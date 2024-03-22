@@ -21,6 +21,17 @@ class MyAudio:
     def changeAudioToFFT(audio):
         return MyAudio(audio.maxAudioIndexInIt, audio.details, librosa.stft(audio.audioValues.copy()))
 
+    @staticmethod
+    def compareTwoFFTAudios(audio1, audio2):
+        audio1Values = np.abs(audio1.audioValues)
+        audio2Values = np.abs(audio2.audioValues)
+        # print(audio1Values, audio2Values)
+        if audio1Values.shape[1] > audio2Values.shape[1]:
+            audio1Values, audio2Values = audio2Values, audio1Values
+        audio2Values = audio2Values[:, :audio1Values.shape[1]]
+
+        return np.dot(audio1Values.flatten(), audio2Values.flatten()) / (np.linalg.norm(audio1Values) * np.linalg.norm(audio2Values))
+
 class AudioManipulator:
     def __init__(self):
         self.chroma_hop_length=12
@@ -61,12 +72,6 @@ class AudioManipulator:
         chromaGram = librosa.feature.chroma_stft(y=audioValues, sr=sr, hop_length=self.chroma_hop_length)
         return chromaGram
 
-    def compareTwoAudioValues(self, audio1Values, audio2Values):
-        _, stft1_db = self.getStft(audio1Values)
-        _, stft2_db = self.getStft(audio2Values)
-        similarity = np.dot(stft1_db.flatten(), stft2_db.flatten()) / (np.linalg.norm(stft1_db) * np.linalg.norm(stft2_db))
-        return similarity
-
     def drawAudio(self, audioValues, sr):
         plt.figure(figsize=(8.8, 3))
         plt.plot([(i+1)/sr for i in range(len(audioValues))], audioValues)
@@ -105,3 +110,6 @@ class AudioManipulator:
         librosa.display.specshow(chromagram, x_axis='time', y_axis='chroma', hop_length=self.chroma_hop_length, cmap='coolwarm')
 
 
+if __name__ == "__main__":
+    print("This is a library for Audio Manipulation via fourier transform made specificaly for minecraft audio production using note blocks")
+    print("Author -: Rajat Bansal, IIT Mandi, B20123")
