@@ -38,6 +38,11 @@ class AudioManipulator:
         self.normalizationValue = 32767.00
         self.n_mels = 128 * 2
 
+    def addAudioValuesAtGivenTime(self, audioValues1, audioValues2, time, sr):
+        for count in range(len(audioValues2)):
+            audioValues1[count + int(time*sr)] += audioValues2[count]
+        return audioValues1
+
     def joinDiffAudiosValues(self, audiosValues):
         mx = -1
         for i in range(len(audiosValues)):
