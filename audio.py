@@ -4,28 +4,25 @@ import IPython.display as ipd
 import matplotlib.pyplot as plt
 
 class MyAudio:
-    def __init__(self, maxAudioIndexInIt, details, audioValues):
-        self.maxAudioIndexInIt = maxAudioIndexInIt
+    def __init__(self, details, audioValues):
         self.details = details
         self.audioValues = audioValues
     
     @staticmethod
     def combineTwoAudios(audio1, audio2, manipulator):
-        maxAudioIndexInIt = max(audio1.maxAudioIndexInIt, audio2.maxAudioIndexInIt)
         details = audio1.details.copy()
         details.extend(audio2.details)
         audioValues = manipulator.joinDiffAudiosValues([audio1.audioValues, audio2.audioValues])
-        return MyAudio(maxAudioIndexInIt, details, audioValues)
+        return MyAudio(details, audioValues)
     
     @staticmethod
     def changeAudioToFFT(audio):
-        return MyAudio(audio.maxAudioIndexInIt, audio.details, np.abs(librosa.stft(audio.audioValues.copy())))
+        return MyAudio(audio.details, librosa.stft(audio.audioValues.copy()))
 
     @staticmethod
     def compareTwoFFTAudios(audio1, audio2):
         audio1Values = np.abs(audio1.audioValues)
         audio2Values = np.abs(audio2.audioValues)
-        # print(audio1Values, audio2Values)
         if audio1Values.shape[1] > audio2Values.shape[1]:
             audio1Values, audio2Values = audio2Values, audio1Values
         audio2Values = audio2Values[:, :audio1Values.shape[1]]
@@ -38,9 +35,17 @@ class AudioManipulator:
         self.normalizationValue = 32767.00
         self.n_mels = 128 * 2
 
-    def addAudioValuesAtGivenTime(self, audioValues1, audioValues2, time, sr):
-        for count in range(len(audioValues2)):
-            audioValues1[count + int(time*sr)] += audioValues2[count]
+    def addAudioValuesInDuration(self, audioValues1, audioValues2, timeSt, timeEd, sr):
+        while len(audioValues2) < int((timeEd - timeSt) * sr):
+            audioValues2 = np.concatenate((audioValues2, audioValues2))
+
+        indexSt = int(timeSt * sr)
+        indexEd = int(timeEd * sr)
+        for index in range(indexSt, indexEd):
+            if index < len(audioValues1):
+                audioValues1[index] += audioValues2[index - indexSt]
+            else:
+                break
         return audioValues1
 
     def joinDiffAudiosValues(self, audiosValues):
@@ -77,7 +82,7 @@ class AudioManipulator:
         chromaGram = librosa.feature.chroma_stft(y=audioValues, sr=sr, hop_length=self.chroma_hop_length)
         return chromaGram
 
-    def drawAudio(self, audioValues, sr):
+    def drawAudioValues(self, audioValues, sr):
         plt.figure(figsize=(8.8, 3))
         plt.plot([(i+1)/sr for i in range(len(audioValues))], audioValues)
         plt.title('Raw Audio Example')

@@ -211,3 +211,26 @@
 # #     print(combination_details)
 # #     combined_reconstructed_audio = np.concatenate((combined_reconstructed_audio, best_combination))
 # #     combined_original_audio = np.concatenate((combined_original_audio, original_audio))
+
+
+
+################################## GENERATE.PY ################################################
+
+# for tone, durations in finalMap.items():
+#     durations = durations[1:]
+#     merged_intervals = []
+#     current_interval = durations[0]
+#     for interval in durations[1:]:
+#         if interval[0] - current_interval[1] <= combinableDurationGap:
+#             current_interval[1] = interval[1]
+#         else:
+#             if current_interval[1] - current_interval[0] > binLength*2:
+#                 merged_intervals.append(current_interval)
+#             current_interval = interval
+#     merged_intervals.append(current_interval)
+
+#     for i in range(len(merged_intervals)):
+#         merged_intervals[i] = [merged_intervals[i][0]/1000, merged_intervals[i][1]/1000]
+#     print(tone, merged_intervals)
+
+###################################################################################################
