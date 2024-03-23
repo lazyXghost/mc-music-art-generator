@@ -19,7 +19,7 @@ class MyAudio:
     
     @staticmethod
     def changeAudioToFFT(audio):
-        return MyAudio(audio.maxAudioIndexInIt, audio.details, librosa.stft(audio.audioValues.copy()))
+        return MyAudio(audio.maxAudioIndexInIt, audio.details, np.abs(librosa.stft(audio.audioValues.copy())))
 
     @staticmethod
     def compareTwoFFTAudios(audio1, audio2):
@@ -108,7 +108,6 @@ class AudioManipulator:
         chromagram = self.getChromaGram(audioValues, sr)
         plt.figure(figsize=(15, 5))
         librosa.display.specshow(chromagram, x_axis='time', y_axis='chroma', hop_length=self.chroma_hop_length, cmap='coolwarm')
-
 
 if __name__ == "__main__":
     print("This is a library for Audio Manipulation via fourier transform made specificaly for minecraft audio production using note blocks")

@@ -17,8 +17,8 @@ def preProcess(maxSemitoneCount, instrumentsPath, instrumentsName, maxCombinable
         instrumentName = audioFileName.split('.')[0]
         if instrumentName in instrumentsName:
             audio, sr = librosa.load(instrumentsPath + audioFileName, sr=sr)
-            inc = 24/(maxSemitoneCount+1)
-            semitonePitch = 12/(maxSemitoneCount+1)
+            inc = int(24/maxSemitoneCount + 0.5)
+            semitonePitch = int(inc/2)
             while semitonePitch < 25:
                 audioValuesShifted = manipulator.shiftPitchOfAudioValues(audio, sr, semitonePitch)
                 ogAudios.append(MyAudio(audioIndex, [(instrumentName, semitonePitch)], audioValuesShifted))
@@ -49,7 +49,7 @@ def preProcess(maxSemitoneCount, instrumentsPath, instrumentsName, maxCombinable
                 queue.append(audio)
 
     if len(mainAudios) != 0:
-        with open(f"{instrumentsPath}mainSounds{file_i}.pkl", "wb") as f:
+        with open(f"{preProcessedSoundsSavePath}main_sounds_{file_i}.pkl", "wb") as f:
             pickle.dump(mainAudios, f)
         file_i += 1
         mainAudios.clear()
