@@ -66,9 +66,16 @@ class AudioManipulator:
         return audio_with_pitch
 
     @staticmethod
-    def calculateAmplitudeShiftOfAudioValues(audioValues1, audioValues2):
-        scaling_factor = np.max(np.abs(audioValues1)) / np.max(np.abs(audioValues2))
-        return audioValues2 * scaling_factor
+    def calculateAmplitudeShiftOfAudioValues(audioValues1, audioValues2, mode):
+        if mode == 'max':
+            peak_amplitude1 = np.max(np.abs(audioValues1))
+            peak_amplitude2 = np.max(np.abs(audioValues2))
+        elif mode == 'mean':
+            peak_amplitude1 = np.mean(np.abs(audioValues1))
+            peak_amplitude2 = np.mean(np.abs(audioValues2))
+        
+        scaling_factor = peak_amplitude1/peak_amplitude2
+        return round(scaling_factor, 2)
 
     @staticmethod
     def getStftAndStftDb(audioValues):
