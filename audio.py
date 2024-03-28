@@ -9,12 +9,12 @@ class MyAudio:
         self.audioValues = audioValues
     
     @staticmethod
-    def combineTwoAudios(audio1, audio2, manipulator):
+    def combineTwoAudios(audio1, audio2):
         details = audio1.details.copy()
         details.extend(audio2.details)
-        audioValues = manipulator.joinDiffAudiosValues([audio1.audioValues, audio2.audioValues])
+        audioValues = AudioManipulator.joinDiffAudiosValues([audio1.audioValues, audio2.audioValues])
         return MyAudio(details, audioValues)
-    
+
     @staticmethod
     def changeAudioToFFT(audio):
         return MyAudio(audio.details, librosa.stft(audio.audioValues.copy()))
@@ -30,25 +30,19 @@ class MyAudio:
         return np.dot(audio1Values.flatten(), audio2Values.flatten()) / (np.linalg.norm(audio1Values) * np.linalg.norm(audio2Values))
 
 class AudioManipulator:
-    def __init__(self):
-        self.chroma_hop_length=12
-        self.normalizationValue = 32767.00
-        self.n_mels = 128 * 2
+    # def __init__(self):
+        # self.n_mels = 128 * 2
 
-    def addAudioValuesInDuration(self, audioValues1, audioValues2, timeSt, timeEd, sr):
-        while len(audioValues2) < int((timeEd - timeSt) * sr):
-            audioValues2 = np.concatenate((audioValues2, audioValues2))
-
-        indexSt = int(timeSt * sr)
-        indexEd = int(timeEd * sr)
+    @staticmethod
+    def addAudioValuesInDuration(audioValues1, audioValues2, timeSt, sr):
+        indexSt = min(len(audioValues1)-1, int(timeSt/1000 * sr))
+        indexEd = min(len(audioValues1), indexSt + len(audioValues2))
         for index in range(indexSt, indexEd):
-            if index < len(audioValues1):
-                audioValues1[index] += audioValues2[index - indexSt]
-            else:
-                break
+            audioValues1[index] += audioValues2[index - indexSt]
         return audioValues1
 
-    def joinDiffAudiosValues(self, audiosValues):
+    @staticmethod
+    def joinDiffAudiosValues(audiosValues):
         mx = -1
         for i in range(len(audiosValues)):
             mx = max(mx, len(audiosValues[i]))
@@ -57,53 +51,67 @@ class AudioManipulator:
                 audiosValues[i] = np.concatenate((audiosValues[i], np.zeros(int(mx - len(audiosValues[i])))))
         return np.sum(audiosValues, axis = 0)
 
-    def getAudioValuesInterface(self, audioValues):
+    @staticmethod
+    def getAudioValuesInterface(audioValues):
         return ipd.Audio(audioValues)
 
-    def splitAudioValues(self, audioValues, sr, start_time, end_time):
-        audioValues = audioValues[int(sr * start_time):int(sr * end_time)]
+    @staticmethod
+    def splitAudioValues(audioValues, sr, start_time, end_time):
+        audioValues = audioValues[int(sr * start_time/1000):int(sr * end_time/1000)]
         return audioValues
 
-    def shiftPitchOfAudioValues(self, audioValues, sr, pitch_shift):
+    @staticmethod
+    def shiftPitchOfAudioValues(audioValues, sr, pitch_shift):
         audio_with_pitch = librosa.effects.pitch_shift(audioValues, sr=sr, n_steps=pitch_shift)
         return audio_with_pitch
 
-    def getStftAndStftDb(self, audioValues):
+    @staticmethod
+    def calculateAmplitudeShiftOfAudioValues(audioValues1, audioValues2):
+        scaling_factor = np.max(np.abs(audioValues1)) / np.max(np.abs(audioValues2))
+        return audioValues2 * scaling_factor
+
+    @staticmethod
+    def getStftAndStftDb(audioValues):
         stft = librosa.stft(audioValues)
         stft_db = librosa.amplitude_to_db(abs(stft))
         return stft, stft_db
 
-    def getMelSpectogram(self, audioValues, sr):
+    @staticmethod
+    def getMelSpectogram(audioValues, sr):
         mel_spec = librosa.feature.melspectrogram(y=audioValues, sr = sr, n_mels = self.n_mels)
         mel_spec_db = librosa.amplitude_to_db(mel_spec) # ref = np.max
         return mel_spec, mel_spec_db
 
-    def getChromaGram(self, audioValues, sr):
+    @staticmethod
+    def getChromaGram(audioValues, sr):
         chromaGram = librosa.feature.chroma_stft(y=audioValues, sr=sr, hop_length=self.chroma_hop_length)
         return chromaGram
 
-    def drawAudioValues(self, audioValues, sr):
+    @staticmethod
+    def drawAudioValues( audioValues, sr):
         plt.figure(figsize=(8.8, 3))
         plt.plot([(i+1)/sr for i in range(len(audioValues))], audioValues)
         plt.title('Raw Audio Example')
         plt.show()
 
-    def drawAudioValuesSpectrum(self, audioValues, sr):
-        X, Xdb= self.getStft(audioValues)
+    @staticmethod
+    def drawAudioValuesSpectrum(audioValues, sr):
+        X, Xdb= AudioManipulator.getStft(audioValues)
         plt.figure(figsize=(14, 5))
         librosa.display.specshow(Xdb, sr=sr, x_axis='time', y_axis='log')
         plt.colorbar()
         plt.show()
 
-    def drawAudioValuesSpectrumNormalized(self, audioValues, sr):
-        X, Xdb = self.getStft(audioValues/audioValues.max() * self.normalizationValue)
+    def drawAudioValuesSpectrumNormalized(audioValues, sr):
+        X, Xdb = AudioManipulator.getStft(audioValues/audioValues.max() * 32767.00)
         plt.figure(figsize=(14, 5))
         librosa.display.specshow(Xdb, sr=sr, x_axis='time', y_axis='log')
         plt.colorbar()
         plt.show()
 
-    def drawMelSpectrogram(self, audioValues, sr):
-        S, S_db_mel = self.getMelSpectogram(audioValues, sr)
+    @staticmethod
+    def drawMelSpectrogram(audioValues, sr):
+        S, S_db_mel = AudioManipulator.getMelSpectogram(audioValues, sr)
 
         fig, ax = plt.subplots(figsize=(10, 3))
         img = librosa.display.specshow(S_db_mel,
@@ -114,10 +122,11 @@ class AudioManipulator:
         fig.colorbar(img, ax=ax, format=f'%0.2f')
         plt.show()
 
-    def drawChromaGram(self, audioValues, sr):
-        chromagram = self.getChromaGram(audioValues, sr)
+    @staticmethod
+    def drawChromaGram(audioValues, sr):
+        chromagram = AudioManipulator.getChromaGram(audioValues, sr)
         plt.figure(figsize=(15, 5))
-        librosa.display.specshow(chromagram, x_axis='time', y_axis='chroma', hop_length=self.chroma_hop_length, cmap='coolwarm')
+        librosa.display.specshow(chromagram, x_axis='time', y_axis='chroma', hop_length=12, cmap='coolwarm')
 
 if __name__ == "__main__":
     print("This is a library for Audio Manipulation via fourier transform made specificaly for minecraft audio production using note blocks")
