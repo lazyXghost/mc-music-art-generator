@@ -17,6 +17,7 @@ def preProcess(mainSoundsPath, targetFile, sr, instruments, instrumentsPath, ini
     mainAudioValues, _ = librosa.load(f'{mainSoundsPath}{targetFile}')
     result = []
     resAudioValues = np.zeros(len(mainAudioValues))
+    # simValues = []
     while startTime < 1000 * len(mainAudioValues)/sr:
         print(startTime, end = ',')
         resAudio = MyAudio([{"fileName": 'resFile', "pitchShift":0, "ASF": 1}], AudioManipulator.splitAudioValues(resAudioValues, sr, startTime, startTime + binLength))
@@ -64,6 +65,7 @@ def preProcess(mainSoundsPath, targetFile, sr, instruments, instrumentsPath, ini
                 instrumentAudioValues = AudioManipulator.shiftPitchOfAudioValues(instrumentAudioValues, sr, instrumentDetails["pitchShift"]) * instrumentDetails["ASF"]
                 resAudioValues = AudioManipulator.addAudioValuesInDuration(resAudioValues, instrumentAudioValues, startTime, sr)
         print(bestMatch)
+        # simValues.append(bestMatch["similarity"])
 
         if startTime % 1000 == 0:
             # AudioManipulator.drawAudioValues(mainAudioValues, sr)
@@ -71,6 +73,10 @@ def preProcess(mainSoundsPath, targetFile, sr, instruments, instrumentsPath, ini
             targetFileName = targetFile.split('.')[0]
             sf.write(f'{resultsPath}{targetFileName}_{amplitudeMode}.mp3', resAudioValues, sr)
         startTime += binLength
+
+    # for simValue in sorted(simValues, reverse=True):
+    #     print(int(simValue * 100), end=',')
+    # print()
     return result
 
 mainSoundsPath = config["mainSoundsPath"]
