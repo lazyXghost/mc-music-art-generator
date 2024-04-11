@@ -1,0 +1,2851 @@
+fill 0 -60 0 100 -59 48 air
+#---------0.1-----------
+setblock 2 -60 0 repeater[delay=1,facing=west]
+fill 3 -60 0 3 -60 48 redstone_wire
+setblock 3 -60 15 dirt
+setblock 3 -59 15 sticky_piston[facing=south]
+setblock 3 -59 16 redstone_block
+setblock 3 -60 17 sticky_piston[facing=north,extended=true]
+setblock 3 -60 18 dirt
+setblock 3 -59 18 redstone_wire
+
+setblock 3 -60 33 dirt
+setblock 3 -59 33 sticky_piston[facing=south]
+setblock 3 -59 34 redstone_block
+setblock 3 -60 35 sticky_piston[facing=north,extended=true]
+setblock 3 -60 36 dirt
+setblock 3 -59 36 redstone_wire
+
+##============================
+setblock 4 -60 0 redstone_wire
+##==========x=4===========
+setblock 4 -60 4 redstone_wire
+##=========x=5===========
+setblock 5 -61 4 emerald_block
+setblock 5 -60 4 note_block[note=18]
+##==========x=4===========
+setblock 4 -60 37 redstone_wire
+##=========x=5===========
+setblock 5 -61 37 iron_block
+setblock 5 -60 37 note_block[note=18]
+
+#---------0.2-----------
+setblock 5 -60 0 repeater[delay=1,facing=west]
+fill 6 -60 0 6 -60 48 redstone_wire
+setblock 6 -60 15 dirt
+setblock 6 -59 15 sticky_piston[facing=south]
+setblock 6 -59 16 redstone_block
+setblock 6 -60 17 sticky_piston[facing=north,extended=true]
+setblock 6 -60 18 dirt
+setblock 6 -59 18 redstone_wire
+
+setblock 6 -60 33 dirt
+setblock 6 -59 33 sticky_piston[facing=south]
+setblock 6 -59 34 redstone_block
+setblock 6 -60 35 sticky_piston[facing=north,extended=true]
+setblock 6 -60 36 dirt
+setblock 6 -59 36 redstone_wire
+
+##============================
+setblock 7 -60 0 redstone_wire
+##==========x=7===========
+setblock 7 -60 15 redstone_wire
+##=========x=8===========
+setblock 8 -61 15 emerald_block
+setblock 8 -60 15 note_block[note=18]
+##==========x=7===========
+setblock 7 -60 42 redstone_wire
+##=========x=8===========
+setblock 8 -61 42 pumpkin
+setblock 8 -60 42 note_block[note=22]
+
+#---------0.3-----------
+setblock 8 -60 0 repeater[delay=1,facing=west]
+fill 9 -60 0 9 -60 48 redstone_wire
+setblock 9 -60 15 dirt
+setblock 9 -59 15 sticky_piston[facing=south]
+setblock 9 -59 16 redstone_block
+setblock 9 -60 17 sticky_piston[facing=north,extended=true]
+setblock 9 -60 18 dirt
+setblock 9 -59 18 redstone_wire
+
+setblock 9 -60 33 dirt
+setblock 9 -59 33 sticky_piston[facing=south]
+setblock 9 -59 34 redstone_block
+setblock 9 -60 35 sticky_piston[facing=north,extended=true]
+setblock 9 -60 36 dirt
+setblock 9 -59 36 redstone_wire
+
+##============================
+setblock 10 -60 0 redstone_wire
+##==========x=10===========
+setblock 10 -60 13 redstone_wire
+##=========x=11===========
+setblock 11 -61 13 emerald_block
+setblock 11 -60 13 note_block[note=20]
+##==========x=10===========
+setblock 10 -60 13 redstone_wire
+##=========x=11===========
+setblock 11 -61 13 emerald_block
+setblock 11 -60 13 note_block[note=17]
+##==========x=10===========
+setblock 10 -60 29 redstone_wire
+##=========x=11===========
+setblock 11 -61 29 gold_block
+setblock 11 -60 29 note_block[note=15]
+
+#---------0.4-----------
+setblock 11 -60 0 repeater[delay=1,facing=west]
+fill 12 -60 0 12 -60 48 redstone_wire
+setblock 12 -60 15 dirt
+setblock 12 -59 15 sticky_piston[facing=south]
+setblock 12 -59 16 redstone_block
+setblock 12 -60 17 sticky_piston[facing=north,extended=true]
+setblock 12 -60 18 dirt
+setblock 12 -59 18 redstone_wire
+
+setblock 12 -60 33 dirt
+setblock 12 -59 33 sticky_piston[facing=south]
+setblock 12 -59 34 redstone_block
+setblock 12 -60 35 sticky_piston[facing=north,extended=true]
+setblock 12 -60 36 dirt
+setblock 12 -59 36 redstone_wire
+
+##============================
+setblock 13 -60 0 redstone_wire
+##==========x=13===========
+setblock 13 -60 22 redstone_wire
+##=========x=14===========
+setblock 14 -61 22 emerald_block
+setblock 14 -60 22 note_block[note=20]
+##==========x=13===========
+setblock 13 -60 36 redstone_wire
+##=========x=14===========
+setblock 14 -61 36 gold_block
+setblock 14 -60 36 note_block[note=15]
+##==========x=13===========
+setblock 13 -60 43 redstone_wire
+##=========x=14===========
+setblock 14 -61 43 pumpkin
+setblock 14 -60 43 note_block[note=10]
+
+#---------0.5-----------
+setblock 14 -60 0 repeater[delay=1,facing=west]
+fill 15 -60 0 15 -60 48 redstone_wire
+setblock 15 -60 15 dirt
+setblock 15 -59 15 sticky_piston[facing=south]
+setblock 15 -59 16 redstone_block
+setblock 15 -60 17 sticky_piston[facing=north,extended=true]
+setblock 15 -60 18 dirt
+setblock 15 -59 18 redstone_wire
+
+setblock 15 -60 33 dirt
+setblock 15 -59 33 sticky_piston[facing=south]
+setblock 15 -59 34 redstone_block
+setblock 15 -60 35 sticky_piston[facing=north,extended=true]
+setblock 15 -60 36 dirt
+setblock 15 -59 36 redstone_wire
+
+##============================
+setblock 16 -60 0 redstone_wire
+##==========x=16===========
+setblock 16 -60 18 redstone_wire
+##=========x=17===========
+setblock 17 -61 18 emerald_block
+setblock 17 -60 18 note_block[note=20]
+##==========x=16===========
+setblock 16 -60 43 redstone_wire
+##=========x=17===========
+setblock 17 -61 43 pumpkin
+setblock 17 -60 43 note_block[note=22]
+##==========x=16===========
+setblock 16 -60 44 redstone_wire
+##=========x=17===========
+setblock 17 -61 44 mangrove_wood
+setblock 17 -60 44 note_block[note=23]
+
+#---------0.6-----------
+setblock 17 -60 0 repeater[delay=1,facing=west]
+fill 18 -60 0 18 -60 48 redstone_wire
+setblock 18 -60 15 dirt
+setblock 18 -59 15 sticky_piston[facing=south]
+setblock 18 -59 16 redstone_block
+setblock 18 -60 17 sticky_piston[facing=north,extended=true]
+setblock 18 -60 18 dirt
+setblock 18 -59 18 redstone_wire
+
+setblock 18 -60 33 dirt
+setblock 18 -59 33 sticky_piston[facing=south]
+setblock 18 -59 34 redstone_block
+setblock 18 -60 35 sticky_piston[facing=north,extended=true]
+setblock 18 -60 36 dirt
+setblock 18 -59 36 redstone_wire
+
+##============================
+setblock 19 -60 0 redstone_wire
+##==========x=19===========
+setblock 19 -60 44 redstone_wire
+##=========x=20===========
+setblock 20 -61 44 pumpkin
+setblock 20 -60 44 note_block[note=22]
+
+#---------0.7-----------
+setblock 20 -60 0 repeater[delay=1,facing=west]
+fill 21 -60 0 21 -60 48 redstone_wire
+setblock 21 -60 15 dirt
+setblock 21 -59 15 sticky_piston[facing=south]
+setblock 21 -59 16 redstone_block
+setblock 21 -60 17 sticky_piston[facing=north,extended=true]
+setblock 21 -60 18 dirt
+setblock 21 -59 18 redstone_wire
+
+setblock 21 -60 33 dirt
+setblock 21 -59 33 sticky_piston[facing=south]
+setblock 21 -59 34 redstone_block
+setblock 21 -60 35 sticky_piston[facing=north,extended=true]
+setblock 21 -60 36 dirt
+setblock 21 -59 36 redstone_wire
+
+##============================
+setblock 22 -60 0 redstone_wire
+##==========x=22===========
+setblock 22 -60 6 redstone_wire
+##=========x=23===========
+setblock 23 -61 6 emerald_block
+setblock 23 -60 6 note_block[note=18]
+##==========x=22===========
+setblock 22 -60 42 redstone_wire
+##=========x=23===========
+setblock 23 -61 42 hay_block
+setblock 23 -60 42 note_block[note=6]
+
+#---------0.8-----------
+setblock 23 -60 0 repeater[delay=1,facing=west]
+fill 24 -60 0 24 -60 48 redstone_wire
+setblock 24 -60 15 dirt
+setblock 24 -59 15 sticky_piston[facing=south]
+setblock 24 -59 16 redstone_block
+setblock 24 -60 17 sticky_piston[facing=north,extended=true]
+setblock 24 -60 18 dirt
+setblock 24 -59 18 redstone_wire
+
+setblock 24 -60 33 dirt
+setblock 24 -59 33 sticky_piston[facing=south]
+setblock 24 -59 34 redstone_block
+setblock 24 -60 35 sticky_piston[facing=north,extended=true]
+setblock 24 -60 36 dirt
+setblock 24 -59 36 redstone_wire
+
+##============================
+setblock 25 -60 0 redstone_wire
+##==========x=25===========
+setblock 25 -60 14 redstone_wire
+##=========x=26===========
+setblock 26 -61 14 emerald_block
+setblock 26 -60 14 note_block[note=18]
+
+#---------0.9-----------
+setblock 26 -60 0 repeater[delay=1,facing=west]
+fill 27 -60 0 27 -60 48 redstone_wire
+setblock 27 -60 15 dirt
+setblock 27 -59 15 sticky_piston[facing=south]
+setblock 27 -59 16 redstone_block
+setblock 27 -60 17 sticky_piston[facing=north,extended=true]
+setblock 27 -60 18 dirt
+setblock 27 -59 18 redstone_wire
+
+setblock 27 -60 33 dirt
+setblock 27 -59 33 sticky_piston[facing=south]
+setblock 27 -59 34 redstone_block
+setblock 27 -60 35 sticky_piston[facing=north,extended=true]
+setblock 27 -60 36 dirt
+setblock 27 -59 36 redstone_wire
+
+##============================
+setblock 28 -60 0 redstone_wire
+##==========x=28===========
+setblock 28 -60 7 redstone_wire
+##=========x=29===========
+setblock 29 -61 7 emerald_block
+setblock 29 -60 7 note_block[note=17]
+##==========x=28===========
+setblock 28 -60 26 redstone_wire
+##=========x=29===========
+setblock 29 -61 26 gold_block
+setblock 29 -60 26 note_block[note=12]
+
+#---------1.0-----------
+setblock 29 -60 0 repeater[delay=1,facing=west]
+fill 30 -60 0 30 -60 48 redstone_wire
+setblock 30 -60 15 dirt
+setblock 30 -59 15 sticky_piston[facing=south]
+setblock 30 -59 16 redstone_block
+setblock 30 -60 17 sticky_piston[facing=north,extended=true]
+setblock 30 -60 18 dirt
+setblock 30 -59 18 redstone_wire
+
+setblock 30 -60 33 dirt
+setblock 30 -59 33 sticky_piston[facing=south]
+setblock 30 -59 34 redstone_block
+setblock 30 -60 35 sticky_piston[facing=north,extended=true]
+setblock 30 -60 36 dirt
+setblock 30 -59 36 redstone_wire
+
+##============================
+setblock 31 -60 0 redstone_wire
+##==========x=31===========
+setblock 31 -60 15 redstone_wire
+##=========x=32===========
+setblock 32 -61 15 emerald_block
+setblock 32 -60 15 note_block[note=17]
+##==========x=31===========
+setblock 31 -60 42 redstone_wire
+##=========x=32===========
+setblock 32 -61 42 pumpkin
+setblock 32 -60 42 note_block[note=22]
+
+#---------1.1-----------
+setblock 32 -60 0 repeater[delay=1,facing=west]
+fill 33 -60 0 33 -60 48 redstone_wire
+setblock 33 -60 15 dirt
+setblock 33 -59 15 sticky_piston[facing=south]
+setblock 33 -59 16 redstone_block
+setblock 33 -60 17 sticky_piston[facing=north,extended=true]
+setblock 33 -60 18 dirt
+setblock 33 -59 18 redstone_wire
+
+setblock 33 -60 33 dirt
+setblock 33 -59 33 sticky_piston[facing=south]
+setblock 33 -59 34 redstone_block
+setblock 33 -60 35 sticky_piston[facing=north,extended=true]
+setblock 33 -60 36 dirt
+setblock 33 -59 36 redstone_wire
+
+##============================
+setblock 34 -60 0 redstone_wire
+##==========x=34===========
+setblock 34 -60 15 redstone_wire
+##=========x=35===========
+setblock 35 -61 15 emerald_block
+setblock 35 -60 15 note_block[note=15]
+##==========x=34===========
+setblock 34 -60 31 redstone_wire
+##=========x=35===========
+setblock 35 -61 31 gold_block
+setblock 35 -60 31 note_block[note=10]
+##==========x=34===========
+setblock 34 -60 42 redstone_wire
+##=========x=35===========
+setblock 35 -61 42 pumpkin
+setblock 35 -60 42 note_block[note=15]
+
+#---------1.2-----------
+setblock 35 -60 0 repeater[delay=1,facing=west]
+fill 36 -60 0 36 -60 48 redstone_wire
+setblock 36 -60 15 dirt
+setblock 36 -59 15 sticky_piston[facing=south]
+setblock 36 -59 16 redstone_block
+setblock 36 -60 17 sticky_piston[facing=north,extended=true]
+setblock 36 -60 18 dirt
+setblock 36 -59 18 redstone_wire
+
+setblock 36 -60 33 dirt
+setblock 36 -59 33 sticky_piston[facing=south]
+setblock 36 -59 34 redstone_block
+setblock 36 -60 35 sticky_piston[facing=north,extended=true]
+setblock 36 -60 36 dirt
+setblock 36 -59 36 redstone_wire
+
+##============================
+setblock 37 -60 0 redstone_wire
+##==========x=37===========
+setblock 37 -60 45 redstone_wire
+##=========x=38===========
+setblock 38 -61 45 glass
+setblock 38 -60 45 note_block[note=7]
+
+#---------1.3-----------
+setblock 38 -60 0 repeater[delay=1,facing=west]
+fill 39 -60 0 39 -60 48 redstone_wire
+setblock 39 -60 15 dirt
+setblock 39 -59 15 sticky_piston[facing=south]
+setblock 39 -59 16 redstone_block
+setblock 39 -60 17 sticky_piston[facing=north,extended=true]
+setblock 39 -60 18 dirt
+setblock 39 -59 18 redstone_wire
+
+setblock 39 -60 33 dirt
+setblock 39 -59 33 sticky_piston[facing=south]
+setblock 39 -59 34 redstone_block
+setblock 39 -60 35 sticky_piston[facing=north,extended=true]
+setblock 39 -60 36 dirt
+setblock 39 -59 36 redstone_wire
+
+##============================
+setblock 40 -60 0 redstone_wire
+##==========x=40===========
+setblock 40 -60 15 redstone_wire
+##=========x=41===========
+setblock 41 -61 15 emerald_block
+setblock 41 -60 15 note_block[note=3]
+##==========x=40===========
+setblock 40 -60 15 redstone_wire
+##=========x=41===========
+setblock 41 -61 15 emerald_block
+setblock 41 -60 15 note_block[note=15]
+##==========x=40===========
+setblock 40 -60 27 redstone_wire
+##=========x=41===========
+setblock 41 -61 27 dirt
+setblock 41 -60 27 note_block[note=3]
+##==========x=40===========
+setblock 40 -60 38 redstone_wire
+##=========x=41===========
+setblock 41 -61 38 green_wool
+setblock 41 -60 38 note_block[note=3]
+##==========x=40===========
+setblock 40 -60 40 redstone_wire
+##=========x=41===========
+setblock 41 -61 40 glowstone
+setblock 41 -60 40 note_block[note=3]
+##==========x=40===========
+setblock 40 -60 40 redstone_wire
+##=========x=41===========
+setblock 41 -61 40 iron_block
+setblock 41 -60 40 note_block[note=3]
+
+#---------1.4-----------
+setblock 41 -60 0 repeater[delay=1,facing=west]
+fill 42 -60 0 42 -60 48 redstone_wire
+setblock 42 -60 15 dirt
+setblock 42 -59 15 sticky_piston[facing=south]
+setblock 42 -59 16 redstone_block
+setblock 42 -60 17 sticky_piston[facing=north,extended=true]
+setblock 42 -60 18 dirt
+setblock 42 -59 18 redstone_wire
+
+setblock 42 -60 33 dirt
+setblock 42 -59 33 sticky_piston[facing=south]
+setblock 42 -59 34 redstone_block
+setblock 42 -60 35 sticky_piston[facing=north,extended=true]
+setblock 42 -60 36 dirt
+setblock 42 -59 36 redstone_wire
+
+##============================
+setblock 43 -60 0 redstone_wire
+##==========x=43===========
+setblock 43 -60 36 redstone_wire
+##=========x=44===========
+setblock 44 -61 36 dirt
+setblock 44 -60 36 note_block[note=3]
+##==========x=43===========
+setblock 43 -60 38 redstone_wire
+##=========x=44===========
+setblock 44 -61 38 gold_block
+setblock 44 -60 38 note_block[note=10]
+
+#---------1.5-----------
+setblock 44 -60 0 repeater[delay=1,facing=west]
+fill 45 -60 0 45 -60 48 redstone_wire
+setblock 45 -60 15 dirt
+setblock 45 -59 15 sticky_piston[facing=south]
+setblock 45 -59 16 redstone_block
+setblock 45 -60 17 sticky_piston[facing=north,extended=true]
+setblock 45 -60 18 dirt
+setblock 45 -59 18 redstone_wire
+
+setblock 45 -60 33 dirt
+setblock 45 -59 33 sticky_piston[facing=south]
+setblock 45 -59 34 redstone_block
+setblock 45 -60 35 sticky_piston[facing=north,extended=true]
+setblock 45 -60 36 dirt
+setblock 45 -59 36 redstone_wire
+
+##============================
+setblock 46 -60 0 redstone_wire
+##==========x=46===========
+setblock 46 -60 20 redstone_wire
+##=========x=47===========
+setblock 47 -61 20 emerald_block
+setblock 47 -60 20 note_block[note=15]
+##==========x=46===========
+setblock 46 -60 38 redstone_wire
+##=========x=47===========
+setblock 47 -61 38 honeycomb_block
+setblock 47 -60 38 note_block[note=22]
+##==========x=46===========
+setblock 46 -60 41 redstone_wire
+##=========x=47===========
+setblock 47 -61 41 glowstone
+setblock 47 -60 41 note_block[note=15]
+
+#---------1.6-----------
+setblock 47 -60 0 repeater[delay=1,facing=west]
+fill 48 -60 0 48 -60 48 redstone_wire
+setblock 48 -60 15 dirt
+setblock 48 -59 15 sticky_piston[facing=south]
+setblock 48 -59 16 redstone_block
+setblock 48 -60 17 sticky_piston[facing=north,extended=true]
+setblock 48 -60 18 dirt
+setblock 48 -59 18 redstone_wire
+
+setblock 48 -60 33 dirt
+setblock 48 -59 33 sticky_piston[facing=south]
+setblock 48 -59 34 redstone_block
+setblock 48 -60 35 sticky_piston[facing=north,extended=true]
+setblock 48 -60 36 dirt
+setblock 48 -59 36 redstone_wire
+
+##============================
+setblock 49 -60 0 redstone_wire
+##==========x=49===========
+setblock 49 -60 27 redstone_wire
+##=========x=50===========
+setblock 50 -61 27 emerald_block
+setblock 50 -60 27 note_block[note=15]
+##==========x=49===========
+setblock 49 -60 37 redstone_wire
+##=========x=50===========
+setblock 50 -61 37 gold_block
+setblock 50 -60 37 note_block[note=10]
+##==========x=49===========
+setblock 49 -60 44 redstone_wire
+##=========x=50===========
+setblock 50 -61 44 pumpkin
+setblock 50 -60 44 note_block[note=15]
+
+#---------1.7-----------
+setblock 50 -60 0 repeater[delay=1,facing=west]
+fill 51 -60 0 51 -60 48 redstone_wire
+setblock 51 -60 15 dirt
+setblock 51 -59 15 sticky_piston[facing=south]
+setblock 51 -59 16 redstone_block
+setblock 51 -60 17 sticky_piston[facing=north,extended=true]
+setblock 51 -60 18 dirt
+setblock 51 -59 18 redstone_wire
+
+setblock 51 -60 33 dirt
+setblock 51 -59 33 sticky_piston[facing=south]
+setblock 51 -59 34 redstone_block
+setblock 51 -60 35 sticky_piston[facing=north,extended=true]
+setblock 51 -60 36 dirt
+setblock 51 -59 36 redstone_wire
+
+##============================
+setblock 52 -60 0 redstone_wire
+##==========x=52===========
+setblock 52 -60 3 redstone_wire
+##=========x=53===========
+setblock 53 -61 3 emerald_block
+setblock 53 -60 3 note_block[note=18]
+##==========x=52===========
+setblock 52 -60 33 redstone_wire
+##=========x=53===========
+setblock 53 -61 33 green_wool
+setblock 53 -60 33 note_block[note=15]
+
+#---------1.8-----------
+setblock 53 -60 0 repeater[delay=1,facing=west]
+fill 54 -60 0 54 -60 48 redstone_wire
+setblock 54 -60 15 dirt
+setblock 54 -59 15 sticky_piston[facing=south]
+setblock 54 -59 16 redstone_block
+setblock 54 -60 17 sticky_piston[facing=north,extended=true]
+setblock 54 -60 18 dirt
+setblock 54 -59 18 redstone_wire
+
+setblock 54 -60 33 dirt
+setblock 54 -59 33 sticky_piston[facing=south]
+setblock 54 -59 34 redstone_block
+setblock 54 -60 35 sticky_piston[facing=north,extended=true]
+setblock 54 -60 36 dirt
+setblock 54 -59 36 redstone_wire
+
+##============================
+setblock 55 -60 0 redstone_wire
+##==========x=55===========
+setblock 55 -60 18 redstone_wire
+##=========x=56===========
+setblock 56 -61 18 emerald_block
+setblock 56 -60 18 note_block[note=18]
+
+#---------1.9-----------
+setblock 56 -60 0 repeater[delay=1,facing=west]
+fill 57 -60 0 57 -60 48 redstone_wire
+setblock 57 -60 15 dirt
+setblock 57 -59 15 sticky_piston[facing=south]
+setblock 57 -59 16 redstone_block
+setblock 57 -60 17 sticky_piston[facing=north,extended=true]
+setblock 57 -60 18 dirt
+setblock 57 -59 18 redstone_wire
+
+setblock 57 -60 33 dirt
+setblock 57 -59 33 sticky_piston[facing=south]
+setblock 57 -59 34 redstone_block
+setblock 57 -60 35 sticky_piston[facing=north,extended=true]
+setblock 57 -60 36 dirt
+setblock 57 -59 36 redstone_wire
+
+##============================
+setblock 58 -60 0 redstone_wire
+##==========x=58===========
+setblock 58 -60 14 redstone_wire
+##=========x=59===========
+setblock 59 -61 14 emerald_block
+setblock 59 -60 14 note_block[note=22]
+
+#---------2.0-----------
+setblock 59 -60 0 repeater[delay=1,facing=west]
+fill 60 -60 0 60 -60 48 redstone_wire
+setblock 60 -60 15 dirt
+setblock 60 -59 15 sticky_piston[facing=south]
+setblock 60 -59 16 redstone_block
+setblock 60 -60 17 sticky_piston[facing=north,extended=true]
+setblock 60 -60 18 dirt
+setblock 60 -59 18 redstone_wire
+
+setblock 60 -60 33 dirt
+setblock 60 -59 33 sticky_piston[facing=south]
+setblock 60 -59 34 redstone_block
+setblock 60 -60 35 sticky_piston[facing=north,extended=true]
+setblock 60 -60 36 dirt
+setblock 60 -59 36 redstone_wire
+
+##============================
+setblock 61 -60 0 redstone_wire
+##==========x=61===========
+setblock 61 -60 30 redstone_wire
+##=========x=62===========
+setblock 62 -61 30 emerald_block
+setblock 62 -60 30 note_block[note=22]
+##==========x=61===========
+setblock 61 -60 45 redstone_wire
+##=========x=62===========
+setblock 62 -61 45 pumpkin
+setblock 62 -60 45 note_block[note=15]
+
+#---------2.1-----------
+setblock 62 -60 0 repeater[delay=1,facing=west]
+fill 63 -60 0 63 -60 48 redstone_wire
+setblock 63 -60 15 dirt
+setblock 63 -59 15 sticky_piston[facing=south]
+setblock 63 -59 16 redstone_block
+setblock 63 -60 17 sticky_piston[facing=north,extended=true]
+setblock 63 -60 18 dirt
+setblock 63 -59 18 redstone_wire
+
+setblock 63 -60 33 dirt
+setblock 63 -59 33 sticky_piston[facing=south]
+setblock 63 -59 34 redstone_block
+setblock 63 -60 35 sticky_piston[facing=north,extended=true]
+setblock 63 -60 36 dirt
+setblock 63 -59 36 redstone_wire
+
+##============================
+setblock 64 -60 0 redstone_wire
+##==========x=64===========
+setblock 64 -60 23 redstone_wire
+##=========x=65===========
+setblock 65 -61 23 emerald_block
+setblock 65 -60 23 note_block[note=3]
+##==========x=64===========
+setblock 64 -60 46 redstone_wire
+##=========x=65===========
+setblock 65 -61 46 sand
+setblock 65 -60 46 note_block[note=3]
+
+#---------2.2-----------
+setblock 65 -60 0 repeater[delay=1,facing=west]
+fill 66 -60 0 66 -60 48 redstone_wire
+setblock 66 -60 15 dirt
+setblock 66 -59 15 sticky_piston[facing=south]
+setblock 66 -59 16 redstone_block
+setblock 66 -60 17 sticky_piston[facing=north,extended=true]
+setblock 66 -60 18 dirt
+setblock 66 -59 18 redstone_wire
+
+setblock 66 -60 33 dirt
+setblock 66 -59 33 sticky_piston[facing=south]
+setblock 66 -59 34 redstone_block
+setblock 66 -60 35 sticky_piston[facing=north,extended=true]
+setblock 66 -60 36 dirt
+setblock 66 -59 36 redstone_wire
+
+##============================
+setblock 67 -60 0 redstone_wire
+##==========x=67===========
+setblock 67 -60 32 redstone_wire
+##=========x=68===========
+setblock 68 -61 32 emerald_block
+setblock 68 -60 32 note_block[note=3]
+
+#---------2.3-----------
+setblock 68 -60 0 repeater[delay=1,facing=west]
+fill 69 -60 0 69 -60 48 redstone_wire
+setblock 69 -60 15 dirt
+setblock 69 -59 15 sticky_piston[facing=south]
+setblock 69 -59 16 redstone_block
+setblock 69 -60 17 sticky_piston[facing=north,extended=true]
+setblock 69 -60 18 dirt
+setblock 69 -59 18 redstone_wire
+
+setblock 69 -60 33 dirt
+setblock 69 -59 33 sticky_piston[facing=south]
+setblock 69 -59 34 redstone_block
+setblock 69 -60 35 sticky_piston[facing=north,extended=true]
+setblock 69 -60 36 dirt
+setblock 69 -59 36 redstone_wire
+
+##============================
+setblock 70 -60 0 redstone_wire
+##==========x=70===========
+setblock 70 -60 20 redstone_wire
+##=========x=71===========
+setblock 71 -61 20 emerald_block
+setblock 71 -60 20 note_block[note=20]
+##==========x=70===========
+setblock 70 -60 41 redstone_wire
+##=========x=71===========
+setblock 71 -61 41 iron_block
+setblock 71 -60 41 note_block[note=20]
+
+#---------2.4-----------
+setblock 71 -60 0 repeater[delay=1,facing=west]
+fill 72 -60 0 72 -60 48 redstone_wire
+setblock 72 -60 15 dirt
+setblock 72 -59 15 sticky_piston[facing=south]
+setblock 72 -59 16 redstone_block
+setblock 72 -60 17 sticky_piston[facing=north,extended=true]
+setblock 72 -60 18 dirt
+setblock 72 -59 18 redstone_wire
+
+setblock 72 -60 33 dirt
+setblock 72 -59 33 sticky_piston[facing=south]
+setblock 72 -59 34 redstone_block
+setblock 72 -60 35 sticky_piston[facing=north,extended=true]
+setblock 72 -60 36 dirt
+setblock 72 -59 36 redstone_wire
+
+##============================
+setblock 73 -60 0 redstone_wire
+##==========x=73===========
+setblock 73 -60 25 redstone_wire
+##=========x=74===========
+setblock 74 -61 25 emerald_block
+setblock 74 -60 25 note_block[note=20]
+##==========x=73===========
+setblock 73 -60 36 redstone_wire
+##=========x=74===========
+setblock 74 -61 36 gold_block
+setblock 74 -60 36 note_block[note=15]
+##==========x=73===========
+setblock 73 -60 41 redstone_wire
+##=========x=74===========
+setblock 74 -61 41 green_wool
+setblock 74 -60 41 note_block[note=3]
+
+#---------2.5-----------
+setblock 74 -60 0 repeater[delay=1,facing=west]
+fill 75 -60 0 75 -60 48 redstone_wire
+setblock 75 -60 15 dirt
+setblock 75 -59 15 sticky_piston[facing=south]
+setblock 75 -59 16 redstone_block
+setblock 75 -60 17 sticky_piston[facing=north,extended=true]
+setblock 75 -60 18 dirt
+setblock 75 -59 18 redstone_wire
+
+setblock 75 -60 33 dirt
+setblock 75 -59 33 sticky_piston[facing=south]
+setblock 75 -59 34 redstone_block
+setblock 75 -60 35 sticky_piston[facing=north,extended=true]
+setblock 75 -60 36 dirt
+setblock 75 -59 36 redstone_wire
+
+##============================
+setblock 76 -60 0 redstone_wire
+##==========x=76===========
+setblock 76 -60 7 redstone_wire
+##=========x=77===========
+setblock 77 -61 7 emerald_block
+setblock 77 -60 7 note_block[note=18]
+##==========x=76===========
+setblock 76 -60 36 redstone_wire
+##=========x=77===========
+setblock 77 -61 36 green_wool
+setblock 77 -60 36 note_block[note=15]
+##==========x=76===========
+setblock 76 -60 37 redstone_wire
+##=========x=77===========
+setblock 77 -61 37 iron_block
+setblock 77 -60 37 note_block[note=3]
+
+#---------2.6-----------
+setblock 77 -60 0 repeater[delay=1,facing=west]
+fill 78 -60 0 78 -60 48 redstone_wire
+setblock 78 -60 15 dirt
+setblock 78 -59 15 sticky_piston[facing=south]
+setblock 78 -59 16 redstone_block
+setblock 78 -60 17 sticky_piston[facing=north,extended=true]
+setblock 78 -60 18 dirt
+setblock 78 -59 18 redstone_wire
+
+setblock 78 -60 33 dirt
+setblock 78 -59 33 sticky_piston[facing=south]
+setblock 78 -59 34 redstone_block
+setblock 78 -60 35 sticky_piston[facing=north,extended=true]
+setblock 78 -60 36 dirt
+setblock 78 -59 36 redstone_wire
+
+##============================
+setblock 79 -60 0 redstone_wire
+##==========x=79===========
+setblock 79 -60 18 redstone_wire
+##=========x=80===========
+setblock 80 -61 18 emerald_block
+setblock 80 -60 18 note_block[note=18]
+
+#---------2.7-----------
+setblock 80 -60 0 repeater[delay=1,facing=west]
+fill 81 -60 0 81 -60 48 redstone_wire
+setblock 81 -60 15 dirt
+setblock 81 -59 15 sticky_piston[facing=south]
+setblock 81 -59 16 redstone_block
+setblock 81 -60 17 sticky_piston[facing=north,extended=true]
+setblock 81 -60 18 dirt
+setblock 81 -59 18 redstone_wire
+
+setblock 81 -60 33 dirt
+setblock 81 -59 33 sticky_piston[facing=south]
+setblock 81 -59 34 redstone_block
+setblock 81 -60 35 sticky_piston[facing=north,extended=true]
+setblock 81 -60 36 dirt
+setblock 81 -59 36 redstone_wire
+
+##============================
+setblock 82 -60 0 redstone_wire
+##==========x=82===========
+setblock 82 -60 11 redstone_wire
+##=========x=83===========
+setblock 83 -61 11 emerald_block
+setblock 83 -60 11 note_block[note=17]
+##==========x=82===========
+setblock 82 -60 28 redstone_wire
+##=========x=83===========
+setblock 83 -61 28 gold_block
+setblock 83 -60 28 note_block[note=12]
+
+#---------2.8-----------
+setblock 83 -60 0 repeater[delay=1,facing=west]
+fill 84 -60 0 84 -60 48 redstone_wire
+setblock 84 -60 15 dirt
+setblock 84 -59 15 sticky_piston[facing=south]
+setblock 84 -59 16 redstone_block
+setblock 84 -60 17 sticky_piston[facing=north,extended=true]
+setblock 84 -60 18 dirt
+setblock 84 -59 18 redstone_wire
+
+setblock 84 -60 33 dirt
+setblock 84 -59 33 sticky_piston[facing=south]
+setblock 84 -59 34 redstone_block
+setblock 84 -60 35 sticky_piston[facing=north,extended=true]
+setblock 84 -60 36 dirt
+setblock 84 -59 36 redstone_wire
+
+##============================
+setblock 85 -60 0 redstone_wire
+##==========x=85===========
+setblock 85 -60 18 redstone_wire
+##=========x=86===========
+setblock 86 -61 18 emerald_block
+setblock 86 -60 18 note_block[note=17]
+##==========x=85===========
+setblock 85 -60 32 redstone_wire
+##=========x=86===========
+setblock 86 -61 32 gold_block
+setblock 86 -60 32 note_block[note=12]
+
+#---------2.9-----------
+setblock 86 -60 0 repeater[delay=1,facing=west]
+fill 87 -60 0 87 -60 48 redstone_wire
+setblock 87 -60 15 dirt
+setblock 87 -59 15 sticky_piston[facing=south]
+setblock 87 -59 16 redstone_block
+setblock 87 -60 17 sticky_piston[facing=north,extended=true]
+setblock 87 -60 18 dirt
+setblock 87 -59 18 redstone_wire
+
+setblock 87 -60 33 dirt
+setblock 87 -59 33 sticky_piston[facing=south]
+setblock 87 -59 34 redstone_block
+setblock 87 -60 35 sticky_piston[facing=north,extended=true]
+setblock 87 -60 36 dirt
+setblock 87 -59 36 redstone_wire
+
+##============================
+setblock 88 -60 0 redstone_wire
+##==========x=88===========
+setblock 88 -60 18 redstone_wire
+##=========x=89===========
+setblock 89 -61 18 emerald_block
+setblock 89 -60 18 note_block[note=17]
+##==========x=88===========
+setblock 88 -60 28 redstone_wire
+##=========x=89===========
+setblock 89 -61 28 dirt
+setblock 89 -60 28 note_block[note=2]
+##==========x=88===========
+setblock 88 -60 38 redstone_wire
+##=========x=89===========
+setblock 89 -61 38 green_wool
+setblock 89 -60 38 note_block[note=2]
+
+#---------3.0-----------
+setblock 89 -60 0 repeater[delay=1,facing=west]
+fill 90 -60 0 90 -60 48 redstone_wire
+setblock 90 -60 15 dirt
+setblock 90 -59 15 sticky_piston[facing=south]
+setblock 90 -59 16 redstone_block
+setblock 90 -60 17 sticky_piston[facing=north,extended=true]
+setblock 90 -60 18 dirt
+setblock 90 -59 18 redstone_wire
+
+setblock 90 -60 33 dirt
+setblock 90 -59 33 sticky_piston[facing=south]
+setblock 90 -59 34 redstone_block
+setblock 90 -60 35 sticky_piston[facing=north,extended=true]
+setblock 90 -60 36 dirt
+setblock 90 -59 36 redstone_wire
+
+##============================
+setblock 91 -60 0 redstone_wire
+##==========x=91===========
+setblock 91 -60 25 redstone_wire
+##=========x=92===========
+setblock 92 -61 25 emerald_block
+setblock 92 -60 25 note_block[note=2]
+##==========x=91===========
+setblock 91 -60 33 redstone_wire
+##=========x=92===========
+setblock 92 -61 33 dirt
+setblock 92 -60 33 note_block[note=2]
+
+#---------3.1-----------
+setblock 92 -60 0 repeater[delay=1,facing=west]
+fill 93 -60 0 93 -60 48 redstone_wire
+setblock 93 -60 15 dirt
+setblock 93 -59 15 sticky_piston[facing=south]
+setblock 93 -59 16 redstone_block
+setblock 93 -60 17 sticky_piston[facing=north,extended=true]
+setblock 93 -60 18 dirt
+setblock 93 -59 18 redstone_wire
+
+setblock 93 -60 33 dirt
+setblock 93 -59 33 sticky_piston[facing=south]
+setblock 93 -59 34 redstone_block
+setblock 93 -60 35 sticky_piston[facing=north,extended=true]
+setblock 93 -60 36 dirt
+setblock 93 -59 36 redstone_wire
+
+##============================
+setblock 94 -60 0 redstone_wire
+##==========x=94===========
+setblock 94 -60 26 redstone_wire
+##=========x=95===========
+setblock 95 -61 26 emerald_block
+setblock 95 -60 26 note_block[note=14]
+##==========x=94===========
+setblock 94 -60 36 redstone_wire
+##=========x=95===========
+setblock 95 -61 36 gold_block
+setblock 95 -60 36 note_block[note=9]
+##==========x=94===========
+setblock 94 -60 41 redstone_wire
+##=========x=95===========
+setblock 95 -61 41 green_wool
+setblock 95 -60 41 note_block[note=2]
+##==========x=94===========
+setblock 94 -60 41 redstone_wire
+##=========x=95===========
+setblock 95 -61 41 green_wool
+setblock 95 -60 41 note_block[note=1]
+##==========x=94===========
+setblock 94 -60 44 redstone_wire
+##=========x=95===========
+setblock 95 -61 44 pumpkin
+setblock 95 -60 44 note_block[note=14]
+##==========x=94===========
+setblock 94 -60 45 redstone_wire
+##=========x=95===========
+setblock 95 -61 45 mangrove_wood
+setblock 95 -60 45 note_block[note=13]
+
+#---------3.2-----------
+setblock 95 -60 0 repeater[delay=1,facing=west]
+fill 96 -60 0 96 -60 48 redstone_wire
+setblock 96 -60 15 dirt
+setblock 96 -59 15 sticky_piston[facing=south]
+setblock 96 -59 16 redstone_block
+setblock 96 -60 17 sticky_piston[facing=north,extended=true]
+setblock 96 -60 18 dirt
+setblock 96 -59 18 redstone_wire
+
+setblock 96 -60 33 dirt
+setblock 96 -59 33 sticky_piston[facing=south]
+setblock 96 -59 34 redstone_block
+setblock 96 -60 35 sticky_piston[facing=north,extended=true]
+setblock 96 -60 36 dirt
+setblock 96 -59 36 redstone_wire
+
+##============================
+setblock 97 -60 0 redstone_wire
+##==========x=97===========
+setblock 97 -60 45 redstone_wire
+##=========x=98===========
+setblock 98 -61 45 green_wool
+setblock 98 -60 45 note_block[note=3]
+##==========x=97===========
+setblock 97 -60 46 redstone_wire
+##=========x=98===========
+setblock 98 -61 46 pumpkin
+setblock 98 -60 46 note_block[note=14]
+##==========x=97===========
+setblock 97 -60 46 redstone_wire
+##=========x=98===========
+setblock 98 -61 46 pumpkin
+setblock 98 -60 46 note_block[note=16]
+##==========x=97===========
+setblock 97 -60 47 redstone_wire
+##=========x=98===========
+setblock 98 -61 47 mangrove_wood
+setblock 98 -60 47 note_block[note=4]
+
+#---------3.3-----------
+setblock 98 -60 0 repeater[delay=1,facing=west]
+fill 99 -60 0 99 -60 48 redstone_wire
+setblock 99 -60 15 dirt
+setblock 99 -59 15 sticky_piston[facing=south]
+setblock 99 -59 16 redstone_block
+setblock 99 -60 17 sticky_piston[facing=north,extended=true]
+setblock 99 -60 18 dirt
+setblock 99 -59 18 redstone_wire
+
+setblock 99 -60 33 dirt
+setblock 99 -59 33 sticky_piston[facing=south]
+setblock 99 -59 34 redstone_block
+setblock 99 -60 35 sticky_piston[facing=north,extended=true]
+setblock 99 -60 36 dirt
+setblock 99 -59 36 redstone_wire
+
+##============================
+setblock 100 -60 0 redstone_wire
+##==========x=100===========
+setblock 100 -60 10 redstone_wire
+##=========x=101===========
+setblock 101 -61 10 emerald_block
+setblock 101 -60 10 note_block[note=18]
+##==========x=100===========
+setblock 100 -60 24 redstone_wire
+##=========x=101===========
+setblock 101 -61 24 dirt
+setblock 101 -60 24 note_block[note=2]
+
+#---------3.4-----------
+setblock 101 -60 0 repeater[delay=1,facing=west]
+fill 102 -60 0 102 -60 48 redstone_wire
+setblock 102 -60 15 dirt
+setblock 102 -59 15 sticky_piston[facing=south]
+setblock 102 -59 16 redstone_block
+setblock 102 -60 17 sticky_piston[facing=north,extended=true]
+setblock 102 -60 18 dirt
+setblock 102 -59 18 redstone_wire
+
+setblock 102 -60 33 dirt
+setblock 102 -59 33 sticky_piston[facing=south]
+setblock 102 -59 34 redstone_block
+setblock 102 -60 35 sticky_piston[facing=north,extended=true]
+setblock 102 -60 36 dirt
+setblock 102 -59 36 redstone_wire
+
+##============================
+setblock 103 -60 0 redstone_wire
+##==========x=103===========
+setblock 103 -60 15 redstone_wire
+##=========x=104===========
+setblock 104 -61 15 emerald_block
+setblock 104 -60 15 note_block[note=18]
+##==========x=103===========
+setblock 103 -60 27 redstone_wire
+##=========x=104===========
+setblock 104 -61 27 dirt
+setblock 104 -60 27 note_block[note=2]
+
+#---------3.5-----------
+setblock 104 -60 0 repeater[delay=1,facing=west]
+fill 105 -60 0 105 -60 48 redstone_wire
+setblock 105 -60 15 dirt
+setblock 105 -59 15 sticky_piston[facing=south]
+setblock 105 -59 16 redstone_block
+setblock 105 -60 17 sticky_piston[facing=north,extended=true]
+setblock 105 -60 18 dirt
+setblock 105 -59 18 redstone_wire
+
+setblock 105 -60 33 dirt
+setblock 105 -59 33 sticky_piston[facing=south]
+setblock 105 -59 34 redstone_block
+setblock 105 -60 35 sticky_piston[facing=north,extended=true]
+setblock 105 -60 36 dirt
+setblock 105 -59 36 redstone_wire
+
+##============================
+setblock 106 -60 0 redstone_wire
+##==========x=106===========
+setblock 106 -60 20 redstone_wire
+##=========x=107===========
+setblock 107 -61 20 emerald_block
+setblock 107 -60 20 note_block[note=20]
+##==========x=106===========
+setblock 106 -60 33 redstone_wire
+##=========x=107===========
+setblock 107 -61 33 gold_block
+setblock 107 -60 33 note_block[note=15]
+
+#---------3.6-----------
+setblock 107 -60 0 repeater[delay=1,facing=west]
+fill 108 -60 0 108 -60 48 redstone_wire
+setblock 108 -60 15 dirt
+setblock 108 -59 15 sticky_piston[facing=south]
+setblock 108 -59 16 redstone_block
+setblock 108 -60 17 sticky_piston[facing=north,extended=true]
+setblock 108 -60 18 dirt
+setblock 108 -59 18 redstone_wire
+
+setblock 108 -60 33 dirt
+setblock 108 -59 33 sticky_piston[facing=south]
+setblock 108 -59 34 redstone_block
+setblock 108 -60 35 sticky_piston[facing=north,extended=true]
+setblock 108 -60 36 dirt
+setblock 108 -59 36 redstone_wire
+
+##============================
+setblock 109 -60 0 redstone_wire
+##==========x=109===========
+setblock 109 -60 25 redstone_wire
+##=========x=110===========
+setblock 110 -61 25 emerald_block
+setblock 110 -60 25 note_block[note=20]
+##==========x=109===========
+setblock 109 -60 36 redstone_wire
+##=========x=110===========
+setblock 110 -61 36 gold_block
+setblock 110 -60 36 note_block[note=15]
+##==========x=109===========
+setblock 109 -60 44 redstone_wire
+##=========x=110===========
+setblock 110 -61 44 pumpkin
+setblock 110 -60 44 note_block[note=10]
+
+#---------3.7-----------
+setblock 110 -60 0 repeater[delay=1,facing=west]
+fill 111 -60 0 111 -60 48 redstone_wire
+setblock 111 -60 15 dirt
+setblock 111 -59 15 sticky_piston[facing=south]
+setblock 111 -59 16 redstone_block
+setblock 111 -60 17 sticky_piston[facing=north,extended=true]
+setblock 111 -60 18 dirt
+setblock 111 -59 18 redstone_wire
+
+setblock 111 -60 33 dirt
+setblock 111 -59 33 sticky_piston[facing=south]
+setblock 111 -59 34 redstone_block
+setblock 111 -60 35 sticky_piston[facing=north,extended=true]
+setblock 111 -60 36 dirt
+setblock 111 -59 36 redstone_wire
+
+##============================
+setblock 112 -60 0 redstone_wire
+##==========x=112===========
+setblock 112 -60 22 redstone_wire
+##=========x=113===========
+setblock 113 -61 22 emerald_block
+setblock 113 -60 22 note_block[note=20]
+##==========x=112===========
+setblock 112 -60 40 redstone_wire
+##=========x=113===========
+setblock 113 -61 40 green_wool
+setblock 113 -60 40 note_block[note=10]
+##==========x=112===========
+setblock 112 -60 45 redstone_wire
+##=========x=113===========
+setblock 113 -61 45 mangrove_wood
+setblock 113 -60 45 note_block[note=10]
+
+#---------3.8-----------
+setblock 113 -60 0 repeater[delay=1,facing=west]
+fill 114 -60 0 114 -60 48 redstone_wire
+setblock 114 -60 15 dirt
+setblock 114 -59 15 sticky_piston[facing=south]
+setblock 114 -59 16 redstone_block
+setblock 114 -60 17 sticky_piston[facing=north,extended=true]
+setblock 114 -60 18 dirt
+setblock 114 -59 18 redstone_wire
+
+setblock 114 -60 33 dirt
+setblock 114 -59 33 sticky_piston[facing=south]
+setblock 114 -59 34 redstone_block
+setblock 114 -60 35 sticky_piston[facing=north,extended=true]
+setblock 114 -60 36 dirt
+setblock 114 -59 36 redstone_wire
+
+##============================
+setblock 115 -60 0 redstone_wire
+##==========x=115===========
+setblock 115 -60 45 redstone_wire
+##=========x=116===========
+setblock 116 -61 45 pumpkin
+setblock 116 -60 45 note_block[note=22]
+
+#---------3.9-----------
+setblock 116 -60 0 repeater[delay=1,facing=west]
+fill 117 -60 0 117 -60 48 redstone_wire
+setblock 117 -60 15 dirt
+setblock 117 -59 15 sticky_piston[facing=south]
+setblock 117 -59 16 redstone_block
+setblock 117 -60 17 sticky_piston[facing=north,extended=true]
+setblock 117 -60 18 dirt
+setblock 117 -59 18 redstone_wire
+
+setblock 117 -60 33 dirt
+setblock 117 -59 33 sticky_piston[facing=south]
+setblock 117 -59 34 redstone_block
+setblock 117 -60 35 sticky_piston[facing=north,extended=true]
+setblock 117 -60 36 dirt
+setblock 117 -59 36 redstone_wire
+
+##============================
+setblock 118 -60 0 redstone_wire
+##==========x=118===========
+setblock 118 -60 18 redstone_wire
+##=========x=119===========
+setblock 119 -61 18 emerald_block
+setblock 119 -60 18 note_block[note=22]
+##==========x=118===========
+setblock 118 -60 18 redstone_wire
+##=========x=119===========
+setblock 119 -61 18 emerald_block
+setblock 119 -60 18 note_block[note=18]
+##==========x=118===========
+setblock 118 -60 43 redstone_wire
+##=========x=119===========
+setblock 119 -61 43 pumpkin
+setblock 119 -60 43 note_block[note=22]
+
+#---------4.0-----------
+setblock 119 -60 0 repeater[delay=1,facing=west]
+fill 120 -60 0 120 -60 48 redstone_wire
+setblock 120 -60 15 dirt
+setblock 120 -59 15 sticky_piston[facing=south]
+setblock 120 -59 16 redstone_block
+setblock 120 -60 17 sticky_piston[facing=north,extended=true]
+setblock 120 -60 18 dirt
+setblock 120 -59 18 redstone_wire
+
+setblock 120 -60 33 dirt
+setblock 120 -59 33 sticky_piston[facing=south]
+setblock 120 -59 34 redstone_block
+setblock 120 -60 35 sticky_piston[facing=north,extended=true]
+setblock 120 -60 36 dirt
+setblock 120 -59 36 redstone_wire
+
+##============================
+setblock 121 -60 0 redstone_wire
+##==========x=121===========
+setblock 121 -60 29 redstone_wire
+##=========x=122===========
+setblock 122 -61 29 emerald_block
+setblock 122 -60 29 note_block[note=22]
+##==========x=121===========
+setblock 121 -60 45 redstone_wire
+##=========x=122===========
+setblock 122 -61 45 pumpkin
+setblock 122 -60 45 note_block[note=10]
+
+#---------4.1-----------
+setblock 122 -60 0 repeater[delay=1,facing=west]
+fill 123 -60 0 123 -60 48 redstone_wire
+setblock 123 -60 15 dirt
+setblock 123 -59 15 sticky_piston[facing=south]
+setblock 123 -59 16 redstone_block
+setblock 123 -60 17 sticky_piston[facing=north,extended=true]
+setblock 123 -60 18 dirt
+setblock 123 -59 18 redstone_wire
+
+setblock 123 -60 33 dirt
+setblock 123 -59 33 sticky_piston[facing=south]
+setblock 123 -59 34 redstone_block
+setblock 123 -60 35 sticky_piston[facing=north,extended=true]
+setblock 123 -60 36 dirt
+setblock 123 -59 36 redstone_wire
+
+##============================
+setblock 124 -60 0 redstone_wire
+##==========x=124===========
+setblock 124 -60 42 redstone_wire
+##=========x=125===========
+setblock 125 -61 42 pumpkin
+setblock 125 -60 42 note_block[note=22]
+##==========x=124===========
+setblock 124 -60 45 redstone_wire
+##=========x=125===========
+setblock 125 -61 45 sand
+setblock 125 -60 45 note_block[note=0]
+
+#---------4.2-----------
+setblock 125 -60 0 repeater[delay=1,facing=west]
+fill 126 -60 0 126 -60 48 redstone_wire
+setblock 126 -60 15 dirt
+setblock 126 -59 15 sticky_piston[facing=south]
+setblock 126 -59 16 redstone_block
+setblock 126 -60 17 sticky_piston[facing=north,extended=true]
+setblock 126 -60 18 dirt
+setblock 126 -59 18 redstone_wire
+
+setblock 126 -60 33 dirt
+setblock 126 -59 33 sticky_piston[facing=south]
+setblock 126 -59 34 redstone_block
+setblock 126 -60 35 sticky_piston[facing=north,extended=true]
+setblock 126 -60 36 dirt
+setblock 126 -59 36 redstone_wire
+
+##============================
+setblock 127 -60 0 redstone_wire
+##==========x=127===========
+setblock 127 -60 46 redstone_wire
+##=========x=128===========
+setblock 128 -61 46 mangrove_wood
+setblock 128 -60 46 note_block[note=22]
+
+#---------4.3-----------
+setblock 128 -60 0 repeater[delay=1,facing=west]
+fill 129 -60 0 129 -60 48 redstone_wire
+setblock 129 -60 15 dirt
+setblock 129 -59 15 sticky_piston[facing=south]
+setblock 129 -59 16 redstone_block
+setblock 129 -60 17 sticky_piston[facing=north,extended=true]
+setblock 129 -60 18 dirt
+setblock 129 -59 18 redstone_wire
+
+setblock 129 -60 33 dirt
+setblock 129 -59 33 sticky_piston[facing=south]
+setblock 129 -59 34 redstone_block
+setblock 129 -60 35 sticky_piston[facing=north,extended=true]
+setblock 129 -60 36 dirt
+setblock 129 -59 36 redstone_wire
+
+##============================
+setblock 130 -60 0 redstone_wire
+##==========x=130===========
+setblock 130 -60 14 redstone_wire
+##=========x=131===========
+setblock 131 -61 14 emerald_block
+setblock 131 -60 14 note_block[note=18]
+##==========x=130===========
+setblock 130 -60 43 redstone_wire
+##=========x=131===========
+setblock 131 -61 43 hay_block
+setblock 131 -60 43 note_block[note=6]
+
+#---------4.4-----------
+setblock 131 -60 0 repeater[delay=1,facing=west]
+fill 132 -60 0 132 -60 48 redstone_wire
+setblock 132 -60 15 dirt
+setblock 132 -59 15 sticky_piston[facing=south]
+setblock 132 -59 16 redstone_block
+setblock 132 -60 17 sticky_piston[facing=north,extended=true]
+setblock 132 -60 18 dirt
+setblock 132 -59 18 redstone_wire
+
+setblock 132 -60 33 dirt
+setblock 132 -59 33 sticky_piston[facing=south]
+setblock 132 -59 34 redstone_block
+setblock 132 -60 35 sticky_piston[facing=north,extended=true]
+setblock 132 -60 36 dirt
+setblock 132 -59 36 redstone_wire
+
+##============================
+setblock 133 -60 0 redstone_wire
+##==========x=133===========
+setblock 133 -60 21 redstone_wire
+##=========x=134===========
+setblock 134 -61 21 emerald_block
+setblock 134 -60 21 note_block[note=18]
+
+#---------4.5-----------
+setblock 134 -60 0 repeater[delay=1,facing=west]
+fill 135 -60 0 135 -60 48 redstone_wire
+setblock 135 -60 15 dirt
+setblock 135 -59 15 sticky_piston[facing=south]
+setblock 135 -59 16 redstone_block
+setblock 135 -60 17 sticky_piston[facing=north,extended=true]
+setblock 135 -60 18 dirt
+setblock 135 -59 18 redstone_wire
+
+setblock 135 -60 33 dirt
+setblock 135 -59 33 sticky_piston[facing=south]
+setblock 135 -59 34 redstone_block
+setblock 135 -60 35 sticky_piston[facing=north,extended=true]
+setblock 135 -60 36 dirt
+setblock 135 -59 36 redstone_wire
+
+##============================
+setblock 136 -60 0 redstone_wire
+##==========x=136===========
+setblock 136 -60 18 redstone_wire
+##=========x=137===========
+setblock 137 -61 18 emerald_block
+setblock 137 -60 18 note_block[note=18]
+##==========x=136===========
+setblock 136 -60 28 redstone_wire
+##=========x=137===========
+setblock 137 -61 28 dirt
+setblock 137 -60 28 note_block[note=3]
+
+#---------4.6-----------
+setblock 137 -60 0 repeater[delay=1,facing=west]
+fill 138 -60 0 138 -60 48 redstone_wire
+setblock 138 -60 15 dirt
+setblock 138 -59 15 sticky_piston[facing=south]
+setblock 138 -59 16 redstone_block
+setblock 138 -60 17 sticky_piston[facing=north,extended=true]
+setblock 138 -60 18 dirt
+setblock 138 -59 18 redstone_wire
+
+setblock 138 -60 33 dirt
+setblock 138 -59 33 sticky_piston[facing=south]
+setblock 138 -59 34 redstone_block
+setblock 138 -60 35 sticky_piston[facing=north,extended=true]
+setblock 138 -60 36 dirt
+setblock 138 -59 36 redstone_wire
+
+##============================
+setblock 139 -60 0 redstone_wire
+##==========x=139===========
+setblock 139 -60 46 redstone_wire
+##=========x=140===========
+setblock 140 -61 46 sand
+setblock 140 -60 46 note_block[note=0]
+
+#---------4.7-----------
+setblock 140 -60 0 repeater[delay=1,facing=west]
+fill 141 -60 0 141 -60 48 redstone_wire
+setblock 141 -60 15 dirt
+setblock 141 -59 15 sticky_piston[facing=south]
+setblock 141 -59 16 redstone_block
+setblock 141 -60 17 sticky_piston[facing=north,extended=true]
+setblock 141 -60 18 dirt
+setblock 141 -59 18 redstone_wire
+
+setblock 141 -60 33 dirt
+setblock 141 -59 33 sticky_piston[facing=south]
+setblock 141 -59 34 redstone_block
+setblock 141 -60 35 sticky_piston[facing=north,extended=true]
+setblock 141 -60 36 dirt
+setblock 141 -59 36 redstone_wire
+
+##============================
+setblock 142 -60 0 redstone_wire
+##==========x=142===========
+setblock 142 -60 23 redstone_wire
+##=========x=143===========
+setblock 143 -61 23 emerald_block
+setblock 143 -60 23 note_block[note=15]
+##==========x=142===========
+setblock 142 -60 36 redstone_wire
+##=========x=143===========
+setblock 143 -61 36 gold_block
+setblock 143 -60 36 note_block[note=10]
+##==========x=142===========
+setblock 142 -60 44 redstone_wire
+##=========x=143===========
+setblock 143 -61 44 pumpkin
+setblock 143 -60 44 note_block[note=15]
+
+#---------4.8-----------
+setblock 143 -60 0 repeater[delay=1,facing=west]
+fill 144 -60 0 144 -60 48 redstone_wire
+setblock 144 -60 15 dirt
+setblock 144 -59 15 sticky_piston[facing=south]
+setblock 144 -59 16 redstone_block
+setblock 144 -60 17 sticky_piston[facing=north,extended=true]
+setblock 144 -60 18 dirt
+setblock 144 -59 18 redstone_wire
+
+setblock 144 -60 33 dirt
+setblock 144 -59 33 sticky_piston[facing=south]
+setblock 144 -59 34 redstone_block
+setblock 144 -60 35 sticky_piston[facing=north,extended=true]
+setblock 144 -60 36 dirt
+setblock 144 -59 36 redstone_wire
+
+##============================
+setblock 145 -60 0 redstone_wire
+##==========x=145===========
+setblock 145 -60 28 redstone_wire
+##=========x=146===========
+setblock 146 -61 28 emerald_block
+setblock 146 -60 28 note_block[note=15]
+##==========x=145===========
+setblock 145 -60 37 redstone_wire
+##=========x=146===========
+setblock 146 -61 37 gold_block
+setblock 146 -60 37 note_block[note=10]
+##==========x=145===========
+setblock 145 -60 45 redstone_wire
+##=========x=146===========
+setblock 146 -61 45 pumpkin
+setblock 146 -60 45 note_block[note=15]
+
+#---------4.9-----------
+setblock 146 -60 0 repeater[delay=1,facing=west]
+fill 147 -60 0 147 -60 48 redstone_wire
+setblock 147 -60 15 dirt
+setblock 147 -59 15 sticky_piston[facing=south]
+setblock 147 -59 16 redstone_block
+setblock 147 -60 17 sticky_piston[facing=north,extended=true]
+setblock 147 -60 18 dirt
+setblock 147 -59 18 redstone_wire
+
+setblock 147 -60 33 dirt
+setblock 147 -59 33 sticky_piston[facing=south]
+setblock 147 -59 34 redstone_block
+setblock 147 -60 35 sticky_piston[facing=north,extended=true]
+setblock 147 -60 36 dirt
+setblock 147 -59 36 redstone_wire
+
+##============================
+setblock 148 -60 0 redstone_wire
+##==========x=148===========
+setblock 148 -60 39 redstone_wire
+##=========x=149===========
+setblock 149 -61 39 green_wool
+setblock 149 -60 39 note_block[note=15]
+##==========x=148===========
+setblock 148 -60 40 redstone_wire
+##=========x=149===========
+setblock 149 -61 40 iron_block
+setblock 149 -60 40 note_block[note=3]
+
+#---------5.0-----------
+setblock 149 -60 0 repeater[delay=1,facing=west]
+fill 150 -60 0 150 -60 48 redstone_wire
+setblock 150 -60 15 dirt
+setblock 150 -59 15 sticky_piston[facing=south]
+setblock 150 -59 16 redstone_block
+setblock 150 -60 17 sticky_piston[facing=north,extended=true]
+setblock 150 -60 18 dirt
+setblock 150 -59 18 redstone_wire
+
+setblock 150 -60 33 dirt
+setblock 150 -59 33 sticky_piston[facing=south]
+setblock 150 -59 34 redstone_block
+setblock 150 -60 35 sticky_piston[facing=north,extended=true]
+setblock 150 -60 36 dirt
+setblock 150 -59 36 redstone_wire
+
+##============================
+setblock 151 -60 0 redstone_wire
+##==========x=151===========
+setblock 151 -60 44 redstone_wire
+##=========x=152===========
+setblock 152 -61 44 iron_block
+setblock 152 -60 44 note_block[note=3]
+
+#---------5.1-----------
+setblock 152 -60 0 repeater[delay=1,facing=west]
+fill 153 -60 0 153 -60 48 redstone_wire
+setblock 153 -60 15 dirt
+setblock 153 -59 15 sticky_piston[facing=south]
+setblock 153 -59 16 redstone_block
+setblock 153 -60 17 sticky_piston[facing=north,extended=true]
+setblock 153 -60 18 dirt
+setblock 153 -59 18 redstone_wire
+
+setblock 153 -60 33 dirt
+setblock 153 -59 33 sticky_piston[facing=south]
+setblock 153 -59 34 redstone_block
+setblock 153 -60 35 sticky_piston[facing=north,extended=true]
+setblock 153 -60 36 dirt
+setblock 153 -59 36 redstone_wire
+
+##============================
+setblock 154 -60 0 redstone_wire
+##==========x=154===========
+setblock 154 -60 19 redstone_wire
+##=========x=155===========
+setblock 155 -61 19 emerald_block
+setblock 155 -60 19 note_block[note=15]
+##==========x=154===========
+setblock 154 -60 33 redstone_wire
+##=========x=155===========
+setblock 155 -61 33 gold_block
+setblock 155 -60 33 note_block[note=10]
+
+#---------5.2-----------
+setblock 155 -60 0 repeater[delay=1,facing=west]
+fill 156 -60 0 156 -60 48 redstone_wire
+setblock 156 -60 15 dirt
+setblock 156 -59 15 sticky_piston[facing=south]
+setblock 156 -59 16 redstone_block
+setblock 156 -60 17 sticky_piston[facing=north,extended=true]
+setblock 156 -60 18 dirt
+setblock 156 -59 18 redstone_wire
+
+setblock 156 -60 33 dirt
+setblock 156 -59 33 sticky_piston[facing=south]
+setblock 156 -59 34 redstone_block
+setblock 156 -60 35 sticky_piston[facing=north,extended=true]
+setblock 156 -60 36 dirt
+setblock 156 -59 36 redstone_wire
+
+##============================
+setblock 157 -60 0 redstone_wire
+##==========x=157===========
+setblock 157 -60 27 redstone_wire
+##=========x=158===========
+setblock 158 -61 27 emerald_block
+setblock 158 -60 27 note_block[note=15]
+##==========x=157===========
+setblock 157 -60 37 redstone_wire
+##=========x=158===========
+setblock 158 -61 37 gold_block
+setblock 158 -60 37 note_block[note=10]
+##==========x=157===========
+setblock 157 -60 44 redstone_wire
+##=========x=158===========
+setblock 158 -61 44 pumpkin
+setblock 158 -60 44 note_block[note=15]
+
+#---------5.3-----------
+setblock 158 -60 0 repeater[delay=1,facing=west]
+fill 159 -60 0 159 -60 48 redstone_wire
+setblock 159 -60 15 dirt
+setblock 159 -59 15 sticky_piston[facing=south]
+setblock 159 -59 16 redstone_block
+setblock 159 -60 17 sticky_piston[facing=north,extended=true]
+setblock 159 -60 18 dirt
+setblock 159 -59 18 redstone_wire
+
+setblock 159 -60 33 dirt
+setblock 159 -59 33 sticky_piston[facing=south]
+setblock 159 -59 34 redstone_block
+setblock 159 -60 35 sticky_piston[facing=north,extended=true]
+setblock 159 -60 36 dirt
+setblock 159 -59 36 redstone_wire
+
+##============================
+setblock 160 -60 0 redstone_wire
+##==========x=160===========
+setblock 160 -60 40 redstone_wire
+##=========x=161===========
+setblock 161 -61 40 green_wool
+setblock 161 -60 40 note_block[note=15]
+##==========x=160===========
+setblock 160 -60 41 redstone_wire
+##=========x=161===========
+setblock 161 -61 41 iron_block
+setblock 161 -60 41 note_block[note=3]
+
+#---------5.4-----------
+setblock 161 -60 0 repeater[delay=1,facing=west]
+fill 162 -60 0 162 -60 48 redstone_wire
+setblock 162 -60 15 dirt
+setblock 162 -59 15 sticky_piston[facing=south]
+setblock 162 -59 16 redstone_block
+setblock 162 -60 17 sticky_piston[facing=north,extended=true]
+setblock 162 -60 18 dirt
+setblock 162 -59 18 redstone_wire
+
+setblock 162 -60 33 dirt
+setblock 162 -59 33 sticky_piston[facing=south]
+setblock 162 -59 34 redstone_block
+setblock 162 -60 35 sticky_piston[facing=north,extended=true]
+setblock 162 -60 36 dirt
+setblock 162 -59 36 redstone_wire
+
+##============================
+setblock 163 -60 0 redstone_wire
+##==========x=163===========
+setblock 163 -60 44 redstone_wire
+##=========x=164===========
+setblock 164 -61 44 iron_block
+setblock 164 -60 44 note_block[note=3]
+
+#---------5.5-----------
+setblock 164 -60 0 repeater[delay=1,facing=west]
+fill 165 -60 0 165 -60 48 redstone_wire
+setblock 165 -60 15 dirt
+setblock 165 -59 15 sticky_piston[facing=south]
+setblock 165 -59 16 redstone_block
+setblock 165 -60 17 sticky_piston[facing=north,extended=true]
+setblock 165 -60 18 dirt
+setblock 165 -59 18 redstone_wire
+
+setblock 165 -60 33 dirt
+setblock 165 -59 33 sticky_piston[facing=south]
+setblock 165 -59 34 redstone_block
+setblock 165 -60 35 sticky_piston[facing=north,extended=true]
+setblock 165 -60 36 dirt
+setblock 165 -59 36 redstone_wire
+
+##============================
+setblock 166 -60 0 redstone_wire
+##==========x=166===========
+setblock 166 -60 41 redstone_wire
+##=========x=167===========
+setblock 167 -61 41 green_wool
+setblock 167 -60 41 note_block[note=4]
+##==========x=166===========
+setblock 166 -60 41 redstone_wire
+##=========x=167===========
+setblock 167 -61 41 green_wool
+setblock 167 -60 41 note_block[note=6]
+##==========x=166===========
+setblock 166 -60 46 redstone_wire
+##=========x=167===========
+setblock 167 -61 46 sand
+setblock 167 -60 46 note_block[note=4]
+
+#---------5.6-----------
+setblock 167 -60 0 repeater[delay=1,facing=west]
+fill 168 -60 0 168 -60 48 redstone_wire
+setblock 168 -60 15 dirt
+setblock 168 -59 15 sticky_piston[facing=south]
+setblock 168 -59 16 redstone_block
+setblock 168 -60 17 sticky_piston[facing=north,extended=true]
+setblock 168 -60 18 dirt
+setblock 168 -59 18 redstone_wire
+
+setblock 168 -60 33 dirt
+setblock 168 -59 33 sticky_piston[facing=south]
+setblock 168 -59 34 redstone_block
+setblock 168 -60 35 sticky_piston[facing=north,extended=true]
+setblock 168 -60 36 dirt
+setblock 168 -59 36 redstone_wire
+
+##============================
+setblock 169 -60 0 redstone_wire
+##==========x=169===========
+setblock 169 -60 45 redstone_wire
+##=========x=170===========
+setblock 170 -61 45 green_wool
+setblock 170 -60 45 note_block[note=5]
+##==========x=169===========
+setblock 169 -60 47 redstone_wire
+##=========x=170===========
+setblock 170 -61 47 pumpkin
+setblock 170 -60 47 note_block[note=17]
+##==========x=169===========
+setblock 169 -60 47 redstone_wire
+##=========x=170===========
+setblock 170 -61 47 mangrove_wood
+setblock 170 -60 47 note_block[note=16]
+##==========x=169===========
+setblock 169 -60 47 redstone_wire
+##=========x=170===========
+setblock 170 -61 47 stone
+setblock 170 -60 47 note_block[note=21]
+
+#---------5.7-----------
+setblock 170 -60 0 repeater[delay=1,facing=west]
+fill 171 -60 0 171 -60 48 redstone_wire
+setblock 171 -60 15 dirt
+setblock 171 -59 15 sticky_piston[facing=south]
+setblock 171 -59 16 redstone_block
+setblock 171 -60 17 sticky_piston[facing=north,extended=true]
+setblock 171 -60 18 dirt
+setblock 171 -59 18 redstone_wire
+
+setblock 171 -60 33 dirt
+setblock 171 -59 33 sticky_piston[facing=south]
+setblock 171 -59 34 redstone_block
+setblock 171 -60 35 sticky_piston[facing=north,extended=true]
+setblock 171 -60 36 dirt
+setblock 171 -59 36 redstone_wire
+
+##============================
+setblock 172 -60 0 redstone_wire
+##==========x=172===========
+setblock 172 -60 42 redstone_wire
+##=========x=173===========
+setblock 173 -61 42 green_wool
+setblock 173 -60 42 note_block[note=6]
+
+#---------5.8-----------
+setblock 173 -60 0 repeater[delay=1,facing=west]
+fill 174 -60 0 174 -60 48 redstone_wire
+setblock 174 -60 15 dirt
+setblock 174 -59 15 sticky_piston[facing=south]
+setblock 174 -59 16 redstone_block
+setblock 174 -60 17 sticky_piston[facing=north,extended=true]
+setblock 174 -60 18 dirt
+setblock 174 -59 18 redstone_wire
+
+setblock 174 -60 33 dirt
+setblock 174 -59 33 sticky_piston[facing=south]
+setblock 174 -59 34 redstone_block
+setblock 174 -60 35 sticky_piston[facing=north,extended=true]
+setblock 174 -60 36 dirt
+setblock 174 -59 36 redstone_wire
+
+##============================
+setblock 175 -60 0 redstone_wire
+##==========x=175===========
+setblock 175 -60 45 redstone_wire
+##=========x=176===========
+setblock 176 -61 45 green_wool
+setblock 176 -60 45 note_block[note=6]
+
+#---------5.9-----------
+setblock 176 -60 0 repeater[delay=1,facing=west]
+fill 177 -60 0 177 -60 48 redstone_wire
+setblock 177 -60 15 dirt
+setblock 177 -59 15 sticky_piston[facing=south]
+setblock 177 -59 16 redstone_block
+setblock 177 -60 17 sticky_piston[facing=north,extended=true]
+setblock 177 -60 18 dirt
+setblock 177 -59 18 redstone_wire
+
+setblock 177 -60 33 dirt
+setblock 177 -59 33 sticky_piston[facing=south]
+setblock 177 -59 34 redstone_block
+setblock 177 -60 35 sticky_piston[facing=north,extended=true]
+setblock 177 -60 36 dirt
+setblock 177 -59 36 redstone_wire
+
+##============================
+setblock 178 -60 0 redstone_wire
+##==========x=178===========
+setblock 178 -60 45 redstone_wire
+##=========x=179===========
+setblock 179 -61 45 mangrove_wood
+setblock 179 -60 45 note_block[note=18]
+##==========x=178===========
+setblock 178 -60 46 redstone_wire
+##=========x=179===========
+setblock 179 -61 46 sand
+setblock 179 -60 46 note_block[note=0]
+
+#---------6.0-----------
+setblock 179 -60 0 repeater[delay=1,facing=west]
+fill 180 -60 0 180 -60 48 redstone_wire
+setblock 180 -60 15 dirt
+setblock 180 -59 15 sticky_piston[facing=south]
+setblock 180 -59 16 redstone_block
+setblock 180 -60 17 sticky_piston[facing=north,extended=true]
+setblock 180 -60 18 dirt
+setblock 180 -59 18 redstone_wire
+
+setblock 180 -60 33 dirt
+setblock 180 -59 33 sticky_piston[facing=south]
+setblock 180 -59 34 redstone_block
+setblock 180 -60 35 sticky_piston[facing=north,extended=true]
+setblock 180 -60 36 dirt
+setblock 180 -59 36 redstone_wire
+
+##============================
+setblock 181 -60 0 redstone_wire
+##==========x=181===========
+setblock 181 -60 45 redstone_wire
+##=========x=182===========
+setblock 182 -61 45 green_wool
+setblock 182 -60 45 note_block[note=8]
+##==========x=181===========
+setblock 181 -60 47 redstone_wire
+##=========x=182===========
+setblock 182 -61 47 pumpkin
+setblock 182 -60 47 note_block[note=20]
+##==========x=181===========
+setblock 181 -60 47 redstone_wire
+##=========x=182===========
+setblock 182 -61 47 mangrove_wood
+setblock 182 -60 47 note_block[note=21]
+
+#---------6.1-----------
+setblock 182 -60 0 repeater[delay=1,facing=west]
+fill 183 -60 0 183 -60 48 redstone_wire
+setblock 183 -60 15 dirt
+setblock 183 -59 15 sticky_piston[facing=south]
+setblock 183 -59 16 redstone_block
+setblock 183 -60 17 sticky_piston[facing=north,extended=true]
+setblock 183 -60 18 dirt
+setblock 183 -59 18 redstone_wire
+
+setblock 183 -60 33 dirt
+setblock 183 -59 33 sticky_piston[facing=south]
+setblock 183 -59 34 redstone_block
+setblock 183 -60 35 sticky_piston[facing=north,extended=true]
+setblock 183 -60 36 dirt
+setblock 183 -59 36 redstone_wire
+
+##============================
+setblock 184 -60 0 redstone_wire
+##==========x=184===========
+setblock 184 -60 12 redstone_wire
+##=========x=185===========
+setblock 185 -61 12 emerald_block
+setblock 185 -60 12 note_block[note=20]
+##==========x=184===========
+setblock 184 -60 41 redstone_wire
+##=========x=185===========
+setblock 185 -61 41 pumpkin
+setblock 185 -60 41 note_block[note=20]
+##==========x=184===========
+setblock 184 -60 44 redstone_wire
+##=========x=185===========
+setblock 185 -61 44 sand
+setblock 185 -60 44 note_block[note=0]
+
+#---------6.2-----------
+setblock 185 -60 0 repeater[delay=1,facing=west]
+fill 186 -60 0 186 -60 48 redstone_wire
+setblock 186 -60 15 dirt
+setblock 186 -59 15 sticky_piston[facing=south]
+setblock 186 -59 16 redstone_block
+setblock 186 -60 17 sticky_piston[facing=north,extended=true]
+setblock 186 -60 18 dirt
+setblock 186 -59 18 redstone_wire
+
+setblock 186 -60 33 dirt
+setblock 186 -59 33 sticky_piston[facing=south]
+setblock 186 -59 34 redstone_block
+setblock 186 -60 35 sticky_piston[facing=north,extended=true]
+setblock 186 -60 36 dirt
+setblock 186 -59 36 redstone_wire
+
+##============================
+setblock 187 -60 0 redstone_wire
+##==========x=187===========
+setblock 187 -60 28 redstone_wire
+##=========x=188===========
+setblock 188 -61 28 emerald_block
+setblock 188 -60 28 note_block[note=20]
+##==========x=187===========
+setblock 187 -60 37 redstone_wire
+##=========x=188===========
+setblock 188 -61 37 gold_block
+setblock 188 -60 37 note_block[note=15]
+##==========x=187===========
+setblock 187 -60 45 redstone_wire
+##=========x=188===========
+setblock 188 -61 45 pumpkin
+setblock 188 -60 45 note_block[note=8]
+
+#---------6.3-----------
+setblock 188 -60 0 repeater[delay=1,facing=west]
+fill 189 -60 0 189 -60 48 redstone_wire
+setblock 189 -60 15 dirt
+setblock 189 -59 15 sticky_piston[facing=south]
+setblock 189 -59 16 redstone_block
+setblock 189 -60 17 sticky_piston[facing=north,extended=true]
+setblock 189 -60 18 dirt
+setblock 189 -59 18 redstone_wire
+
+setblock 189 -60 33 dirt
+setblock 189 -59 33 sticky_piston[facing=south]
+setblock 189 -59 34 redstone_block
+setblock 189 -60 35 sticky_piston[facing=north,extended=true]
+setblock 189 -60 36 dirt
+setblock 189 -59 36 redstone_wire
+
+##============================
+setblock 190 -60 0 redstone_wire
+##==========x=190===========
+setblock 190 -60 28 redstone_wire
+##=========x=191===========
+setblock 191 -61 28 emerald_block
+setblock 191 -60 28 note_block[note=20]
+##==========x=190===========
+setblock 190 -60 46 redstone_wire
+##=========x=191===========
+setblock 191 -61 46 mangrove_wood
+setblock 191 -60 46 note_block[note=8]
+
+#---------6.4-----------
+setblock 191 -60 0 repeater[delay=1,facing=west]
+fill 192 -60 0 192 -60 48 redstone_wire
+setblock 192 -60 15 dirt
+setblock 192 -59 15 sticky_piston[facing=south]
+setblock 192 -59 16 redstone_block
+setblock 192 -60 17 sticky_piston[facing=north,extended=true]
+setblock 192 -60 18 dirt
+setblock 192 -59 18 redstone_wire
+
+setblock 192 -60 33 dirt
+setblock 192 -59 33 sticky_piston[facing=south]
+setblock 192 -59 34 redstone_block
+setblock 192 -60 35 sticky_piston[facing=north,extended=true]
+setblock 192 -60 36 dirt
+setblock 192 -59 36 redstone_wire
+
+##============================
+setblock 193 -60 0 redstone_wire
+##==========x=193===========
+setblock 193 -60 38 redstone_wire
+##=========x=194===========
+setblock 194 -61 38 emerald_block
+setblock 194 -60 38 note_block[note=20]
+##==========x=193===========
+setblock 193 -60 46 redstone_wire
+##=========x=194===========
+setblock 194 -61 46 iron_block
+setblock 194 -60 46 note_block[note=20]
+
+#---------6.5-----------
+setblock 194 -60 0 repeater[delay=1,facing=west]
+fill 195 -60 0 195 -60 48 redstone_wire
+setblock 195 -60 15 dirt
+setblock 195 -59 15 sticky_piston[facing=south]
+setblock 195 -59 16 redstone_block
+setblock 195 -60 17 sticky_piston[facing=north,extended=true]
+setblock 195 -60 18 dirt
+setblock 195 -59 18 redstone_wire
+
+setblock 195 -60 33 dirt
+setblock 195 -59 33 sticky_piston[facing=south]
+setblock 195 -59 34 redstone_block
+setblock 195 -60 35 sticky_piston[facing=north,extended=true]
+setblock 195 -60 36 dirt
+setblock 195 -59 36 redstone_wire
+
+##============================
+setblock 196 -60 0 redstone_wire
+##==========x=196===========
+setblock 196 -60 20 redstone_wire
+##=========x=197===========
+setblock 197 -61 20 emerald_block
+setblock 197 -60 20 note_block[note=23]
+##==========x=196===========
+setblock 196 -60 44 redstone_wire
+##=========x=197===========
+setblock 197 -61 44 hay_block
+setblock 197 -60 44 note_block[note=11]
+
+#---------6.6-----------
+setblock 197 -60 0 repeater[delay=1,facing=west]
+fill 198 -60 0 198 -60 48 redstone_wire
+setblock 198 -60 15 dirt
+setblock 198 -59 15 sticky_piston[facing=south]
+setblock 198 -59 16 redstone_block
+setblock 198 -60 17 sticky_piston[facing=north,extended=true]
+setblock 198 -60 18 dirt
+setblock 198 -59 18 redstone_wire
+
+setblock 198 -60 33 dirt
+setblock 198 -59 33 sticky_piston[facing=south]
+setblock 198 -59 34 redstone_block
+setblock 198 -60 35 sticky_piston[facing=north,extended=true]
+setblock 198 -60 36 dirt
+setblock 198 -59 36 redstone_wire
+
+##============================
+setblock 199 -60 0 redstone_wire
+##==========x=199===========
+setblock 199 -60 27 redstone_wire
+##=========x=200===========
+setblock 200 -61 27 emerald_block
+setblock 200 -60 27 note_block[note=23]
+
+#---------6.7-----------
+setblock 200 -60 0 repeater[delay=1,facing=west]
+fill 201 -60 0 201 -60 48 redstone_wire
+setblock 201 -60 15 dirt
+setblock 201 -59 15 sticky_piston[facing=south]
+setblock 201 -59 16 redstone_block
+setblock 201 -60 17 sticky_piston[facing=north,extended=true]
+setblock 201 -60 18 dirt
+setblock 201 -59 18 redstone_wire
+
+setblock 201 -60 33 dirt
+setblock 201 -59 33 sticky_piston[facing=south]
+setblock 201 -59 34 redstone_block
+setblock 201 -60 35 sticky_piston[facing=north,extended=true]
+setblock 201 -60 36 dirt
+setblock 201 -59 36 redstone_wire
+
+##============================
+setblock 202 -60 0 redstone_wire
+##==========x=202===========
+setblock 202 -60 1 redstone_wire
+##=========x=203===========
+setblock 203 -61 1 packed_ice
+setblock 203 -60 1 note_block[note=16]
+##==========x=202===========
+setblock 202 -60 29 redstone_wire
+##=========x=203===========
+setblock 203 -61 29 gold_block
+setblock 203 -60 29 note_block[note=3]
+##==========x=202===========
+setblock 202 -60 29 redstone_wire
+##=========x=203===========
+setblock 203 -61 29 gold_block
+setblock 203 -60 29 note_block[note=22]
+##==========x=202===========
+setblock 202 -60 41 redstone_wire
+##=========x=203===========
+setblock 203 -61 41 pumpkin
+setblock 203 -60 41 note_block[note=8]
+
+#---------6.8-----------
+setblock 203 -60 0 repeater[delay=1,facing=west]
+fill 204 -60 0 204 -60 48 redstone_wire
+setblock 204 -60 15 dirt
+setblock 204 -59 15 sticky_piston[facing=south]
+setblock 204 -59 16 redstone_block
+setblock 204 -60 17 sticky_piston[facing=north,extended=true]
+setblock 204 -60 18 dirt
+setblock 204 -59 18 redstone_wire
+
+setblock 204 -60 33 dirt
+setblock 204 -59 33 sticky_piston[facing=south]
+setblock 204 -59 34 redstone_block
+setblock 204 -60 35 sticky_piston[facing=north,extended=true]
+setblock 204 -60 36 dirt
+setblock 204 -59 36 redstone_wire
+
+##============================
+setblock 205 -60 0 redstone_wire
+##==========x=205===========
+setblock 205 -60 36 redstone_wire
+##=========x=206===========
+setblock 206 -61 36 gold_block
+setblock 206 -60 36 note_block[note=3]
+##==========x=205===========
+setblock 205 -60 36 redstone_wire
+##=========x=206===========
+setblock 206 -61 36 gold_block
+setblock 206 -60 36 note_block[note=22]
+
+#---------6.9-----------
+setblock 206 -60 0 repeater[delay=1,facing=west]
+fill 207 -60 0 207 -60 48 redstone_wire
+setblock 207 -60 15 dirt
+setblock 207 -59 15 sticky_piston[facing=south]
+setblock 207 -59 16 redstone_block
+setblock 207 -60 17 sticky_piston[facing=north,extended=true]
+setblock 207 -60 18 dirt
+setblock 207 -59 18 redstone_wire
+
+setblock 207 -60 33 dirt
+setblock 207 -59 33 sticky_piston[facing=south]
+setblock 207 -59 34 redstone_block
+setblock 207 -60 35 sticky_piston[facing=north,extended=true]
+setblock 207 -60 36 dirt
+setblock 207 -59 36 redstone_wire
+
+##============================
+setblock 208 -60 0 redstone_wire
+##==========x=208===========
+setblock 208 -60 45 redstone_wire
+##=========x=209===========
+setblock 209 -61 45 sand
+setblock 209 -60 45 note_block[note=0]
+
+#---------7.0-----------
+setblock 209 -60 0 repeater[delay=1,facing=west]
+fill 210 -60 0 210 -60 48 redstone_wire
+setblock 210 -60 15 dirt
+setblock 210 -59 15 sticky_piston[facing=south]
+setblock 210 -59 16 redstone_block
+setblock 210 -60 17 sticky_piston[facing=north,extended=true]
+setblock 210 -60 18 dirt
+setblock 210 -59 18 redstone_wire
+
+setblock 210 -60 33 dirt
+setblock 210 -59 33 sticky_piston[facing=south]
+setblock 210 -59 34 redstone_block
+setblock 210 -60 35 sticky_piston[facing=north,extended=true]
+setblock 210 -60 36 dirt
+setblock 210 -59 36 redstone_wire
+
+##============================
+setblock 211 -60 0 redstone_wire
+##==========x=211===========
+setblock 211 -60 44 redstone_wire
+##=========x=212===========
+setblock 212 -61 44 pumpkin
+setblock 212 -60 44 note_block[note=8]
+##==========x=211===========
+setblock 211 -60 46 redstone_wire
+##=========x=212===========
+setblock 212 -61 46 sand
+setblock 212 -60 46 note_block[note=0]
+
+#---------7.1-----------
+setblock 212 -60 0 repeater[delay=1,facing=west]
+fill 213 -60 0 213 -60 48 redstone_wire
+setblock 213 -60 15 dirt
+setblock 213 -59 15 sticky_piston[facing=south]
+setblock 213 -59 16 redstone_block
+setblock 213 -60 17 sticky_piston[facing=north,extended=true]
+setblock 213 -60 18 dirt
+setblock 213 -59 18 redstone_wire
+
+setblock 213 -60 33 dirt
+setblock 213 -59 33 sticky_piston[facing=south]
+setblock 213 -59 34 redstone_block
+setblock 213 -60 35 sticky_piston[facing=north,extended=true]
+setblock 213 -60 36 dirt
+setblock 213 -59 36 redstone_wire
+
+##============================
+setblock 214 -60 0 redstone_wire
+##==========x=214===========
+setblock 214 -60 7 redstone_wire
+##=========x=215===========
+setblock 215 -61 7 packed_ice
+setblock 215 -60 7 note_block[note=14]
+##==========x=214===========
+setblock 214 -60 37 redstone_wire
+##=========x=215===========
+setblock 215 -61 37 honeycomb_block
+setblock 215 -60 37 note_block[note=13]
+##==========x=214===========
+setblock 214 -60 39 redstone_wire
+##=========x=215===========
+setblock 215 -61 39 bone_block
+setblock 215 -60 39 note_block[note=1]
+##==========x=214===========
+setblock 214 -60 42 redstone_wire
+##=========x=215===========
+setblock 215 -61 42 pumpkin
+setblock 215 -60 42 note_block[note=9]
+
+#---------7.2-----------
+setblock 215 -60 0 repeater[delay=1,facing=west]
+fill 216 -60 0 216 -60 48 redstone_wire
+setblock 216 -60 15 dirt
+setblock 216 -59 15 sticky_piston[facing=south]
+setblock 216 -59 16 redstone_block
+setblock 216 -60 17 sticky_piston[facing=north,extended=true]
+setblock 216 -60 18 dirt
+setblock 216 -59 18 redstone_wire
+
+setblock 216 -60 33 dirt
+setblock 216 -59 33 sticky_piston[facing=south]
+setblock 216 -59 34 redstone_block
+setblock 216 -60 35 sticky_piston[facing=north,extended=true]
+setblock 216 -60 36 dirt
+setblock 216 -59 36 redstone_wire
+
+##============================
+setblock 217 -60 0 redstone_wire
+##==========x=217===========
+setblock 217 -60 36 redstone_wire
+##=========x=218===========
+setblock 218 -61 36 gold_block
+setblock 218 -60 36 note_block[note=1]
+##==========x=217===========
+setblock 217 -60 36 redstone_wire
+##=========x=218===========
+setblock 218 -61 36 gold_block
+setblock 218 -60 36 note_block[note=20]
+##==========x=217===========
+setblock 217 -60 44 redstone_wire
+##=========x=218===========
+setblock 218 -61 44 pumpkin
+setblock 218 -60 44 note_block[note=15]
+##==========x=217===========
+setblock 217 -60 45 redstone_wire
+##=========x=218===========
+setblock 218 -61 45 soul_sand
+setblock 218 -60 45 note_block[note=13]
+
+#---------7.3-----------
+setblock 218 -60 0 repeater[delay=1,facing=west]
+fill 219 -60 0 219 -60 48 redstone_wire
+setblock 219 -60 15 dirt
+setblock 219 -59 15 sticky_piston[facing=south]
+setblock 219 -59 16 redstone_block
+setblock 219 -60 17 sticky_piston[facing=north,extended=true]
+setblock 219 -60 18 dirt
+setblock 219 -59 18 redstone_wire
+
+setblock 219 -60 33 dirt
+setblock 219 -59 33 sticky_piston[facing=south]
+setblock 219 -59 34 redstone_block
+setblock 219 -60 35 sticky_piston[facing=north,extended=true]
+setblock 219 -60 36 dirt
+setblock 219 -59 36 redstone_wire
+
+##============================
+setblock 220 -60 0 redstone_wire
+##==========x=220===========
+setblock 220 -60 15 redstone_wire
+##=========x=221===========
+setblock 221 -61 15 emerald_block
+setblock 221 -60 15 note_block[note=23]
+##==========x=220===========
+setblock 220 -60 43 redstone_wire
+##=========x=221===========
+setblock 221 -61 43 hay_block
+setblock 221 -60 43 note_block[note=11]
+
+#---------7.4-----------
+setblock 221 -60 0 repeater[delay=1,facing=west]
+fill 222 -60 0 222 -60 48 redstone_wire
+setblock 222 -60 15 dirt
+setblock 222 -59 15 sticky_piston[facing=south]
+setblock 222 -59 16 redstone_block
+setblock 222 -60 17 sticky_piston[facing=north,extended=true]
+setblock 222 -60 18 dirt
+setblock 222 -59 18 redstone_wire
+
+setblock 222 -60 33 dirt
+setblock 222 -59 33 sticky_piston[facing=south]
+setblock 222 -59 34 redstone_block
+setblock 222 -60 35 sticky_piston[facing=north,extended=true]
+setblock 222 -60 36 dirt
+setblock 222 -59 36 redstone_wire
+
+##============================
+setblock 223 -60 0 redstone_wire
+##==========x=223===========
+setblock 223 -60 25 redstone_wire
+##=========x=224===========
+setblock 224 -61 25 emerald_block
+setblock 224 -60 25 note_block[note=23]
+
+#---------7.5-----------
+setblock 224 -60 0 repeater[delay=1,facing=west]
+fill 225 -60 0 225 -60 48 redstone_wire
+setblock 225 -60 15 dirt
+setblock 225 -59 15 sticky_piston[facing=south]
+setblock 225 -59 16 redstone_block
+setblock 225 -60 17 sticky_piston[facing=north,extended=true]
+setblock 225 -60 18 dirt
+setblock 225 -59 18 redstone_wire
+
+setblock 225 -60 33 dirt
+setblock 225 -59 33 sticky_piston[facing=south]
+setblock 225 -59 34 redstone_block
+setblock 225 -60 35 sticky_piston[facing=north,extended=true]
+setblock 225 -60 36 dirt
+setblock 225 -59 36 redstone_wire
+
+##============================
+setblock 226 -60 0 redstone_wire
+##==========x=226===========
+setblock 226 -60 24 redstone_wire
+##=========x=227===========
+setblock 227 -61 24 emerald_block
+setblock 227 -60 24 note_block[note=22]
+##==========x=226===========
+setblock 226 -60 44 redstone_wire
+##=========x=227===========
+setblock 227 -61 44 pumpkin
+setblock 227 -60 44 note_block[note=12]
+##==========x=226===========
+setblock 226 -60 44 redstone_wire
+##=========x=227===========
+setblock 227 -61 44 pumpkin
+setblock 227 -60 44 note_block[note=13]
+
+#---------7.6-----------
+setblock 227 -60 0 repeater[delay=1,facing=west]
+fill 228 -60 0 228 -60 48 redstone_wire
+setblock 228 -60 15 dirt
+setblock 228 -59 15 sticky_piston[facing=south]
+setblock 228 -59 16 redstone_block
+setblock 228 -60 17 sticky_piston[facing=north,extended=true]
+setblock 228 -60 18 dirt
+setblock 228 -59 18 redstone_wire
+
+setblock 228 -60 33 dirt
+setblock 228 -59 33 sticky_piston[facing=south]
+setblock 228 -59 34 redstone_block
+setblock 228 -60 35 sticky_piston[facing=north,extended=true]
+setblock 228 -60 36 dirt
+setblock 228 -59 36 redstone_wire
+
+##============================
+setblock 229 -60 0 redstone_wire
+##==========x=229===========
+setblock 229 -60 30 redstone_wire
+##=========x=230===========
+setblock 230 -61 30 emerald_block
+setblock 230 -60 30 note_block[note=22]
+
+#---------7.7-----------
+setblock 230 -60 0 repeater[delay=1,facing=west]
+fill 231 -60 0 231 -60 48 redstone_wire
+setblock 231 -60 15 dirt
+setblock 231 -59 15 sticky_piston[facing=south]
+setblock 231 -59 16 redstone_block
+setblock 231 -60 17 sticky_piston[facing=north,extended=true]
+setblock 231 -60 18 dirt
+setblock 231 -59 18 redstone_wire
+
+setblock 231 -60 33 dirt
+setblock 231 -59 33 sticky_piston[facing=south]
+setblock 231 -59 34 redstone_block
+setblock 231 -60 35 sticky_piston[facing=north,extended=true]
+setblock 231 -60 36 dirt
+setblock 231 -59 36 redstone_wire
+
+##============================
+setblock 232 -60 0 redstone_wire
+##==========x=232===========
+setblock 232 -60 32 redstone_wire
+##=========x=233===========
+setblock 233 -61 32 emerald_block
+setblock 233 -60 32 note_block[note=22]
+##==========x=232===========
+setblock 232 -60 43 redstone_wire
+##=========x=233===========
+setblock 233 -61 43 green_wool
+setblock 233 -60 43 note_block[note=6]
+
+#---------7.8-----------
+setblock 233 -60 0 repeater[delay=1,facing=west]
+fill 234 -60 0 234 -60 48 redstone_wire
+setblock 234 -60 15 dirt
+setblock 234 -59 15 sticky_piston[facing=south]
+setblock 234 -59 16 redstone_block
+setblock 234 -60 17 sticky_piston[facing=north,extended=true]
+setblock 234 -60 18 dirt
+setblock 234 -59 18 redstone_wire
+
+setblock 234 -60 33 dirt
+setblock 234 -59 33 sticky_piston[facing=south]
+setblock 234 -59 34 redstone_block
+setblock 234 -60 35 sticky_piston[facing=north,extended=true]
+setblock 234 -60 36 dirt
+setblock 234 -59 36 redstone_wire
+
+##============================
+setblock 235 -60 0 redstone_wire
+##==========x=235===========
+setblock 235 -60 44 redstone_wire
+##=========x=236===========
+setblock 236 -61 44 green_wool
+setblock 236 -60 44 note_block[note=6]
+
+#---------7.9-----------
+setblock 236 -60 0 repeater[delay=1,facing=west]
+fill 237 -60 0 237 -60 48 redstone_wire
+setblock 237 -60 15 dirt
+setblock 237 -59 15 sticky_piston[facing=south]
+setblock 237 -59 16 redstone_block
+setblock 237 -60 17 sticky_piston[facing=north,extended=true]
+setblock 237 -60 18 dirt
+setblock 237 -59 18 redstone_wire
+
+setblock 237 -60 33 dirt
+setblock 237 -59 33 sticky_piston[facing=south]
+setblock 237 -59 34 redstone_block
+setblock 237 -60 35 sticky_piston[facing=north,extended=true]
+setblock 237 -60 36 dirt
+setblock 237 -59 36 redstone_wire
+
+##============================
+setblock 238 -60 0 redstone_wire
+##==========x=238===========
+setblock 238 -60 46 redstone_wire
+##=========x=239===========
+setblock 239 -61 46 pumpkin
+setblock 239 -60 46 note_block[note=17]
+##==========x=238===========
+setblock 238 -60 46 redstone_wire
+##=========x=239===========
+setblock 239 -61 46 mangrove_wood
+setblock 239 -60 46 note_block[note=19]
+##==========x=238===========
+setblock 238 -60 47 redstone_wire
+##=========x=239===========
+setblock 239 -61 47 stone
+setblock 239 -60 47 note_block[note=20]
+
+#---------8.0-----------
+setblock 239 -60 0 repeater[delay=1,facing=west]
+fill 240 -60 0 240 -60 48 redstone_wire
+setblock 240 -60 15 dirt
+setblock 240 -59 15 sticky_piston[facing=south]
+setblock 240 -59 16 redstone_block
+setblock 240 -60 17 sticky_piston[facing=north,extended=true]
+setblock 240 -60 18 dirt
+setblock 240 -59 18 redstone_wire
+
+setblock 240 -60 33 dirt
+setblock 240 -59 33 sticky_piston[facing=south]
+setblock 240 -59 34 redstone_block
+setblock 240 -60 35 sticky_piston[facing=north,extended=true]
+setblock 240 -60 36 dirt
+setblock 240 -59 36 redstone_wire
+
+##============================
+setblock 241 -60 0 redstone_wire
+##==========x=241===========
+setblock 241 -60 44 redstone_wire
+##=========x=242===========
+setblock 242 -61 44 emerald_block
+setblock 242 -60 44 note_block[note=0]
+##==========x=241===========
+setblock 241 -60 44 redstone_wire
+##=========x=242===========
+setblock 242 -61 44 emerald_block
+setblock 242 -60 44 note_block[note=3]
+##==========x=241===========
+setblock 241 -60 48 redstone_wire
+##=========x=242===========
+setblock 242 -61 48 pumpkin
+setblock 242 -60 48 note_block[note=24]
+
+#---------8.1-----------
+setblock 242 -60 0 repeater[delay=1,facing=west]
+fill 243 -60 0 243 -60 48 redstone_wire
+setblock 243 -60 15 dirt
+setblock 243 -59 15 sticky_piston[facing=south]
+setblock 243 -59 16 redstone_block
+setblock 243 -60 17 sticky_piston[facing=north,extended=true]
+setblock 243 -60 18 dirt
+setblock 243 -59 18 redstone_wire
+
+setblock 243 -60 33 dirt
+setblock 243 -59 33 sticky_piston[facing=south]
+setblock 243 -59 34 redstone_block
+setblock 243 -60 35 sticky_piston[facing=north,extended=true]
+setblock 243 -60 36 dirt
+setblock 243 -59 36 redstone_wire
+
+##============================
+setblock 244 -60 0 redstone_wire
+##==========x=244===========
+setblock 244 -60 4 redstone_wire
+##=========x=245===========
+setblock 245 -61 4 packed_ice
+setblock 245 -60 4 note_block[note=7]
+##==========x=244===========
+setblock 244 -60 15 redstone_wire
+##=========x=245===========
+setblock 245 -61 15 emerald_block
+setblock 245 -60 15 note_block[note=18]
+##==========x=244===========
+setblock 244 -60 37 redstone_wire
+##=========x=245===========
+setblock 245 -61 37 honeycomb_block
+setblock 245 -60 37 note_block[note=6]
+##==========x=244===========
+setblock 244 -60 40 redstone_wire
+##=========x=245===========
+setblock 245 -61 40 iron_block
+setblock 245 -60 40 note_block[note=18]
+##==========x=244===========
+setblock 244 -60 42 redstone_wire
+##=========x=245===========
+setblock 245 -61 42 pumpkin
+setblock 245 -60 42 note_block[note=18]
+
+#---------8.2-----------
+setblock 245 -60 0 repeater[delay=1,facing=west]
+fill 246 -60 0 246 -60 48 redstone_wire
+setblock 246 -60 15 dirt
+setblock 246 -59 15 sticky_piston[facing=south]
+setblock 246 -59 16 redstone_block
+setblock 246 -60 17 sticky_piston[facing=north,extended=true]
+setblock 246 -60 18 dirt
+setblock 246 -59 18 redstone_wire
+
+setblock 246 -60 33 dirt
+setblock 246 -59 33 sticky_piston[facing=south]
+setblock 246 -59 34 redstone_block
+setblock 246 -60 35 sticky_piston[facing=north,extended=true]
+setblock 246 -60 36 dirt
+setblock 246 -59 36 redstone_wire
+
+##============================
+setblock 247 -60 0 redstone_wire
+##==========x=247===========
+setblock 247 -60 20 redstone_wire
+##=========x=248===========
+setblock 248 -61 20 emerald_block
+setblock 248 -60 20 note_block[note=18]
+##==========x=247===========
+setblock 247 -60 43 redstone_wire
+##=========x=248===========
+setblock 248 -61 43 pumpkin
+setblock 248 -60 43 note_block[note=18]
+
+#---------8.3-----------
+setblock 248 -60 0 repeater[delay=1,facing=west]
+fill 249 -60 0 249 -60 48 redstone_wire
+setblock 249 -60 15 dirt
+setblock 249 -59 15 sticky_piston[facing=south]
+setblock 249 -59 16 redstone_block
+setblock 249 -60 17 sticky_piston[facing=north,extended=true]
+setblock 249 -60 18 dirt
+setblock 249 -59 18 redstone_wire
+
+setblock 249 -60 33 dirt
+setblock 249 -59 33 sticky_piston[facing=south]
+setblock 249 -59 34 redstone_block
+setblock 249 -60 35 sticky_piston[facing=north,extended=true]
+setblock 249 -60 36 dirt
+setblock 249 -59 36 redstone_wire
+
+##============================
+setblock 250 -60 0 redstone_wire
+##==========x=250===========
+setblock 250 -60 41 redstone_wire
+##=========x=251===========
+setblock 251 -61 41 glowstone
+setblock 251 -60 41 note_block[note=22]
+##==========x=250===========
+setblock 250 -60 45 redstone_wire
+##=========x=251===========
+setblock 251 -61 45 sand
+setblock 251 -60 45 note_block[note=1]
+
+#---------8.4-----------
+setblock 251 -60 0 repeater[delay=1,facing=west]
+fill 252 -60 0 252 -60 48 redstone_wire
+setblock 252 -60 15 dirt
+setblock 252 -59 15 sticky_piston[facing=south]
+setblock 252 -59 16 redstone_block
+setblock 252 -60 17 sticky_piston[facing=north,extended=true]
+setblock 252 -60 18 dirt
+setblock 252 -59 18 redstone_wire
+
+setblock 252 -60 33 dirt
+setblock 252 -59 33 sticky_piston[facing=south]
+setblock 252 -59 34 redstone_block
+setblock 252 -60 35 sticky_piston[facing=north,extended=true]
+setblock 252 -60 36 dirt
+setblock 252 -59 36 redstone_wire
+
+##============================
+setblock 253 -60 0 redstone_wire
+##==========x=253===========
+setblock 253 -60 30 redstone_wire
+##=========x=254===========
+setblock 254 -61 30 emerald_block
+setblock 254 -60 30 note_block[note=22]
+
+#---------8.5-----------
+setblock 254 -60 0 repeater[delay=1,facing=west]
+fill 255 -60 0 255 -60 48 redstone_wire
+setblock 255 -60 15 dirt
+setblock 255 -59 15 sticky_piston[facing=south]
+setblock 255 -59 16 redstone_block
+setblock 255 -60 17 sticky_piston[facing=north,extended=true]
+setblock 255 -60 18 dirt
+setblock 255 -59 18 redstone_wire
+
+setblock 255 -60 33 dirt
+setblock 255 -59 33 sticky_piston[facing=south]
+setblock 255 -59 34 redstone_block
+setblock 255 -60 35 sticky_piston[facing=north,extended=true]
+setblock 255 -60 36 dirt
+setblock 255 -59 36 redstone_wire
+
+##============================
+setblock 256 -60 0 redstone_wire
+##==========x=256===========
+setblock 256 -60 25 redstone_wire
+##=========x=257===========
+setblock 257 -61 25 emerald_block
+setblock 257 -60 25 note_block[note=22]
+##==========x=256===========
+setblock 256 -60 42 redstone_wire
+##=========x=257===========
+setblock 257 -61 42 iron_block
+setblock 257 -60 42 note_block[note=22]
+##==========x=256===========
+setblock 256 -60 43 redstone_wire
+##=========x=257===========
+setblock 257 -61 43 glowstone
+setblock 257 -60 43 note_block[note=22]
+##==========x=256===========
+setblock 256 -60 45 redstone_wire
+##=========x=257===========
+setblock 257 -61 45 hay_block
+setblock 257 -60 45 note_block[note=3]
+
+#---------8.6-----------
+setblock 257 -60 0 repeater[delay=1,facing=west]
+fill 258 -60 0 258 -60 48 redstone_wire
+setblock 258 -60 15 dirt
+setblock 258 -59 15 sticky_piston[facing=south]
+setblock 258 -59 16 redstone_block
+setblock 258 -60 17 sticky_piston[facing=north,extended=true]
+setblock 258 -60 18 dirt
+setblock 258 -59 18 redstone_wire
+
+setblock 258 -60 33 dirt
+setblock 258 -59 33 sticky_piston[facing=south]
+setblock 258 -59 34 redstone_block
+setblock 258 -60 35 sticky_piston[facing=north,extended=true]
+setblock 258 -60 36 dirt
+setblock 258 -59 36 redstone_wire
+
+##============================
+setblock 259 -60 0 redstone_wire
+##==========x=259===========
+setblock 259 -60 33 redstone_wire
+##=========x=260===========
+setblock 260 -61 33 emerald_block
+setblock 260 -60 33 note_block[note=22]
+##==========x=259===========
+setblock 259 -60 46 redstone_wire
+##=========x=260===========
+setblock 260 -61 46 pumpkin
+setblock 260 -60 46 note_block[note=13]
+##==========x=259===========
+setblock 259 -60 46 redstone_wire
+##=========x=260===========
+setblock 260 -61 46 pumpkin
+setblock 260 -60 46 note_block[note=14]
+##==========x=259===========
+setblock 259 -60 46 redstone_wire
+##=========x=260===========
+setblock 260 -61 46 mangrove_wood
+setblock 260 -60 46 note_block[note=13]
+
+#---------8.7-----------
+setblock 260 -60 0 repeater[delay=1,facing=west]
+fill 261 -60 0 261 -60 48 redstone_wire
+setblock 261 -60 15 dirt
+setblock 261 -59 15 sticky_piston[facing=south]
+setblock 261 -59 16 redstone_block
+setblock 261 -60 17 sticky_piston[facing=north,extended=true]
+setblock 261 -60 18 dirt
+setblock 261 -59 18 redstone_wire
+
+setblock 261 -60 33 dirt
+setblock 261 -59 33 sticky_piston[facing=south]
+setblock 261 -59 34 redstone_block
+setblock 261 -60 35 sticky_piston[facing=north,extended=true]
+setblock 261 -60 36 dirt
+setblock 261 -59 36 redstone_wire
+
+##============================
+setblock 262 -60 0 redstone_wire
+##==========x=262===========
+setblock 262 -60 8 redstone_wire
+##=========x=263===========
+setblock 263 -61 8 packed_ice
+setblock 263 -60 8 note_block[note=9]
+##==========x=262===========
+setblock 262 -60 19 redstone_wire
+##=========x=263===========
+setblock 263 -61 19 emerald_block
+setblock 263 -60 19 note_block[note=20]
+##==========x=262===========
+setblock 262 -60 40 redstone_wire
+##=========x=263===========
+setblock 263 -61 40 iron_block
+setblock 263 -60 40 note_block[note=20]
+
+#---------8.8-----------
+setblock 263 -60 0 repeater[delay=1,facing=west]
+fill 264 -60 0 264 -60 48 redstone_wire
+setblock 264 -60 15 dirt
+setblock 264 -59 15 sticky_piston[facing=south]
+setblock 264 -59 16 redstone_block
+setblock 264 -60 17 sticky_piston[facing=north,extended=true]
+setblock 264 -60 18 dirt
+setblock 264 -59 18 redstone_wire
+
+setblock 264 -60 33 dirt
+setblock 264 -59 33 sticky_piston[facing=south]
+setblock 264 -59 34 redstone_block
+setblock 264 -60 35 sticky_piston[facing=north,extended=true]
+setblock 264 -60 36 dirt
+setblock 264 -59 36 redstone_wire
+
+##============================
+setblock 265 -60 0 redstone_wire
+##==========x=265===========
+setblock 265 -60 27 redstone_wire
+##=========x=266===========
+setblock 266 -61 27 emerald_block
+setblock 266 -60 27 note_block[note=20]
+##==========x=265===========
+setblock 265 -60 43 redstone_wire
+##=========x=266===========
+setblock 266 -61 43 iron_block
+setblock 266 -60 43 note_block[note=20]
+
+#---------8.9-----------
+setblock 266 -60 0 repeater[delay=1,facing=west]
+fill 267 -60 0 267 -60 48 redstone_wire
+setblock 267 -60 15 dirt
+setblock 267 -59 15 sticky_piston[facing=south]
+setblock 267 -59 16 redstone_block
+setblock 267 -60 17 sticky_piston[facing=north,extended=true]
+setblock 267 -60 18 dirt
+setblock 267 -59 18 redstone_wire
+
+setblock 267 -60 33 dirt
+setblock 267 -59 33 sticky_piston[facing=south]
+setblock 267 -59 34 redstone_block
+setblock 267 -60 35 sticky_piston[facing=north,extended=true]
+setblock 267 -60 36 dirt
+setblock 267 -59 36 redstone_wire
+
+##============================
+setblock 268 -60 0 redstone_wire
+##==========x=268===========
+setblock 268 -60 5 redstone_wire
+##=========x=269===========
+setblock 269 -61 5 packed_ice
+setblock 269 -60 5 note_block[note=7]
+##==========x=268===========
+setblock 268 -60 15 redstone_wire
+##=========x=269===========
+setblock 269 -61 15 emerald_block
+setblock 269 -60 15 note_block[note=18]
+##==========x=268===========
+setblock 268 -60 37 redstone_wire
+##=========x=269===========
+setblock 269 -61 37 honeycomb_block
+setblock 269 -60 37 note_block[note=6]
+##==========x=268===========
+setblock 268 -60 40 redstone_wire
+##=========x=269===========
+setblock 269 -61 40 iron_block
+setblock 269 -60 40 note_block[note=18]
+
+#---------9.0-----------
+setblock 269 -60 0 repeater[delay=1,facing=west]
+fill 270 -60 0 270 -60 48 redstone_wire
+setblock 270 -60 15 dirt
+setblock 270 -59 15 sticky_piston[facing=south]
+setblock 270 -59 16 redstone_block
+setblock 270 -60 17 sticky_piston[facing=north,extended=true]
+setblock 270 -60 18 dirt
+setblock 270 -59 18 redstone_wire
+
+setblock 270 -60 33 dirt
+setblock 270 -59 33 sticky_piston[facing=south]
+setblock 270 -59 34 redstone_block
+setblock 270 -60 35 sticky_piston[facing=north,extended=true]
+setblock 270 -60 36 dirt
+setblock 270 -59 36 redstone_wire
+
+##============================
+setblock 271 -60 0 redstone_wire
+##==========x=271===========
+setblock 271 -60 25 redstone_wire
+##=========x=272===========
+setblock 272 -61 25 emerald_block
+setblock 272 -60 25 note_block[note=18]
+##==========x=271===========
+setblock 271 -60 41 redstone_wire
+##=========x=272===========
+setblock 272 -61 41 bone_block
+setblock 272 -60 41 note_block[note=13]
+##==========x=271===========
+setblock 271 -60 42 redstone_wire
+##=========x=272===========
+setblock 272 -61 42 iron_block
+setblock 272 -60 42 note_block[note=18]
+
