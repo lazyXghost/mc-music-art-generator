@@ -76,7 +76,7 @@ args = parser.parse_args()
 if __name__ == "__main__":
     target_file = args.file
     commands = main(results_path, target_file, music_box_dict, hearable_range, one_hundred_milli_horizontal_gap, startingCoordinates, one_floor_vertical_gap)
-    with open(f"{results_path}musicCommand_{target_file}.txt", "w") as f:
+    with open(f"{results_path}musicCommand_{target_file}.mcfunction", "w") as f:
         f.write(commands)
 
     # plt.scatter([i for i in range(len(asfValues))], asfValues)

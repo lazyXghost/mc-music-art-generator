@@ -65,16 +65,17 @@ setblock {x + 2*inc} {y} {z} redstone_wire
         res = f"""
 #--------------UPPER-FLOOR-CONNECTION-------------------
 setblock {x} {y} {z} redstone_wire
-setblock {x} {y} {z} redstone_wire
-setblock {x} {y} {z - 1} glass
-setblock {x} {y + 1} {z - 1} redstone_wire
-setblock {x} {y + 1} {z - 2} glass
-setblock {x} {y + 2} {z - 2} redstone_wire
-setblock {x + inc} {y + 2} {z - 2} glass
-setblock {x + inc} {y + 3} {z - 2} redstone_wire
-setblock {x + inc} {y + 3} {z - 1} glass
-setblock {x + inc} {y + 4} {z - 1} redstone_wire
-setblock {x + inc} {y + 4} {z} redstone_wire
+setblock {x + inc} {y} {z} redstone_wire
+setblock {x + inc} {y-1} {z} glass
+setblock {x + inc} {y} {z - 1} glass
+setblock {x + inc} {y + 1} {z - 1} redstone_wire
+setblock {x + inc} {y + 1} {z - 2} glass
+setblock {x + inc} {y + 2} {z - 2} redstone_wire
+setblock {x + 2 * inc} {y + 2} {z - 2} glass
+setblock {x + 2 * inc} {y + 3} {z - 2} redstone_wire
+setblock {x + 2 * inc} {y + 3} {z - 1} glass
+setblock {x + 2 * inc} {y + 4} {z - 1} redstone_wire
+setblock {x + 2 * inc} {y + 4} {z} redstone_wire
 #-------------------------------------------------------
         """
         return res
