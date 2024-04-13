@@ -1,4 +1,4 @@
-from audio import MyAudio, AudioManipulator
+from rajatsLibrary.audio import MyAudio, AudioManipulator
 import librosa
 import configparser
 import json
