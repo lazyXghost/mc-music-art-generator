@@ -46,10 +46,11 @@ setblock {x + inc} {y} {z + pos} note_block[note={block['note']}]
     @staticmethod
     def getMainRepeaterAndRedstoneLine(coordinates, tm, inc):
         x, y, z = coordinates[0], coordinates[1], coordinates[2]
+        dir = "west" if inc == 1 else "east"
         res = f"""
 #------------------------------------{tm / 1000}-----------------------------------------
 setblock {x} {y - 1} {z} glass 
-setblock {x} {y} {z} repeater[delay=1,facing=west]
+setblock {x} {y} {z} repeater[delay=1,facing={dir}]
 
 fill {x + inc} {y - 1} {z} {x + inc} {y - 1} {z + 48} glass 
 fill {x + inc} {y} {z} {x + inc} {y} {z + 48} redstone_wire
@@ -64,9 +65,10 @@ setblock {x + 2*inc} {y} {z} redstone_wire
         x, y, z = coordinates[0], coordinates[1], coordinates[2]
         res = f"""
 #--------------UPPER-FLOOR-CONNECTION-------------------
+setblock {x} {y-1} {z} glass
 setblock {x} {y} {z} redstone_wire
+setblock {x + inc} {y - 1} {z} glass
 setblock {x + inc} {y} {z} redstone_wire
-setblock {x + inc} {y-1} {z} glass
 setblock {x + inc} {y} {z - 1} glass
 setblock {x + inc} {y + 1} {z - 1} redstone_wire
 setblock {x + inc} {y + 1} {z - 2} glass
@@ -75,6 +77,7 @@ setblock {x + 2 * inc} {y + 2} {z - 2} glass
 setblock {x + 2 * inc} {y + 3} {z - 2} redstone_wire
 setblock {x + 2 * inc} {y + 3} {z - 1} glass
 setblock {x + 2 * inc} {y + 4} {z - 1} redstone_wire
+setblock {x + 2 * inc} {y + 3} {z} glass
 setblock {x + 2 * inc} {y + 4} {z} redstone_wire
 #-------------------------------------------------------
         """

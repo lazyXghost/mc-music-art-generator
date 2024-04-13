@@ -51,7 +51,9 @@ def main(results_path, target_file, music_box_dict, hearable_range, one_hundred_
             tm = oneMilliNotes[0]
             note_blocks = oneMilliNotes[1]
             current_height = startingY + floor_level * one_floor_vertical_gap
-            output += myCommandGenerator.getMainRepeaterAndRedstoneLine((x, current_height, startingZ), tm, inc) +  myCommandGenerator.getInstantRepeater((x + inc, current_height, startingZ+15)) + myCommandGenerator.getInstantRepeater((x + inc, current_height, startingZ+33))
+            output += myCommandGenerator.getMainRepeaterAndRedstoneLine((x, current_height, startingZ), tm, inc) 
+            output += myCommandGenerator.getInstantRepeater((x + inc, current_height, startingZ+15)) 
+            output += myCommandGenerator.getInstantRepeater((x + inc, current_height, startingZ+33))
             for note_block in note_blocks:
                 output += myCommandGenerator.getNoteBlock((x + 2 * inc, current_height, startingZ), inc, note_block)
             x += 3 * inc
@@ -76,7 +78,8 @@ args = parser.parse_args()
 if __name__ == "__main__":
     target_file = args.file
     commands = main(results_path, target_file, music_box_dict, hearable_range, one_hundred_milli_horizontal_gap, startingCoordinates, one_floor_vertical_gap)
-    with open(f"{results_path}musicCommand_{target_file}.mcfunction", "w") as f:
+    # with open(f"{results_path}musicCommand_{target_file}.mcfunction", "w") as f:
+    with open(f"{results_path}v2.mcfunction", "w") as f:
         f.write(commands)
 
     # plt.scatter([i for i in range(len(asfValues))], asfValues)
