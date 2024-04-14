@@ -1,15 +1,18 @@
 import pickle as pkl
-import math
 import json
 from rajatsLibrary.minecraft import commandGenerator
 import configparser
 import argparse
+from rajatsLibrary.amplitude import AsfPosConverter
+from rajatsLibrary.minecraft import spaceManager
 
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read("config.ini")
 config = config["MinecraftSettings"]
 
-def getBlockDetails(results_path, target_file, music_box_dict):
+def getBlockDetails(
+    results_path, target_file, music_box_dict, amplitude_dict, pitch_mapping_shift
+):
     pickle_file_path = f"{results_path}{target_file}.pkl"
     with open(pickle_file_path, "rb") as f:
         data = pkl.load(f)
@@ -21,13 +24,13 @@ def getBlockDetails(results_path, target_file, music_box_dict):
         beat_instruments = beat_details["combination"]
         curr_instruments_details = []
         for instrument in beat_instruments:
-            asf = min(instrument["ASF"], 1)
-            pos = int(1 + 48 * (1 - asf))
+            asf = round(float(instrument["ASF"]), 3)
+            pos_details = AsfPosConverter.getPosition(amplitude_dict, asf)
             curr_instruments_details.append(
                 {
                     "block_name": music_box_dict[instrument["instrument"]],
-                    "note": 12 + instrument["pitchShift"],
-                    "position": pos,
+                    "note": pitch_mapping_shift + instrument["pitchShift"],
+                    "position": int(pos_details[1]),
                 }
             )
         curr_instruments_details = sorted(
@@ -36,51 +39,105 @@ def getBlockDetails(results_path, target_file, music_box_dict):
         res.append((tm_value, curr_instruments_details))
     return res
 
-def main(results_path, target_file, music_box_dict, hearable_range, one_hundred_milli_horizontal_gap, startingCoordinates, one_floor_vertical_gap,):
-    startingX, startingY, startingZ = startingCoordinates[0], startingCoordinates[1], startingCoordinates[2]
+
+def main(
+    results_path,
+    target_file,
+    music_box_dict,
+    amplitude_dict,
+    hearable_range,
+    one_hundred_milli_horizontal_gap,
+    starting_coordinates,
+    one_floor_vertical_gap,
+    instant_repeater_zs,
+    pitch_mapping_shift,
+):
+    startingX, startingY, startingZ = (
+        starting_coordinates[0],
+        starting_coordinates[1],
+        starting_coordinates[2],
+    )
     myCommandGenerator = commandGenerator()
-    block_details = getBlockDetails(results_path, target_file, music_box_dict)
+    space_manager = spaceManager()
+    block_details = getBlockDetails(
+        results_path, target_file, music_box_dict, amplitude_dict, pitch_mapping_shift
+    )
     batch_size = int(hearable_range / one_hundred_milli_horizontal_gap)
     floor_level = 0
-    output = myCommandGenerator.getCleanSpace(startingCoordinates, hearable_range, hearable_range, hearable_range)
+    output = myCommandGenerator.getCleanSpace(
+        starting_coordinates, hearable_range, hearable_range, hearable_range
+    )
     x = startingX
+
     for i in range(0, len(block_details), batch_size):
         batch = block_details[i : i + batch_size]
-        inc = 1 if floor_level%2 == 0 else -1
+        inc = 1 if floor_level % 2 == 0 else -1
         for oneMilliNotes in batch:
             tm = oneMilliNotes[0]
             note_blocks = oneMilliNotes[1]
             current_height = startingY + floor_level * one_floor_vertical_gap
-            output += myCommandGenerator.getMainRepeaterAndRedstoneLine((x, current_height, startingZ), tm, inc) 
-            output += myCommandGenerator.getInstantRepeater((x + inc, current_height, startingZ+15)) 
-            output += myCommandGenerator.getInstantRepeater((x + inc, current_height, startingZ+33))
+            output += myCommandGenerator.getMainRepeaterAndRedstoneLine(
+                (x, current_height, startingZ), tm, inc
+            )
+            space_manager.savePlacementDetails((x + inc, current_height, startingZ + instant_repeater_zs[0]), 'instant_repeater')
+            output += myCommandGenerator.getInstantRepeater(
+                (x + inc, current_height, startingZ + instant_repeater_zs[0])
+            )
+            space_manager.savePlacementDetails((x + inc, current_height, startingZ + instant_repeater_zs[1]), 'instant_repeater')
+            output += myCommandGenerator.getInstantRepeater(
+                (x + inc, current_height, startingZ + instant_repeater_zs[1])
+            )
             for note_block in note_blocks:
-                output += myCommandGenerator.getNoteBlock((x + 2 * inc, current_height, startingZ), inc, note_block)
+                pos, place_connector = space_manager.getPlacementDetails((x + inc, current_height, startingZ), note_block["position"])
+                state = "note_block_with_connector" if place_connector else "note_block_without_connector"
+                space_manager.savePlacementDetails((x + inc, current_height, startingZ + pos), state)
+                output += myCommandGenerator.getNoteBlock(
+                    (x + 2 * inc, current_height, startingZ), inc, note_block, pos, place_connector
+                )
             x += 3 * inc
-        output += myCommandGenerator.getUpperFloorConnection((x, current_height, startingZ), inc)
+        output += myCommandGenerator.getUpperFloorConnection(
+            (x, current_height, startingZ), inc
+        )
         x += inc
         floor_level += 1
     return output
 
-
 music_box_dict = json.loads(config["music_box_dict"])
-startingCoordinates = [int(_) for _ in config["starting_coordinates"].split(',')]
-
+amplitude_dict = json.loads(config["amplitude_dict"])
+pitch_mapping_shift = int(config["pitch_mapping_shift"])
+instant_repeater_zs = [int(_) for _ in config["instant_repeater_zs"].split(",")]
+starting_coordinates = [int(_) for _ in config["starting_coordinates"].split(",")]
 hearable_range = int(config["hearable_range"])
 one_floor_vertical_gap = int(config["one_floor_vertical_gap"])
 one_hundred_milli_horizontal_gap = int(config["100ms_horizontal_gap"])
 results_path = config["results_path"]
 
-parser = argparse.ArgumentParser(description="Command generator for minecraft note blocks")
+parser = argparse.ArgumentParser(
+    description="Command generator for minecraft note blocks"
+)
 parser.add_argument("-f", "--file", help="Specify the file name for processing")
 args = parser.parse_args()
 
 if __name__ == "__main__":
     target_file = args.file
-    commands = main(results_path, target_file, music_box_dict, hearable_range, one_hundred_milli_horizontal_gap, startingCoordinates, one_floor_vertical_gap)
-    # with open(f"{results_path}musicCommand_{target_file}.mcfunction", "w") as f:
-    with open(f"{results_path}v2.mcfunction", "w") as f:
-        f.write(commands)
+    if args.file:
+        commands = main(
+            results_path,
+            target_file,
+            music_box_dict,
+            amplitude_dict,
+            hearable_range,
+            one_hundred_milli_horizontal_gap,
+            starting_coordinates,
+            one_floor_vertical_gap,
+            instant_repeater_zs,
+            pitch_mapping_shift
+        )
+        # with open(f"{results_path}musicCommand_{target_file}.mcfunction", "w") as f:
+        with open(f"{results_path}v2.mcfunction", "w") as f:
+            f.write(commands)
+    else:
+        print("Usage - python commandGenerator.py -f <file_name>")
 
     # plt.scatter([i for i in range(len(asfValues))], asfValues)
     # plt.show()

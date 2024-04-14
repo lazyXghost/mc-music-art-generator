@@ -1,3 +1,62 @@
+from enum import Enum
+from amplitude import AsfPosConverter
+
+class space_state(Enum):
+    unavailable = 1
+    available_without_connector = 2
+    default_available = 3
+
+class spaceManager:
+    def __init__(self):
+        self.spaces_unavailable = {}
+
+    def getSpaceState(self, coordinates):
+        if coordinates in self.spaces_unavailable:
+            return self.spaces_unavailable[coordinates]
+        return space_state.default_available
+
+    def changeSpaceState(self, coordinates, state):
+        if coordinates in self.spaces_unavailable:
+            self.spaces_unavailable[coordinates] = min(self.spaces_unavailable[coordinates], state)
+        else:
+            self.spaces_unavailable[coordinates] = state
+
+    def getPlacementDetails(self, coordinates, pos):
+        x, y, z = coordinates[0], coordinates[1], coordinates[2]
+        pos1 = pos
+        while self.getSpaceState((x, y, z+pos)) == 1:
+            pos += 1
+        pos2 = pos
+        pos = pos1
+        while self.getSpaceState((x, y, z+pos)) == 1:
+            pos -= 1
+        pos0 = pos
+
+        if (pos0 != 1) and (pos2 == 49 or AsfPosConverter.getAmplitude(pos0) - AsfPosConverter.getAmplitude(pos2) < 2 * AsfPosConverter.getAmplitude(pos1)):
+            pos = pos1
+        else:
+            pos = pos2
+
+        if self.getSpaceState((x, y, z+pos)) == 2:
+            return pos, False
+        elif self.getSpaceState((x, y, z+pos)) == 3:
+            return pos, True
+
+    def savePlacementDetails(self, coordinates, state):
+        x, y, z = coordinates[0], coordinates[1], coordinates[2]
+        if state == 'instant_repeater':
+            self.changeSpaceState((x, y, z), space_state.available_without_connector)
+            self.changeSpaceState((x, y, z+1), space_state.unavailable)
+            self.changeSpaceState((x, y, z+2), space_state.unavailable)
+            self.changeSpaceState((x, y, z+3), space_state.available_without_connector)
+        else: 
+            if state == 'note_block_with_connector':
+                self.changeSpaceState((x, y, z), space_state.unavailable)
+                self.changeSpaceState((x, y, z-1), space_state.available_without_connector)
+                self.changeSpaceState((x, y, z+1), space_state.available_without_connector)
+            elif state == 'note_block_without_connector':
+                self.changeSpaceState((x, y, z), space_state.unavailable)
+
 class commandGenerator:
     @staticmethod
     def getCleanSpace(coordinates, l, b, h):
@@ -21,21 +80,16 @@ setblock {x} {y + 1} {z + 3} redstone_wire
         return res
 
     @staticmethod
-    def getNoteBlock(coordinates, inc, block):
+    def getNoteBlock(coordinates, inc, block, pos, place_connector):
         x, y, z = coordinates[0], coordinates[1], coordinates[2]
-        pos = block["position"]
-        # shifting one forward or back depending upon instant repeaters position
-        pos = (
-            15 if pos == 16
-            else 18 if pos == 17 
-            else 33 if pos == 34 
-            else 36 if pos == 35 
-            else pos
-        )
-        res = f"""
+        res = ""
+        if place_connector:
+            res += f"""
 #--------------NOTE_BLOCK-{pos}-------------------
 setblock {x} {y-1} {z + pos} glass
-setblock {x} {y} {z + pos} redstone_wire
+setblock {x} {y} {z + pos} redstone_wire"""
+
+        res += f"""
 setblock {x + inc} {y - 2} {z + pos} glass
 setblock {x + inc} {y - 1} {z + pos} {block['block_name']}
 setblock {x + inc} {y} {z + pos} note_block[note={block['note']}]
@@ -86,3 +140,5 @@ setblock {x + 2 * inc} {y + 4} {z} redstone_wire
 if __name__ == "__main__":
     print("This is a library for Audio Manipulation via fourier transform made specificaly for minecraft audio production using note blocks")
     print("Author -: Rajat Bansal, IIT Mandi, B20123")
+    print("Sample Command -:")
+    print(commandGenerator.getCleanSpace((0, 0, 0), 1, 1, 1))
