@@ -107,7 +107,9 @@ setblock {x} {y + 1} {z + 3} redstone_wire
 #--------------NOTE_BLOCK-{pos}-------------------
 setblock {x} {y-1} {z + pos} glass
 setblock {x} {y} {z + pos} redstone_wire"""
-
+        else:
+            res += f"""
+#--------------NOTE_BLOCK-{pos}-------------------"""
         res += f"""
 setblock {x + inc} {y - 2} {z + pos} glass
 setblock {x + inc} {y - 1} {z + pos} {block['block_name']}
