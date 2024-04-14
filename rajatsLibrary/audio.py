@@ -98,7 +98,7 @@ class AudioManipulator:
     @staticmethod
     def getMelSpectogram(audioValues, sr):
         mel_spec = librosa.feature.melspectrogram(
-            y=audioValues, sr=sr, n_mels=self.n_mels
+            y=audioValues, sr=sr, n_mels=128*2
         )
         mel_spec_db = librosa.amplitude_to_db(mel_spec)  # ref = np.max
         return mel_spec, mel_spec_db
@@ -106,7 +106,7 @@ class AudioManipulator:
     @staticmethod
     def getChromaGram(audioValues, sr):
         chromaGram = librosa.feature.chroma_stft(
-            y=audioValues, sr=sr, hop_length=self.chroma_hop_length
+            y=audioValues, sr=sr, hop_length=12
         )
         return chromaGram
 
