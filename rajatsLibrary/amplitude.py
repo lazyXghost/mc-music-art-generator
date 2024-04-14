@@ -7,7 +7,7 @@ class AsfPosConverter:
         closest_key = None
         closest_diff = float('inf')
         
-        for key, value_in_dict in amplitude_dict.items():
+        for key, _ in amplitude_dict.items():
             diff = abs(float(key) - curr_amp)
             if diff < closest_diff:
                 closest_key = key
@@ -17,7 +17,10 @@ class AsfPosConverter:
     
     @staticmethod
     def getAmplitude(amplitude_dict, curr_pos):
-        pass
+        for key, value in amplitude_dict.items():
+            if float(value) == curr_pos:
+                return float(key)
+        return None
 
     @staticmethod
     def analyze(audio_file):

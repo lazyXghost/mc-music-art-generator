@@ -124,12 +124,9 @@ setblock 9 -61 26 emerald_block
 setblock 9 -60 26 note_block[note=20]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-26-------------------
-setblock 8 -61 26 glass
-setblock 8 -60 26 redstone_wire
-setblock 9 -62 26 glass
-setblock 9 -61 26 emerald_block
-setblock 9 -60 26 note_block[note=17]
+setblock 9 -62 25 glass
+setblock 9 -61 25 emerald_block
+setblock 9 -60 25 note_block[note=17]
 #-----------------------------------------------
         
 #--------------NOTE_BLOCK-41-------------------
@@ -168,9 +165,6 @@ setblock 10 -60 36 dirt
 setblock 10 -59 36 redstone_wire
 #------------------------------------
         
-#--------------NOTE_BLOCK-36-------------------
-setblock 11 -61 36 glass
-setblock 11 -60 36 redstone_wire
 setblock 12 -62 36 glass
 setblock 12 -61 36 emerald_block
 setblock 12 -60 36 note_block[note=20]
@@ -236,12 +230,9 @@ setblock 15 -61 48 pumpkin
 setblock 15 -60 48 note_block[note=22]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 14 -61 48 glass
-setblock 14 -60 48 redstone_wire
-setblock 15 -62 48 glass
-setblock 15 -61 48 mangrove_wood
-setblock 15 -60 48 note_block[note=23]
+setblock 15 -62 47 glass
+setblock 15 -61 47 mangrove_wood
+setblock 15 -60 47 note_block[note=23]
 #-----------------------------------------------
         
 #------------------------------------0.6-----------------------------------------
@@ -308,12 +299,9 @@ setblock 19 -60 36 dirt
 setblock 19 -59 36 redstone_wire
 #------------------------------------
         
-#--------------NOTE_BLOCK-18-------------------
-setblock 20 -61 18 glass
-setblock 20 -60 18 redstone_wire
-setblock 21 -62 18 glass
-setblock 21 -61 18 emerald_block
-setblock 21 -60 18 note_block[note=18]
+setblock 21 -62 15 glass
+setblock 21 -61 15 emerald_block
+setblock 21 -60 15 note_block[note=18]
 #-----------------------------------------------
         
 #--------------NOTE_BLOCK-47-------------------
@@ -388,9 +376,6 @@ setblock 25 -60 36 dirt
 setblock 25 -59 36 redstone_wire
 #------------------------------------
         
-#--------------NOTE_BLOCK-18-------------------
-setblock 26 -61 18 glass
-setblock 26 -60 18 redstone_wire
 setblock 27 -62 18 glass
 setblock 27 -61 18 emerald_block
 setblock 27 -60 18 note_block[note=17]
@@ -572,12 +557,9 @@ setblock 39 -61 30 emerald_block
 setblock 39 -60 30 note_block[note=3]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-30-------------------
-setblock 38 -61 30 glass
-setblock 38 -60 30 redstone_wire
-setblock 39 -62 30 glass
-setblock 39 -61 30 emerald_block
-setblock 39 -60 30 note_block[note=15]
+setblock 39 -62 29 glass
+setblock 39 -61 29 emerald_block
+setblock 39 -60 29 note_block[note=15]
 #-----------------------------------------------
         
 #--------------NOTE_BLOCK-40-------------------
@@ -596,20 +578,17 @@ setblock 39 -61 46 glowstone
 setblock 39 -60 46 note_block[note=3]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-46-------------------
-setblock 38 -61 46 glass
-setblock 38 -60 46 redstone_wire
-setblock 39 -62 46 glass
-setblock 39 -61 46 iron_block
-setblock 39 -60 46 note_block[note=3]
+setblock 39 -62 45 glass
+setblock 39 -61 45 iron_block
+setblock 39 -60 45 note_block[note=3]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-46-------------------
-setblock 38 -61 46 glass
-setblock 38 -60 46 redstone_wire
-setblock 39 -62 46 glass
-setblock 39 -61 46 green_wool
-setblock 39 -60 46 note_block[note=3]
+#--------------NOTE_BLOCK-44-------------------
+setblock 38 -61 44 glass
+setblock 38 -60 44 redstone_wire
+setblock 39 -62 44 glass
+setblock 39 -61 44 green_wool
+setblock 39 -60 44 note_block[note=3]
 #-----------------------------------------------
         
 #------------------------------------1.4-----------------------------------------
@@ -648,9 +627,6 @@ setblock 42 -61 44 dirt
 setblock 42 -60 44 note_block[note=3]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-45-------------------
-setblock 41 -61 45 glass
-setblock 41 -60 45 redstone_wire
 setblock 42 -62 45 glass
 setblock 42 -61 45 gold_block
 setblock 42 -60 45 note_block[note=10]
@@ -684,9 +660,6 @@ setblock 43 -60 36 dirt
 setblock 43 -59 36 redstone_wire
 #------------------------------------
         
-#--------------NOTE_BLOCK-33-------------------
-setblock 44 -61 33 glass
-setblock 44 -60 33 redstone_wire
 setblock 45 -62 33 glass
 setblock 45 -61 33 emerald_block
 setblock 45 -60 33 note_block[note=15]
@@ -965,9 +938,6 @@ setblock 36 -56 36 dirt
 setblock 36 -55 36 redstone_wire
 #------------------------------------
         
-#--------------NOTE_BLOCK-36-------------------
-setblock 35 -57 36 glass
-setblock 35 -56 36 redstone_wire
 setblock 34 -58 36 glass
 setblock 34 -57 36 emerald_block
 setblock 34 -56 36 note_block[note=3]
@@ -1045,9 +1015,6 @@ setblock 30 -56 36 dirt
 setblock 30 -55 36 redstone_wire
 #------------------------------------
         
-#--------------NOTE_BLOCK-33-------------------
-setblock 29 -57 33 glass
-setblock 29 -56 33 redstone_wire
 setblock 28 -58 33 glass
 setblock 28 -57 33 emerald_block
 setblock 28 -56 33 note_block[note=20]
@@ -1141,9 +1108,6 @@ setblock 24 -56 36 dirt
 setblock 24 -55 36 redstone_wire
 #------------------------------------
         
-#--------------NOTE_BLOCK-18-------------------
-setblock 23 -57 18 glass
-setblock 23 -56 18 redstone_wire
 setblock 22 -58 18 glass
 setblock 22 -57 18 emerald_block
 setblock 22 -56 18 note_block[note=18]
@@ -1157,9 +1121,6 @@ setblock 22 -57 44 green_wool
 setblock 22 -56 44 note_block[note=15]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-45-------------------
-setblock 23 -57 45 glass
-setblock 23 -56 45 redstone_wire
 setblock 22 -58 45 glass
 setblock 22 -57 45 iron_block
 setblock 22 -56 45 note_block[note=3]
@@ -1437,28 +1398,19 @@ setblock 4 -57 47 green_wool
 setblock 4 -56 47 note_block[note=2]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-47-------------------
-setblock 5 -57 47 glass
-setblock 5 -56 47 redstone_wire
-setblock 4 -58 47 glass
-setblock 4 -57 47 green_wool
-setblock 4 -56 47 note_block[note=1]
+setblock 4 -58 46 glass
+setblock 4 -57 46 green_wool
+setblock 4 -56 46 note_block[note=1]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 5 -57 48 glass
-setblock 5 -56 48 redstone_wire
 setblock 4 -58 48 glass
 setblock 4 -57 48 pumpkin
 setblock 4 -56 48 note_block[note=14]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 5 -57 48 glass
-setblock 5 -56 48 redstone_wire
-setblock 4 -58 48 glass
-setblock 4 -57 48 mangrove_wood
-setblock 4 -56 48 note_block[note=13]
+setblock 4 -58 45 glass
+setblock 4 -57 45 mangrove_wood
+setblock 4 -56 45 note_block[note=13]
 #-----------------------------------------------
         
 #------------------------------------3.2-----------------------------------------
@@ -1497,28 +1449,22 @@ setblock 1 -57 48 pumpkin
 setblock 1 -56 48 note_block[note=14]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 2 -57 48 glass
-setblock 2 -56 48 redstone_wire
-setblock 1 -58 48 glass
-setblock 1 -57 48 green_wool
-setblock 1 -56 48 note_block[note=3]
+setblock 1 -58 47 glass
+setblock 1 -57 47 green_wool
+setblock 1 -56 47 note_block[note=3]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 2 -57 48 glass
-setblock 2 -56 48 redstone_wire
-setblock 1 -58 48 glass
-setblock 1 -57 48 pumpkin
-setblock 1 -56 48 note_block[note=16]
+#--------------NOTE_BLOCK-46-------------------
+setblock 2 -57 46 glass
+setblock 2 -56 46 redstone_wire
+setblock 1 -58 46 glass
+setblock 1 -57 46 pumpkin
+setblock 1 -56 46 note_block[note=16]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 2 -57 48 glass
-setblock 2 -56 48 redstone_wire
-setblock 1 -58 48 glass
-setblock 1 -57 48 mangrove_wood
-setblock 1 -56 48 note_block[note=4]
+setblock 1 -58 45 glass
+setblock 1 -57 45 mangrove_wood
+setblock 1 -56 45 note_block[note=4]
 #-----------------------------------------------
         
 #--------------UPPER-FLOOR-CONNECTION-------------------
@@ -1654,9 +1600,6 @@ setblock 7 -52 36 dirt
 setblock 7 -51 36 redstone_wire
 #------------------------------------
         
-#--------------NOTE_BLOCK-33-------------------
-setblock 8 -53 33 glass
-setblock 8 -52 33 redstone_wire
 setblock 9 -54 33 glass
 setblock 9 -53 33 emerald_block
 setblock 9 -52 33 note_block[note=20]
@@ -1750,12 +1693,9 @@ setblock 13 -52 36 dirt
 setblock 13 -51 36 redstone_wire
 #------------------------------------
         
-#--------------NOTE_BLOCK-36-------------------
-setblock 14 -53 36 glass
-setblock 14 -52 36 redstone_wire
-setblock 15 -54 36 glass
-setblock 15 -53 36 emerald_block
-setblock 15 -52 36 note_block[note=20]
+setblock 15 -54 33 glass
+setblock 15 -53 33 emerald_block
+setblock 15 -52 33 note_block[note=20]
 #-----------------------------------------------
         
 #--------------NOTE_BLOCK-46-------------------
@@ -1846,12 +1786,9 @@ setblock 21 -53 32 emerald_block
 setblock 21 -52 32 note_block[note=22]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-32-------------------
-setblock 20 -53 32 glass
-setblock 20 -52 32 redstone_wire
-setblock 21 -54 32 glass
-setblock 21 -53 32 emerald_block
-setblock 21 -52 32 note_block[note=18]
+setblock 21 -54 31 glass
+setblock 21 -53 31 emerald_block
+setblock 21 -52 31 note_block[note=18]
 #-----------------------------------------------
         
 #--------------NOTE_BLOCK-48-------------------
@@ -1942,9 +1879,6 @@ setblock 27 -53 47 pumpkin
 setblock 27 -52 47 note_block[note=22]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 26 -53 48 glass
-setblock 26 -52 48 redstone_wire
 setblock 27 -54 48 glass
 setblock 27 -53 48 sand
 setblock 27 -52 48 note_block[note=0]
@@ -2058,12 +1992,9 @@ setblock 34 -52 36 dirt
 setblock 34 -51 36 redstone_wire
 #------------------------------------
         
-#--------------NOTE_BLOCK-36-------------------
-setblock 35 -53 36 glass
-setblock 35 -52 36 redstone_wire
-setblock 36 -54 36 glass
-setblock 36 -53 36 emerald_block
-setblock 36 -52 36 note_block[note=18]
+setblock 36 -54 33 glass
+setblock 36 -53 33 emerald_block
+setblock 36 -52 33 note_block[note=18]
 #-----------------------------------------------
         
 #------------------------------------4.5-----------------------------------------
@@ -2174,9 +2105,6 @@ setblock 43 -52 36 dirt
 setblock 43 -51 36 redstone_wire
 #------------------------------------
         
-#--------------NOTE_BLOCK-36-------------------
-setblock 44 -53 36 glass
-setblock 44 -52 36 redstone_wire
 setblock 45 -54 36 glass
 setblock 45 -53 36 emerald_block
 setblock 45 -52 36 note_block[note=15]
@@ -2303,12 +2231,9 @@ setblock 46 -49 46 green_wool
 setblock 46 -48 46 note_block[note=15]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-46-------------------
-setblock 47 -49 46 glass
-setblock 47 -48 46 redstone_wire
-setblock 46 -50 46 glass
-setblock 46 -49 46 iron_block
-setblock 46 -48 46 note_block[note=3]
+setblock 46 -50 45 glass
+setblock 46 -49 45 iron_block
+setblock 46 -48 45 note_block[note=3]
 #-----------------------------------------------
         
 #------------------------------------5.0-----------------------------------------
@@ -2375,9 +2300,6 @@ setblock 42 -48 36 dirt
 setblock 42 -47 36 redstone_wire
 #------------------------------------
         
-#--------------NOTE_BLOCK-33-------------------
-setblock 41 -49 33 glass
-setblock 41 -48 33 redstone_wire
 setblock 40 -50 33 glass
 setblock 40 -49 33 emerald_block
 setblock 40 -48 33 note_block[note=15]
@@ -2479,9 +2401,6 @@ setblock 34 -49 46 green_wool
 setblock 34 -48 46 note_block[note=15]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-47-------------------
-setblock 35 -49 47 glass
-setblock 35 -48 47 redstone_wire
 setblock 34 -50 47 glass
 setblock 34 -49 47 iron_block
 setblock 34 -48 47 note_block[note=3]
@@ -2559,17 +2478,11 @@ setblock 28 -49 47 green_wool
 setblock 28 -48 47 note_block[note=4]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-47-------------------
-setblock 29 -49 47 glass
-setblock 29 -48 47 redstone_wire
-setblock 28 -50 47 glass
-setblock 28 -49 47 green_wool
-setblock 28 -48 47 note_block[note=6]
+setblock 28 -50 46 glass
+setblock 28 -49 46 green_wool
+setblock 28 -48 46 note_block[note=6]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 29 -49 48 glass
-setblock 29 -48 48 redstone_wire
 setblock 28 -50 48 glass
 setblock 28 -49 48 sand
 setblock 28 -48 48 note_block[note=4]
@@ -2611,28 +2524,22 @@ setblock 25 -49 48 pumpkin
 setblock 25 -48 48 note_block[note=17]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 26 -49 48 glass
-setblock 26 -48 48 redstone_wire
-setblock 25 -50 48 glass
-setblock 25 -49 48 mangrove_wood
-setblock 25 -48 48 note_block[note=16]
+setblock 25 -50 47 glass
+setblock 25 -49 47 mangrove_wood
+setblock 25 -48 47 note_block[note=16]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 26 -49 48 glass
-setblock 26 -48 48 redstone_wire
-setblock 25 -50 48 glass
-setblock 25 -49 48 stone
-setblock 25 -48 48 note_block[note=21]
+#--------------NOTE_BLOCK-46-------------------
+setblock 26 -49 46 glass
+setblock 26 -48 46 redstone_wire
+setblock 25 -50 46 glass
+setblock 25 -49 46 stone
+setblock 25 -48 46 note_block[note=21]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 26 -49 48 glass
-setblock 26 -48 48 redstone_wire
-setblock 25 -50 48 glass
-setblock 25 -49 48 green_wool
-setblock 25 -48 48 note_block[note=5]
+setblock 25 -50 45 glass
+setblock 25 -49 45 green_wool
+setblock 25 -48 45 note_block[note=5]
 #-----------------------------------------------
         
 #------------------------------------5.7-----------------------------------------
@@ -2743,12 +2650,9 @@ setblock 16 -49 48 mangrove_wood
 setblock 16 -48 48 note_block[note=18]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 17 -49 48 glass
-setblock 17 -48 48 redstone_wire
-setblock 16 -50 48 glass
-setblock 16 -49 48 sand
-setblock 16 -48 48 note_block[note=0]
+setblock 16 -50 47 glass
+setblock 16 -49 47 sand
+setblock 16 -48 47 note_block[note=0]
 #-----------------------------------------------
         
 #------------------------------------6.0-----------------------------------------
@@ -2787,20 +2691,17 @@ setblock 13 -49 48 green_wool
 setblock 13 -48 48 note_block[note=8]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 14 -49 48 glass
-setblock 14 -48 48 redstone_wire
-setblock 13 -50 48 glass
-setblock 13 -49 48 pumpkin
-setblock 13 -48 48 note_block[note=20]
+setblock 13 -50 47 glass
+setblock 13 -49 47 pumpkin
+setblock 13 -48 47 note_block[note=20]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 14 -49 48 glass
-setblock 14 -48 48 redstone_wire
-setblock 13 -50 48 glass
-setblock 13 -49 48 mangrove_wood
-setblock 13 -48 48 note_block[note=21]
+#--------------NOTE_BLOCK-46-------------------
+setblock 14 -49 46 glass
+setblock 14 -48 46 redstone_wire
+setblock 13 -50 46 glass
+setblock 13 -49 46 mangrove_wood
+setblock 13 -48 46 note_block[note=21]
 #-----------------------------------------------
         
 #------------------------------------6.1-----------------------------------------
@@ -2847,9 +2748,6 @@ setblock 10 -49 47 pumpkin
 setblock 10 -48 47 note_block[note=20]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 11 -49 48 glass
-setblock 11 -48 48 redstone_wire
 setblock 10 -50 48 glass
 setblock 10 -49 48 sand
 setblock 10 -48 48 note_block[note=0]
@@ -3040,9 +2938,6 @@ setblock 1 -44 36 dirt
 setblock 1 -43 36 redstone_wire
 #------------------------------------
         
-#--------------NOTE_BLOCK-33-------------------
-setblock 2 -45 33 glass
-setblock 2 -44 33 redstone_wire
 setblock 3 -46 33 glass
 setblock 3 -45 33 emerald_block
 setblock 3 -44 33 note_block[note=23]
@@ -3136,12 +3031,9 @@ setblock 9 -45 41 gold_block
 setblock 9 -44 41 note_block[note=3]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-41-------------------
-setblock 8 -45 41 glass
-setblock 8 -44 41 redstone_wire
-setblock 9 -46 41 glass
-setblock 9 -45 41 gold_block
-setblock 9 -44 41 note_block[note=22]
+setblock 9 -46 40 glass
+setblock 9 -45 40 gold_block
+setblock 9 -44 40 note_block[note=22]
 #-----------------------------------------------
         
 #--------------NOTE_BLOCK-47-------------------
@@ -3188,12 +3080,9 @@ setblock 12 -45 44 gold_block
 setblock 12 -44 44 note_block[note=3]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-44-------------------
-setblock 11 -45 44 glass
-setblock 11 -44 44 redstone_wire
-setblock 12 -46 44 glass
-setblock 12 -45 44 gold_block
-setblock 12 -44 44 note_block[note=22]
+setblock 12 -46 43 glass
+setblock 12 -45 43 gold_block
+setblock 12 -44 43 note_block[note=22]
 #-----------------------------------------------
         
 #------------------------------------6.9-----------------------------------------
@@ -3268,12 +3157,9 @@ setblock 18 -45 48 pumpkin
 setblock 18 -44 48 note_block[note=8]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 17 -45 48 glass
-setblock 17 -44 48 redstone_wire
-setblock 18 -46 48 glass
-setblock 18 -45 48 sand
-setblock 18 -44 48 note_block[note=0]
+setblock 18 -46 47 glass
+setblock 18 -45 47 sand
+setblock 18 -44 47 note_block[note=0]
 #-----------------------------------------------
         
 #------------------------------------7.1-----------------------------------------
@@ -3304,9 +3190,6 @@ setblock 19 -44 36 dirt
 setblock 19 -43 36 redstone_wire
 #------------------------------------
         
-#--------------NOTE_BLOCK-18-------------------
-setblock 20 -45 18 glass
-setblock 20 -44 18 redstone_wire
 setblock 21 -46 18 glass
 setblock 21 -45 18 packed_ice
 setblock 21 -44 18 note_block[note=14]
@@ -3320,9 +3203,6 @@ setblock 21 -45 45 honeycomb_block
 setblock 21 -44 45 note_block[note=13]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-46-------------------
-setblock 20 -45 46 glass
-setblock 20 -44 46 redstone_wire
 setblock 21 -46 46 glass
 setblock 21 -45 46 bone_block
 setblock 21 -44 46 note_block[note=1]
@@ -3372,12 +3252,9 @@ setblock 24 -45 44 gold_block
 setblock 24 -44 44 note_block[note=1]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-44-------------------
-setblock 23 -45 44 glass
-setblock 23 -44 44 redstone_wire
-setblock 24 -46 44 glass
-setblock 24 -45 44 gold_block
-setblock 24 -44 44 note_block[note=20]
+setblock 24 -46 43 glass
+setblock 24 -45 43 gold_block
+setblock 24 -44 43 note_block[note=20]
 #-----------------------------------------------
         
 #--------------NOTE_BLOCK-48-------------------
@@ -3388,12 +3265,9 @@ setblock 24 -45 48 soul_sand
 setblock 24 -44 48 note_block[note=13]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 23 -45 48 glass
-setblock 23 -44 48 redstone_wire
-setblock 24 -46 48 glass
-setblock 24 -45 48 pumpkin
-setblock 24 -44 48 note_block[note=15]
+setblock 24 -46 47 glass
+setblock 24 -45 47 pumpkin
+setblock 24 -44 47 note_block[note=15]
 #-----------------------------------------------
         
 #------------------------------------7.3-----------------------------------------
@@ -3520,12 +3394,9 @@ setblock 33 -45 48 pumpkin
 setblock 33 -44 48 note_block[note=12]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 32 -45 48 glass
-setblock 32 -44 48 redstone_wire
-setblock 33 -46 48 glass
-setblock 33 -45 48 pumpkin
-setblock 33 -44 48 note_block[note=13]
+setblock 33 -46 47 glass
+setblock 33 -45 47 pumpkin
+setblock 33 -44 47 note_block[note=13]
 #-----------------------------------------------
         
 #------------------------------------7.6-----------------------------------------
@@ -3680,20 +3551,17 @@ setblock 45 -45 48 stone
 setblock 45 -44 48 note_block[note=20]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 44 -45 48 glass
-setblock 44 -44 48 redstone_wire
-setblock 45 -46 48 glass
-setblock 45 -45 48 pumpkin
-setblock 45 -44 48 note_block[note=17]
+setblock 45 -46 47 glass
+setblock 45 -45 47 pumpkin
+setblock 45 -44 47 note_block[note=17]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 44 -45 48 glass
-setblock 44 -44 48 redstone_wire
-setblock 45 -46 48 glass
-setblock 45 -45 48 mangrove_wood
-setblock 45 -44 48 note_block[note=19]
+#--------------NOTE_BLOCK-46-------------------
+setblock 44 -45 46 glass
+setblock 44 -44 46 redstone_wire
+setblock 45 -46 46 glass
+setblock 45 -45 46 mangrove_wood
+setblock 45 -44 46 note_block[note=19]
 #-----------------------------------------------
         
 #------------------------------------8.0-----------------------------------------
@@ -3732,20 +3600,17 @@ setblock 48 -45 48 emerald_block
 setblock 48 -44 48 note_block[note=0]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 47 -45 48 glass
-setblock 47 -44 48 redstone_wire
-setblock 48 -46 48 glass
-setblock 48 -45 48 emerald_block
-setblock 48 -44 48 note_block[note=3]
+setblock 48 -46 47 glass
+setblock 48 -45 47 emerald_block
+setblock 48 -44 47 note_block[note=3]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 47 -45 48 glass
-setblock 47 -44 48 redstone_wire
-setblock 48 -46 48 glass
-setblock 48 -45 48 pumpkin
-setblock 48 -44 48 note_block[note=24]
+#--------------NOTE_BLOCK-46-------------------
+setblock 47 -45 46 glass
+setblock 47 -44 46 redstone_wire
+setblock 48 -46 46 glass
+setblock 48 -45 46 pumpkin
+setblock 48 -44 46 note_block[note=24]
 #-----------------------------------------------
         
 #--------------UPPER-FLOOR-CONNECTION-------------------
@@ -3817,9 +3682,6 @@ setblock 46 -41 45 honeycomb_block
 setblock 46 -40 45 note_block[note=6]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-46-------------------
-setblock 47 -41 46 glass
-setblock 47 -40 46 redstone_wire
 setblock 46 -42 46 glass
 setblock 46 -41 46 iron_block
 setblock 46 -40 46 note_block[note=18]
@@ -3861,9 +3723,6 @@ setblock 45 -40 36 dirt
 setblock 45 -39 36 redstone_wire
 #------------------------------------
         
-#--------------NOTE_BLOCK-33-------------------
-setblock 44 -41 33 glass
-setblock 44 -40 33 redstone_wire
 setblock 43 -42 33 glass
 setblock 43 -41 33 emerald_block
 setblock 43 -40 33 note_block[note=18]
@@ -3913,9 +3772,6 @@ setblock 40 -41 47 glowstone
 setblock 40 -40 47 note_block[note=22]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 41 -41 48 glass
-setblock 41 -40 48 redstone_wire
 setblock 40 -42 48 glass
 setblock 40 -41 48 sand
 setblock 40 -40 48 note_block[note=1]
@@ -4001,20 +3857,14 @@ setblock 34 -41 47 iron_block
 setblock 34 -40 47 note_block[note=22]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 35 -41 48 glass
-setblock 35 -40 48 redstone_wire
 setblock 34 -42 48 glass
 setblock 34 -41 48 glowstone
 setblock 34 -40 48 note_block[note=22]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 35 -41 48 glass
-setblock 35 -40 48 redstone_wire
-setblock 34 -42 48 glass
-setblock 34 -41 48 hay_block
-setblock 34 -40 48 note_block[note=3]
+setblock 34 -42 46 glass
+setblock 34 -41 46 hay_block
+setblock 34 -40 46 note_block[note=3]
 #-----------------------------------------------
         
 #------------------------------------8.6-----------------------------------------
@@ -4061,20 +3911,17 @@ setblock 31 -41 48 pumpkin
 setblock 31 -40 48 note_block[note=13]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 32 -41 48 glass
-setblock 32 -40 48 redstone_wire
-setblock 31 -42 48 glass
-setblock 31 -41 48 pumpkin
-setblock 31 -40 48 note_block[note=14]
+setblock 31 -42 47 glass
+setblock 31 -41 47 pumpkin
+setblock 31 -40 47 note_block[note=14]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-48-------------------
-setblock 32 -41 48 glass
-setblock 32 -40 48 redstone_wire
-setblock 31 -42 48 glass
-setblock 31 -41 48 mangrove_wood
-setblock 31 -40 48 note_block[note=13]
+#--------------NOTE_BLOCK-46-------------------
+setblock 32 -41 46 glass
+setblock 32 -40 46 redstone_wire
+setblock 31 -42 46 glass
+setblock 31 -41 46 mangrove_wood
+setblock 31 -40 46 note_block[note=13]
 #-----------------------------------------------
         
 #------------------------------------8.7-----------------------------------------
@@ -4113,9 +3960,6 @@ setblock 28 -41 20 packed_ice
 setblock 28 -40 20 note_block[note=9]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-33-------------------
-setblock 29 -41 33 glass
-setblock 29 -40 33 redstone_wire
 setblock 28 -42 33 glass
 setblock 28 -41 33 emerald_block
 setblock 28 -40 33 note_block[note=20]
@@ -4225,9 +4069,6 @@ setblock 22 -41 45 honeycomb_block
 setblock 22 -40 45 note_block[note=6]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-46-------------------
-setblock 23 -41 46 glass
-setblock 23 -40 46 redstone_wire
 setblock 22 -42 46 glass
 setblock 22 -41 46 iron_block
 setblock 22 -40 46 note_block[note=18]
@@ -4277,12 +4118,9 @@ setblock 19 -41 47 iron_block
 setblock 19 -40 47 note_block[note=18]
 #-----------------------------------------------
         
-#--------------NOTE_BLOCK-47-------------------
-setblock 20 -41 47 glass
-setblock 20 -40 47 redstone_wire
-setblock 19 -42 47 glass
-setblock 19 -41 47 bone_block
-setblock 19 -40 47 note_block[note=13]
+setblock 19 -42 46 glass
+setblock 19 -41 46 bone_block
+setblock 19 -40 46 note_block[note=13]
 #-----------------------------------------------
         
 #--------------UPPER-FLOOR-CONNECTION-------------------

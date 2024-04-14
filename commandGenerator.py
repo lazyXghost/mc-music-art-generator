@@ -88,7 +88,7 @@ def main(
                 (x + inc, current_height, startingZ + instant_repeater_zs[1])
             )
             for note_block in note_blocks:
-                pos, place_connector = space_manager.getPlacementDetails((x + inc, current_height, startingZ), note_block["position"])
+                pos, place_connector = space_manager.getPlacementDetails((x + inc, current_height, startingZ), note_block["position"], amplitude_dict)
                 state = "note_block_with_connector" if place_connector else "note_block_without_connector"
                 space_manager.savePlacementDetails((x + inc, current_height, startingZ + pos), state)
                 output += myCommandGenerator.getNoteBlock(
