@@ -10,6 +10,7 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 config = config["MinecraftSettings"]
 
+
 def getBlockDetails(
     results_path, target_file, music_box_dict, amplitude_dict, pitch_mapping_shift
 ):
@@ -79,20 +80,40 @@ def main(
             output += myCommandGenerator.getMainRepeaterAndRedstoneLine(
                 (x, current_height, startingZ), tm, inc
             )
-            space_manager.savePlacementDetails((x + inc, current_height, startingZ + instant_repeater_zs[0]), 'instant_repeater')
+            space_manager.savePlacementDetails(
+                (x + inc, current_height, startingZ + instant_repeater_zs[0]),
+                "instant_repeater",
+            )
             output += myCommandGenerator.getInstantRepeater(
                 (x + inc, current_height, startingZ + instant_repeater_zs[0])
             )
-            space_manager.savePlacementDetails((x + inc, current_height, startingZ + instant_repeater_zs[1]), 'instant_repeater')
+            space_manager.savePlacementDetails(
+                (x + inc, current_height, startingZ + instant_repeater_zs[1]),
+                "instant_repeater",
+            )
             output += myCommandGenerator.getInstantRepeater(
                 (x + inc, current_height, startingZ + instant_repeater_zs[1])
             )
             for note_block in note_blocks:
-                pos, place_connector = space_manager.getPlacementDetails((x + inc, current_height, startingZ), note_block["position"], amplitude_dict)
-                state = "note_block_with_connector" if place_connector else "note_block_without_connector"
-                space_manager.savePlacementDetails((x + inc, current_height, startingZ + pos), state)
+                pos, place_connector = space_manager.getPlacementDetails(
+                    (x + inc, current_height, startingZ),
+                    note_block["position"],
+                    amplitude_dict,
+                )
+                state = (
+                    "note_block_with_connector"
+                    if place_connector
+                    else "note_block_without_connector"
+                )
+                space_manager.savePlacementDetails(
+                    (x + inc, current_height, startingZ + pos), state
+                )
                 output += myCommandGenerator.getNoteBlock(
-                    (x + 2 * inc, current_height, startingZ), inc, note_block, pos, place_connector
+                    (x + 2 * inc, current_height, startingZ),
+                    inc,
+                    note_block,
+                    pos,
+                    place_connector,
                 )
             x += 3 * inc
         output += myCommandGenerator.getUpperFloorConnection(
@@ -101,6 +122,7 @@ def main(
         x += inc
         floor_level += 1
     return output
+
 
 music_box_dict = json.loads(config["music_box_dict"])
 amplitude_dict = json.loads(config["amplitude_dict"])
@@ -131,7 +153,7 @@ if __name__ == "__main__":
             starting_coordinates,
             one_floor_vertical_gap,
             instant_repeater_zs,
-            pitch_mapping_shift
+            pitch_mapping_shift,
         )
         # with open(f"{results_path}musicCommand_{target_file}.mcfunction", "w") as f:
         with open(f"{results_path}v2.mcfunction", "w") as f:

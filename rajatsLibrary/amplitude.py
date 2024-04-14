@@ -1,20 +1,21 @@
 import matplotlib.pyplot as plt
 import librosa
 
+
 class AsfPosConverter:
     @staticmethod
     def getPosition(amplitude_dict, curr_amp):
         closest_key = None
-        closest_diff = float('inf')
-        
+        closest_diff = float("inf")
+
         for key, _ in amplitude_dict.items():
             diff = abs(float(key) - curr_amp)
             if diff < closest_diff:
                 closest_key = key
                 closest_diff = diff
-        
+
         return closest_key, amplitude_dict[closest_key]
-    
+
     @staticmethod
     def getAmplitude(amplitude_dict, curr_pos):
         for key, value in amplitude_dict.items():
@@ -48,10 +49,63 @@ class AsfPosConverter:
         # plt.show()
         # ---------------------------------------
 
-        amplitude_list = [1, 0.99, 0.98, 0.97, 0.97, 0.96, 0.95, 0.95, 0.94, 0.93, 0.93, 0.92, 0.91, 0.91, 0.9, 0.89, 0.88, 0.87, 0.86, 0.845, 0.83, 0.815, 0.8, 0.79, 0.775, 0.76, 0.74, 0.72, 0.7, 0.68, 0.66, 0.64, 0.62, 0.6, 0.57, 0.54, 0.515, 0.49, 0.47, 0.43, 0.39, 0.35, 0.31, 0.27, 0.23, 0.19, 0.15, 0.11, 0]
+        amplitude_list = [
+            1,
+            0.99,
+            0.98,
+            0.97,
+            0.97,
+            0.96,
+            0.95,
+            0.95,
+            0.94,
+            0.93,
+            0.93,
+            0.92,
+            0.91,
+            0.91,
+            0.9,
+            0.89,
+            0.88,
+            0.87,
+            0.86,
+            0.845,
+            0.83,
+            0.815,
+            0.8,
+            0.79,
+            0.775,
+            0.76,
+            0.74,
+            0.72,
+            0.7,
+            0.68,
+            0.66,
+            0.64,
+            0.62,
+            0.6,
+            0.57,
+            0.54,
+            0.515,
+            0.49,
+            0.47,
+            0.43,
+            0.39,
+            0.35,
+            0.31,
+            0.27,
+            0.23,
+            0.19,
+            0.15,
+            0.11,
+            0,
+        ]
         print(amplitude_list)
 
+
 if __name__ == "__main__":
-    print("This is a library for Audio Manipulation via fourier transform made specificaly for minecraft audio production using note blocks")
+    print(
+        "This is a library for Audio Manipulation via fourier transform made specificaly for minecraft audio production using note blocks"
+    )
     print("Author -: Rajat Bansal, IIT Mandi, B20123")
     # AsfToPos.analyze('Sounds/Amplitude2.m4a')

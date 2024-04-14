@@ -46,7 +46,10 @@ class spaceManager:
             pos = pos0
         else:
             pos = pos2
-        if self.getSpaceState((x, y, z + pos)) == space_state.available_without_connector:
+        if (
+            self.getSpaceState((x, y, z + pos))
+            == space_state.available_without_connector
+        ):
             return pos, False
         elif self.getSpaceState((x, y, z + pos)) == space_state.default_available:
             return pos, True
