@@ -72,10 +72,10 @@ class AudioManipulator:
 
     @staticmethod
     def shiftPitchOfAudioValues(audioValues, sr, pitch_shift):
-        audio_with_pitch = librosa.effects.pitch_shift(
+        audio_with_pitch_shift = librosa.effects.pitch_shift(
             audioValues, sr=sr, n_steps=pitch_shift
         )
-        return audio_with_pitch
+        return audio_with_pitch_shift
 
     @staticmethod
     def calculateAmplitudeShiftOfAudioValues(audioValues1, audioValues2, mode):

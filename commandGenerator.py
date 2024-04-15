@@ -128,7 +128,6 @@ music_box_dict = json.loads(config["music_box_dict"])
 amplitude_dict = json.loads(config["amplitude_dict"])
 pitch_mapping_shift = int(config["pitch_mapping_shift"])
 instant_repeater_zs = [int(_) for _ in config["instant_repeater_zs"].split(",")]
-starting_coordinates = [int(_) for _ in config["starting_coordinates"].split(",")]
 hearable_range = int(config["hearable_range"])
 one_floor_vertical_gap = int(config["one_floor_vertical_gap"])
 one_hundred_milli_horizontal_gap = int(config["100ms_horizontal_gap"])
@@ -138,11 +137,13 @@ parser = argparse.ArgumentParser(
     description="Command generator for minecraft note blocks"
 )
 parser.add_argument("-f", "--file", help="Specify the file name for processing")
+parser.add_argument("-c", "--coordinates", help="Starting coordinatest")
 args = parser.parse_args()
 
 if __name__ == "__main__":
     target_file = args.file
-    if args.file:
+    if args.file and args.coordinates:
+        starting_coordinates = [int(_) for _ in args.coordinates.split(",")]
         commands = main(
             results_path,
             target_file,
@@ -159,7 +160,7 @@ if __name__ == "__main__":
         with open(f"{results_path}v2.mcfunction", "w") as f:
             f.write(commands)
     else:
-        print("Usage - python commandGenerator.py -f <file_name>")
+        print("Usage - python commandGenerator.py -f <file_name> -c <coordinates>")
 
     # plt.scatter([i for i in range(len(asfValues))], asfValues)
     # plt.show()
