@@ -79,10 +79,10 @@ class AudioManipulator:
 
     @staticmethod
     def calculateAmplitudeShiftOfAudioValues(audioValues1, audioValues2, mode):
-        if mode == "max":
+        if mode == "Max":
             peak_amplitude1 = np.max(np.abs(audioValues1))
             peak_amplitude2 = np.max(np.abs(audioValues2))
-        elif mode == "mean":
+        elif mode == "Mean":
             peak_amplitude1 = np.mean(np.abs(audioValues1))
             peak_amplitude2 = np.mean(np.abs(audioValues2))
 

@@ -1,10 +1,10 @@
 import pickle as pkl
 import json
-from rajatsLibrary.minecraft import commandGenerator
+from RajatsLibrary.minecraft import commandGenerator
 import configparser
 import argparse
-from rajatsLibrary.amplitude import AsfPosConverter
-from rajatsLibrary.minecraft import spaceManager
+from RajatsLibrary.amplitude import AsfPosConverter
+from RajatsLibrary.minecraft import spaceManager
 
 config = configparser.ConfigParser()
 config.read("config.ini")
@@ -14,7 +14,7 @@ config = config["MinecraftSettings"]
 def getBlockDetails(
     results_path, target_file, music_box_dict, amplitude_dict, pitch_mapping_shift
 ):
-    pickle_file_path = f"{results_path}{target_file}.pkl"
+    pickle_file_path = f"{results_path}pkl/{target_file}.pkl"
     with open(pickle_file_path, "rb") as f:
         data = pkl.load(f)
 
@@ -157,7 +157,7 @@ if __name__ == "__main__":
             pitch_mapping_shift,
         )
         # with open(f"{results_path}musicCommand_{target_file}.mcfunction", "w") as f:
-        with open(f"{results_path}v2.mcfunction", "w") as f:
+        with open(f"{results_path}commands/v2.mcfunction", "w") as f:
             f.write(commands)
     else:
         print("Usage - python commandGenerator.py -f <file_name> -c <coordinates>")

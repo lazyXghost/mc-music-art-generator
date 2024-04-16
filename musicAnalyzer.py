@@ -1,4 +1,4 @@
-from rajatsLibrary.audio import MyAudio, AudioManipulator
+from RajatsLibrary.audio import MyAudio, AudioManipulator
 import librosa
 import configparser
 import json
@@ -49,7 +49,7 @@ def preProcess(
         initialBestMatches = []
         for instrument in instruments:
             rng = instruments[instrument]
-            audioValues, sr = librosa.load(instrumentsPath + instrument)
+            audioValues, sr = librosa.load(instrumentsPath + 'sounds/' + instrument)
             for pitchShift in range(rng[0], rng[1] + 1):
                 asf = AudioManipulator.calculateAmplitudeShiftOfAudioValues(
                     mainAudio.audioValues, audioValues, amplitudeMode
@@ -154,7 +154,7 @@ def preProcess(
             # AudioManipulator.drawAudioValues(resAudioValues, sr)
             targetFileName = targetFile.split(".")[0]
             sf.write(
-                f"{resultsPath}{targetFileName}_{amplitudeMode}.mp3", resAudioValues, sr
+                f"{resultsPath}sounds/{targetFileName}_{amplitudeMode}.mp3", resAudioValues, sr
             )
         startTime += binLength
 
@@ -174,7 +174,7 @@ simThresh = float(config["simThresh"])
 resultsPath = config["resultsPath"]
 
 parser = argparse.ArgumentParser(description="Music analyzer for minecraft note blocks")
-parser.add_argument("-m", "--mode", help="Specify the mode. <mean> or <max>")
+parser.add_argument("-m", "--mode", help="Specify the mode. <Mean> or <Max>")
 parser.add_argument("-f", "--file", help="Specify the file name for processing")
 args = parser.parse_args()
 
@@ -194,5 +194,5 @@ if __name__ == "__main__":
         resultsPath,
         amplitudeMode,
     )
-    with open(f"{resultsPath}{targetFileName}_{amplitudeMode}.pkl", "wb") as f:
+    with open(f"{resultsPath}pkl/{targetFileName}{amplitudeMode}.pkl", "wb") as f:
         pkl.dump(preProcessingResults, f)
