@@ -157,7 +157,7 @@ if __name__ == "__main__":
             pitch_mapping_shift,
         )
         # with open(f"{results_path}musicCommand_{target_file}.mcfunction", "w") as f:
-        with open(f"{results_path}commands/{target_file}.mcfunction", "w") as f:
+        with open(f"{results_path}commands/{target_file.lower()}.mcfunction", "w") as f:
             f.write(commands)
     else:
         print("Usage - python commandGenerator.py -f <file_name_without_extension> -c <coordinates>")
