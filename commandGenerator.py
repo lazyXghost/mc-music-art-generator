@@ -157,10 +157,10 @@ if __name__ == "__main__":
             pitch_mapping_shift,
         )
         # with open(f"{results_path}musicCommand_{target_file}.mcfunction", "w") as f:
-        with open(f"{results_path}commands/v2.mcfunction", "w") as f:
+        with open(f"{results_path}commands/{target_file}.mcfunction", "w") as f:
             f.write(commands)
     else:
-        print("Usage - python commandGenerator.py -f <file_name> -c <coordinates>")
+        print("Usage - python commandGenerator.py -f <file_name_without_extension> -c <coordinates>")
 
     # plt.scatter([i for i in range(len(asfValues))], asfValues)
     # plt.show()

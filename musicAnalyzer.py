@@ -17,7 +17,8 @@ def preProcess(
     mainSoundsPath,
     targetFile,
     sr,
-    instruments,
+    instruments_dict,
+    scaling_dict,
     instrumentsPath,
     initialBestMatchesLength,
     simThresh,
@@ -47,15 +48,18 @@ def preProcess(
 
         ########################### Finding initial best matches ########################
         initialBestMatches = []
-        for instrument in instruments:
-            rng = instruments[instrument]
-            audioValues, sr = librosa.load(instrumentsPath + 'sounds/' + instrument)
+        for instrument in instruments_dict:
+            rng = instruments_dict[instrument]
+            audioValues, sr = librosa.load(instrumentsPath + instrument)
+            audioValues *= scaling_dict[instrument]
             for pitchShift in range(rng[0], rng[1] + 1):
                 asf = AudioManipulator.calculateAmplitudeShiftOfAudioValues(
-                    mainAudio.audioValues, audioValues, amplitudeMode
+                    mainAudio.audioValues, AudioManipulator.shiftPitchOfAudioValues(
+                        audioValues, sr, pitchShift
+                    ), amplitudeMode
                 )
                 pitchShiftedAudio = MyAudio(
-                    [{"instrument": instrument, "pitchShift": pitchShift, "ASF": 1}],
+                    [{"instrument": instrument, "pitchShift": pitchShift, "ASF": asf}],
                     AudioManipulator.shiftPitchOfAudioValues(
                         audioValues, sr, pitchShift
                     )
@@ -84,6 +88,7 @@ def preProcess(
         mxIndex = initialBestMatchesLength
         for idx, note in enumerate(initialBestMatches[:initialBestMatchesLength]):
             audioValues, _ = librosa.load(f'{instrumentsPath}{note["instrument"]}')
+            audioValues *= scaling_dict[note["instrument"]]
             audio = MyAudio(
                 [
                     {
@@ -137,6 +142,8 @@ def preProcess(
                 instrumentAudioValues, _ = librosa.load(
                     f'{instrumentsPath}{instrumentDetails["instrument"]}'
                 )
+                instrumentAudioValues *= scaling_dict[instrumentDetails["instrument"]]
+
                 instrumentAudioValues = (
                     AudioManipulator.shiftPitchOfAudioValues(
                         instrumentAudioValues, sr, instrumentDetails["pitchShift"]
@@ -154,7 +161,7 @@ def preProcess(
             # AudioManipulator.drawAudioValues(resAudioValues, sr)
             targetFileName = targetFile.split(".")[0]
             sf.write(
-                f"{resultsPath}sounds/{targetFileName}_{amplitudeMode}.mp3", resAudioValues, sr
+                f"{resultsPath}sounds/{targetFileName}{amplitudeMode}.mp3", resAudioValues, sr
             )
         startTime += binLength
 
@@ -166,7 +173,8 @@ def preProcess(
 
 mainSoundsPath = config["mainSoundsPath"]
 sr = int(config["sr"])
-instruments = json.loads(config["instruments"])
+instruments_dict = json.loads(config["instruments_dict"])
+scaling_dict = json.loads(config["scaling_dict"])
 instrumentsPath = config["instrumentsPath"]
 initialBestMatchesLength = int(config["initialBestMatchesLength"])
 binLength = int(config["binLength"])
@@ -181,18 +189,22 @@ args = parser.parse_args()
 if __name__ == "__main__":
     targetFile = args.file
     amplitudeMode = args.mode
-    targetFileName = targetFile.split(".")[0]
-    preProcessingResults = preProcess(
-        mainSoundsPath,
-        targetFile,
-        sr,
-        instruments,
-        instrumentsPath,
-        initialBestMatchesLength,
-        simThresh,
-        binLength,
-        resultsPath,
-        amplitudeMode,
-    )
-    with open(f"{resultsPath}pkl/{targetFileName}{amplitudeMode}.pkl", "wb") as f:
-        pkl.dump(preProcessingResults, f)
+    if targetFile and amplitudeMode:
+        targetFileName = targetFile.split(".")[0]
+        preProcessingResults = preProcess(
+            mainSoundsPath,
+            targetFile,
+            sr,
+            instruments_dict,
+            scaling_dict,
+            instrumentsPath,
+            initialBestMatchesLength,
+            simThresh,
+            binLength,
+            resultsPath,
+            amplitudeMode,
+        )
+        with open(f"{resultsPath}pkl/{targetFileName}{amplitudeMode}.pkl", "wb") as f:
+            pkl.dump(preProcessingResults, f)
+    else:
+        print("Usage - python musicAnalyzer.py -f <file_name_with_extension> -m <mode - Mean or Max>")

@@ -18,10 +18,13 @@ class AsfPosConverter:
 
     @staticmethod
     def getAmplitude(amplitude_dict, curr_pos):
+        diff = float('inf')
+        res = None
         for key, value in amplitude_dict.items():
-            if float(value) == curr_pos:
-                return float(key)
-        return None
+            if abs(float(value) - curr_pos) < diff:
+                res = float(key)
+                diff = abs(float(value) - curr_pos)
+        return res
 
     @staticmethod
     def analyze(audio_file):
