@@ -88,11 +88,11 @@ class commandGenerator:
         x, y, z = coordinates[0], coordinates[1], coordinates[2]
         res = f"""
 #---------INSTANT_REPEATER-----------
-setblock {x} {y} {z} dirt
+setblock {x} {y} {z} redstone_lamp
 setblock {x} {y + 1} {z} sticky_piston[facing=south]
 setblock {x} {y + 1} {z + 1} redstone_block
 setblock {x} {y} {z + 2} sticky_piston[facing=north,extended=true]
-setblock {x} {y} {z + 3} dirt
+setblock {x} {y} {z + 3} redstone_lamp
 setblock {x} {y + 1} {z + 3} redstone_wire
 #------------------------------------
         """
@@ -154,6 +154,135 @@ setblock {x + 2 * inc} {y + 3} {z - 1} glass
 setblock {x + 2 * inc} {y + 4} {z - 1} redstone_wire
 setblock {x + 2 * inc} {y + 3} {z} glass
 setblock {x + 2 * inc} {y + 4} {z} redstone_wire
+#-------------------------------------------------------
+        """
+        return res
+
+    @staticmethod
+    def getMineCartRailsStarter(coordinates):
+        x, y, z = coordinates[0], coordinates[1], coordinates[2]
+        res = f"""
+#--------------MINECART-RAIL-STARTER-------------------
+setblock {x - 1} {y} {z} redstone_wire
+setblock {x - 2} {y} {z} redstone_wire
+setblock {x - 2} {y} {z - 1} redstone_wire
+setblock {x - 2} {y} {z - 2} redstone_wire
+setblock {x - 2} {y} {z - 3} redstone_wire
+setblock {x - 2} {y} {z - 4} redstone_wire
+setblock {x - 1} {y} {z - 4} redstone_wire
+setblock {x} {y} {z-4} redstone_wire
+setblock {x + 1} {y} {z - 4} redstone_wire
+setblock {x + 2} {y} {z - 4} repeater[delay=1,facing=east]
+setblock {x + 3} {y} {z - 4} redstone_wire
+setblock {x + 4} {y} {z - 4} redstone_wire
+setblock {x + 5} {y} {z - 4} redstone_wire
+setblock {x + 6} {y} {z - 4} redstone_wire
+setblock {x + 7} {y} {z - 4} redstone_wire
+setblock {x + 8} {y} {z - 4} redstone_wire
+setblock {x + 9} {y} {z - 4} redstone_wire
+setblock {x + 10} {y} {z - 4} redstone_wire
+setblock {x + 11} {y} {z - 4} redstone_wire
+setblock {x + 12} {y} {z - 4} repeater[delay=1,facing=east]
+setblock {x + 13} {y} {z - 4} redstone_wire
+setblock {x + 14} {y} {z - 4} redstone_wire
+setblock {x + 15} {y} {z - 4} redstone_wire
+setblock {x + 16} {y} {z - 4} redstone_wire
+setblock {x + 17} {y} {z - 4} redstone_wire
+setblock {x + 18} {y} {z - 4} redstone_wire
+setblock {x + 19} {y} {z - 4} stone_button[face=floor]
+setblock {x + 19} {y} {z - 3} redstone_wire
+setblock {x + 19} {y} {z - 2} smooth_quartz
+setblock {x + 20} {y} {z - 2} powered_rail
+summon minecart {x + 20} {y} {z - 2}
+setblock {x + 21} {y} {z - 2} rail
+setblock {x + 22} {y} {z - 2} powered_rail
+#-------------------------------------------------------
+        """
+        return res
+
+    @staticmethod
+    def getMineCartRailsEnder(coordinates, inc):
+        x, y, z = coordinates[0], coordinates[1], coordinates[2]
+
+        if inc == 1:
+            x = x + 23
+            z = z - 2
+        else:
+            x = x - 26
+            z = z - 1
+
+        res = f"""
+#--------------MINECART-RAIL-ENDER-------------------
+setblock {x} {y - 1} {z - 1} smooth_quartz
+setblock {x} {y} {z - 1} redstone_torch
+setblock {x} {y - 1} {z} smooth_quartz
+setblock {x} {y} {z} powered_rail
+setblock {x + inc} {y - 1} {z} smooth_quartz
+setblock {x + inc} {y} {z} rail
+setblock {x + 2 * inc} {y - 1} {z} smooth_quartz
+setblock {x + 2 * inc} {y} {z} powered_rail
+summon minecart {x + 2 * inc} {y} {z}
+setblock {x + 3 * inc} {y - 1} {z} smooth_quartz
+setblock {x + 3 * inc} {y} {z} smooth_quartz
+#-------------------------------------------------------
+        """
+        return res
+
+    @staticmethod
+    def getMineCartRails(coordinates, inc):
+        x, y, z = coordinates[0], coordinates[1], coordinates[2]
+
+        if inc == 1:
+            x = x + 23
+            z = z - 2
+        else:
+            x = x - 26
+            z = z - 1
+
+        res = f"""
+#--------------MINECART-RAIL-SUPPORT-------------------
+setblock {x} {y - 1} {z - 1} smooth_quartz
+setblock {x} {y} {z - 1} redstone_torch
+setblock {x} {y - 1} {z} smooth_quartz
+setblock {x} {y} {z} powered_rail
+setblock {x + inc} {y} {z} smooth_quartz
+setblock {x + inc} {y + 1} {z} powered_rail
+setblock {x + 2 * inc} {y + 1} {z} smooth_quartz
+setblock {x + 2 * inc} {y + 2} {z} powered_rail
+setblock {x + 3 * inc} {y + 2} {z} smooth_quartz
+setblock {x + 3 * inc} {y + 3} {z} powered_rail
+setblock {x + 4 * inc} {y + 2} {z} smooth_quartz
+setblock {x + 4 * inc} {y + 3} {z} powered_rail
+setblock {x + 5 * inc} {y + 2} {z} smooth_quartz
+setblock {x + 5 * inc} {y + 3} {z} powered_rail
+setblock {x + 6 * inc} {y + 2} {z} smooth_quartz"""
+
+        if inc == 1:
+            res += f"""
+setblock {x + 6 * inc} {y + 3} {z} rail
+setblock {x + 6 * inc} {y + 2} {z + inc} smooth_quartz
+setblock {x + 6 * inc} {y + 3} {z + inc} rail"""
+        else:
+            res += f"""
+setblock {x + 6 * inc} {y + 3} {z} powered_rail
+setblock {x + 7 * inc} {y + 2} {z} smooth_quartz
+setblock {x + 7 * inc} {y + 3} {z} rail
+setblock {x + 7 * inc} {y + 2} {z + inc} smooth_quartz
+setblock {x + 7 * inc} {y + 3} {z + inc} rail
+setblock {x + 6 * inc} {y + 2} {z + inc} smooth_quartz
+setblock {x + 6 * inc} {y + 3} {z + inc} powered_rail"""
+
+        res += f"""
+setblock {x + 5 * inc} {y + 2} {z + inc} smooth_quartz
+setblock {x + 5 * inc} {y + 3} {z + inc} powered_rail
+setblock {x + 4 * inc} {y + 3} {z + inc} smooth_quartz
+setblock {x + 4 * inc} {y + 4} {z + inc} powered_rail
+setblock {x + 3 * inc} {y + 3} {z + inc} smooth_quartz
+setblock {x + 3 * inc} {y + 4} {z + inc} powered_rail
+setblock {x + 2 * inc} {y + 3} {z + inc} smooth_quartz
+setblock {x + 2 * inc} {y + 4} {z + inc} powered_rail
+setblock {x + 1 * inc} {y + 3} {z + inc} smooth_quartz
+setblock {x + 1 * inc} {y + 4} {z + inc} powered_rail
 #-------------------------------------------------------
         """
         return res

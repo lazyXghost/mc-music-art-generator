@@ -68,11 +68,20 @@ def main(
     output = myCommandGenerator.getCleanSpace(
         starting_coordinates, hearable_range, hearable_range, hearable_range
     )
+    output += myCommandGenerator.getMineCartRailsStarter(starting_coordinates)
     x = startingX
 
     for i in range(0, len(block_details), batch_size):
         batch = block_details[i : i + batch_size]
         inc = 1 if floor_level % 2 == 0 else -1
+        if len(batch) == batch_size:
+            output += myCommandGenerator.getMineCartRails(
+                (x, startingY + floor_level * one_floor_vertical_gap, startingZ), inc
+            )
+        else:
+            output += myCommandGenerator.getMineCartRailsEnder(
+                (x, startingY + floor_level * one_floor_vertical_gap, startingZ), inc
+            )
         for oneMilliNotes in batch:
             tm = oneMilliNotes[0]
             note_blocks = oneMilliNotes[1]
@@ -160,7 +169,9 @@ if __name__ == "__main__":
         with open(f"{results_path}commands/{target_file.lower()}.mcfunction", "w") as f:
             f.write(commands)
     else:
-        print("Usage - python commandGenerator.py -f <file_name_without_extension> -c <coordinates>")
+        print(
+            "Usage - python commandGenerator.py -f <file_name_without_extension> -c <coordinates>"
+        )
 
     # plt.scatter([i for i in range(len(asfValues))], asfValues)
     # plt.show()
