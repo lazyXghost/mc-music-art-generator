@@ -125,9 +125,10 @@ def main(
                     place_connector,
                 )
             x += 3 * inc
-        output += myCommandGenerator.getUpperFloorConnection(
-            (x, current_height, startingZ), inc
-        )
+        if len(batch) == batch_size:
+            output += myCommandGenerator.getUpperFloorConnection(
+                (x, current_height, startingZ), inc
+            )
         x += inc
         floor_level += 1
     return output
