@@ -12,7 +12,7 @@ config = config["MinecraftSettings"]
 
 
 def getBlockDetails(
-    results_path, target_file, music_box_dict, amplitude_dict, pitch_mapping_shift
+    results_path, target_file, music_box_dict, amplitude_dict, pitch_mapping_shift, sim_thresh
 ):
     pickle_file_path = f"{results_path}pkl/{target_file}.pkl"
     with open(pickle_file_path, "rb") as f:
@@ -20,24 +20,25 @@ def getBlockDetails(
 
     res = []
     for beat in data[1:]:
-        tm_value = beat[0]
-        beat_details = beat[1]
-        beat_instruments = beat_details["combination"]
-        curr_instruments_details = []
-        for instrument in beat_instruments:
-            asf = round(float(instrument["ASF"]), 3)
-            pos_details = AsfPosConverter.getPosition(amplitude_dict, asf)
-            curr_instruments_details.append(
-                {
-                    "block_name": music_box_dict[instrument["instrument"]],
-                    "note": pitch_mapping_shift + instrument["pitchShift"],
-                    "position": int(pos_details[1]),
-                }
+        if beat[1]["similarity"] > sim_thresh:
+            tm_value = beat[0]
+            beat_details = beat[1]
+            beat_instruments = beat_details["combination"]
+            curr_instruments_details = []
+            for instrument in beat_instruments:
+                asf = round(float(instrument["ASF"]), 3)
+                pos_details = AsfPosConverter.getPosition(amplitude_dict, asf)
+                curr_instruments_details.append(
+                    {
+                        "block_name": music_box_dict[instrument["instrument"]],
+                        "note": pitch_mapping_shift + instrument["pitchShift"],
+                        "position": int(pos_details[1]),
+                    }
+                )
+            curr_instruments_details = sorted(
+                curr_instruments_details, key=lambda x: x["position"]
             )
-        curr_instruments_details = sorted(
-            curr_instruments_details, key=lambda x: x["position"]
-        )
-        res.append((tm_value, curr_instruments_details))
+            res.append((tm_value, curr_instruments_details))
     return res
 
 
@@ -52,6 +53,7 @@ def main(
     one_floor_vertical_gap,
     instant_repeater_zs,
     pitch_mapping_shift,
+    sim_thresh
 ):
     startingX, startingY, startingZ = (
         starting_coordinates[0],
@@ -61,7 +63,7 @@ def main(
     myCommandGenerator = commandGenerator()
     space_manager = spaceManager()
     block_details = getBlockDetails(
-        results_path, target_file, music_box_dict, amplitude_dict, pitch_mapping_shift
+        results_path, target_file, music_box_dict, amplitude_dict, pitch_mapping_shift, sim_thresh
     )
     batch_size = int(hearable_range / one_hundred_milli_horizontal_gap)
     floor_level = 0
@@ -137,6 +139,7 @@ def main(
 music_box_dict = json.loads(config["music_box_dict"])
 amplitude_dict = json.loads(config["amplitude_dict"])
 pitch_mapping_shift = int(config["pitch_mapping_shift"])
+sim_thresh = float(config['sim_thresh'])
 instant_repeater_zs = [int(_) for _ in config["instant_repeater_zs"].split(",")]
 hearable_range = int(config["hearable_range"])
 one_floor_vertical_gap = int(config["one_floor_vertical_gap"])
@@ -165,6 +168,7 @@ if __name__ == "__main__":
             one_floor_vertical_gap,
             instant_repeater_zs,
             pitch_mapping_shift,
+            sim_thresh,
         )
         # with open(f"{results_path}musicCommand_{target_file}.mcfunction", "w") as f:
         with open(f"{results_path}commands/{target_file.lower()}.mcfunction", "w") as f:
