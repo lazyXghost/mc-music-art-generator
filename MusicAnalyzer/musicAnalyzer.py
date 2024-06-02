@@ -1,4 +1,4 @@
-from RajatsLibrary.audio import MyAudio, AudioManipulator
+from RajatsMinecraftLibrary.audio import MyAudio, AudioManipulator
 import librosa
 import configparser
 import json
@@ -7,14 +7,16 @@ import argparse
 from collections import deque
 import numpy as np
 import soundfile as sf
+import os
 
 config = configparser.ConfigParser()
-config.read("config.ini")
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+config.read(os.path.join(script_dir, 'config.ini'))
 config = config["AudioSettings"]
 
 
 def preProcess(
-    mainSoundsPath,
     targetFile,
     sr,
     instruments_dict,
@@ -27,7 +29,7 @@ def preProcess(
     amplitudeMode,
 ):
     startTime = 0
-    mainAudioValues, _ = librosa.load(f"{mainSoundsPath}{targetFile}")
+    mainAudioValues, _ = librosa.load(f"{targetFile}")
     result = []
     resAudioValues = np.zeros(len(mainAudioValues))
     # simValues = []
@@ -50,7 +52,7 @@ def preProcess(
         initialBestMatches = []
         for instrument in instruments_dict:
             rng = instruments_dict[instrument]
-            audioValues, sr = librosa.load(instrumentsPath + instrument)
+            audioValues, sr = librosa.load(os.path.join(script_dir, instrumentsPath + instrument))
             audioValues *= scaling_dict[instrument]
             for pitchShift in range(rng[0], rng[1] + 1):
                 asf = AudioManipulator.calculateAmplitudeShiftOfAudioValues(
@@ -87,7 +89,7 @@ def preProcess(
         ogAudios = []
         mxIndex = initialBestMatchesLength
         for idx, note in enumerate(initialBestMatches[:initialBestMatchesLength]):
-            audioValues, _ = librosa.load(f'{instrumentsPath}{note["instrument"]}')
+            audioValues, _ = librosa.load(os.path.join(script_dir, f'{instrumentsPath}{note["instrument"]}'))
             audioValues *= scaling_dict[note["instrument"]]
             audio = MyAudio(
                 [
@@ -140,7 +142,7 @@ def preProcess(
         if bestMatch["similarity"] >= simThresh:
             for instrumentDetails in bestMatch["combination"]:
                 instrumentAudioValues, _ = librosa.load(
-                    f'{instrumentsPath}{instrumentDetails["instrument"]}'
+                    os.path.join(script_dir, f'{instrumentsPath}{instrumentDetails["instrument"]}')
                 )
                 instrumentAudioValues *= scaling_dict[instrumentDetails["instrument"]]
 
@@ -159,7 +161,7 @@ def preProcess(
         if startTime % 1000 == 0:
             # AudioManipulator.drawAudioValues(mainAudioValues, sr)
             # AudioManipulator.drawAudioValues(resAudioValues, sr)
-            targetFileName = targetFile.split(".")[0]
+            targetFileName = targetFile.split("/")[-1].split(".")[0]
             sf.write(
                 f"{resultsPath}sounds/{targetFileName}{amplitudeMode}.mp3", resAudioValues, sr
             )
@@ -170,8 +172,6 @@ def preProcess(
     # print()
     return result
 
-
-mainSoundsPath = config["mainSoundsPath"]
 sr = int(config["sr"])
 instruments_dict = json.loads(config["instruments_dict"])
 scaling_dict = json.loads(config["scaling_dict"])
@@ -179,20 +179,20 @@ instrumentsPath = config["instrumentsPath"]
 initialBestMatchesLength = int(config["initialBestMatchesLength"])
 binLength = int(config["binLength"])
 simThresh = float(config["simThresh"])
-resultsPath = config["resultsPath"]
 
 parser = argparse.ArgumentParser(description="Music analyzer for minecraft note blocks")
 parser.add_argument("-m", "--mode", help="Specify the mode. <Mean> or <Max>")
-parser.add_argument("-f", "--file", help="Specify the file name for processing")
+parser.add_argument("-f", "--file", help="Specify the file path for processing")
+parser.add_argument("-o", "--output", help="Specify the result path for saving")
 args = parser.parse_args()
 
 if __name__ == "__main__":
     targetFile = args.file
+    resultsPath = args.output
     amplitudeMode = args.mode
     if targetFile and amplitudeMode:
-        targetFileName = targetFile.split(".")[0]
+        targetFileName = targetFile.split("/")[-1].split(".")[0]
         preProcessingResults = preProcess(
-            mainSoundsPath,
             targetFile,
             sr,
             instruments_dict,
@@ -207,4 +207,4 @@ if __name__ == "__main__":
         with open(f"{resultsPath}pkl/{targetFileName}{amplitudeMode}.pkl", "wb") as f:
             pkl.dump(preProcessingResults, f)
     else:
-        print("Usage - python musicAnalyzer.py -f <file_name_with_extension> -m <mode - Mean or Max>")
+        print("Usage - python musicAnalyzer.py -f <file_name_with_extension> -o <output_folders_path> -m <mode - Mean or Max>")

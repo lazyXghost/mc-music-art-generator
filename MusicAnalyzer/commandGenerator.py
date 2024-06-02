@@ -1,15 +1,10 @@
 import pickle as pkl
 import json
-from RajatsLibrary.minecraft import commandGenerator
+from RajatsMinecraftLibrary.minecraft import commandGenerator
 import configparser
 import argparse
-from RajatsLibrary.amplitude import AsfPosConverter
-from RajatsLibrary.minecraft import spaceManager
-
-config = configparser.ConfigParser()
-config.read("config.ini")
-config = config["MinecraftSettings"]
-
+from RajatsMinecraftLibrary.amplitude import AsfPosConverter
+from RajatsMinecraftLibrary.minecraft import spaceManager
 
 def getBlockDetails(
     results_path, target_file, music_box_dict, amplitude_dict, pitch_mapping_shift, sim_thresh
@@ -136,15 +131,17 @@ def main(
     return output
 
 
-music_box_dict = json.loads(config["music_box_dict"])
-amplitude_dict = json.loads(config["amplitude_dict"])
-pitch_mapping_shift = int(config["pitch_mapping_shift"])
-sim_thresh = float(config['sim_thresh'])
-instant_repeater_zs = [int(_) for _ in config["instant_repeater_zs"].split(",")]
-hearable_range = int(config["hearable_range"])
-one_floor_vertical_gap = int(config["one_floor_vertical_gap"])
-one_hundred_milli_horizontal_gap = int(config["100ms_horizontal_gap"])
-results_path = config["results_path"]
+config = configparser.ConfigParser()
+config.read("config.ini")
+music_box_dict = json.loads(config["MinecraftSettings"]["music_box_dict"])
+amplitude_dict = json.loads(config["MinecraftSettings"]["amplitude_dict"])
+pitch_mapping_shift = int(config["MinecraftSettings"]["pitch_mapping_shift"])
+sim_thresh = float(config["MinecraftSettings"]['sim_thresh'])
+instant_repeater_zs = [int(_) for _ in config["MinecraftSettings"]["instant_repeater_zs"].split(",")]
+hearable_range = int(config["MinecraftSettings"]["hearable_range"])
+one_floor_vertical_gap = int(config["MinecraftSettings"]["one_floor_vertical_gap"])
+one_hundred_milli_horizontal_gap = int(config["MinecraftSettings"]["100ms_horizontal_gap"])
+results_path = config["MinecraftSettings"]["results_path"]
 
 parser = argparse.ArgumentParser(
     description="Command generator for minecraft note blocks"
