@@ -1,4 +1,4 @@
-from RajatsMinecraftLibrary.audio import MyAudio, AudioManipulator
+from .RajatsMinecraftLibrary.audio import MyAudio, AudioManipulator
 import librosa
 import configparser
 import json
@@ -21,7 +21,6 @@ def preProcess(
     sr,
     instruments_dict,
     scaling_dict,
-    instrumentsPath,
     initialBestMatchesLength,
     simThresh,
     binLength,
@@ -52,7 +51,7 @@ def preProcess(
         initialBestMatches = []
         for instrument in instruments_dict:
             rng = instruments_dict[instrument]
-            audioValues, sr = librosa.load(os.path.join(script_dir, instrumentsPath + instrument))
+            audioValues, sr = librosa.load(os.path.join(script_dir, "Instruments/" + instrument))
             audioValues *= scaling_dict[instrument]
             for pitchShift in range(rng[0], rng[1] + 1):
                 asf = AudioManipulator.calculateAmplitudeShiftOfAudioValues(
@@ -89,7 +88,7 @@ def preProcess(
         ogAudios = []
         mxIndex = initialBestMatchesLength
         for idx, note in enumerate(initialBestMatches[:initialBestMatchesLength]):
-            audioValues, _ = librosa.load(os.path.join(script_dir, f'{instrumentsPath}{note["instrument"]}'))
+            audioValues, _ = librosa.load(os.path.join(script_dir, f'Instruments/{note["instrument"]}'))
             audioValues *= scaling_dict[note["instrument"]]
             audio = MyAudio(
                 [
@@ -142,7 +141,7 @@ def preProcess(
         if bestMatch["similarity"] >= simThresh:
             for instrumentDetails in bestMatch["combination"]:
                 instrumentAudioValues, _ = librosa.load(
-                    os.path.join(script_dir, f'{instrumentsPath}{instrumentDetails["instrument"]}')
+                    os.path.join(script_dir, f'Instruments/{instrumentDetails["instrument"]}')
                 )
                 instrumentAudioValues *= scaling_dict[instrumentDetails["instrument"]]
 
@@ -175,7 +174,6 @@ def preProcess(
 sr = int(config["sr"])
 instruments_dict = json.loads(config["instruments_dict"])
 scaling_dict = json.loads(config["scaling_dict"])
-instrumentsPath = config["instrumentsPath"]
 initialBestMatchesLength = int(config["initialBestMatchesLength"])
 binLength = int(config["binLength"])
 simThresh = float(config["simThresh"])
@@ -197,7 +195,6 @@ if __name__ == "__main__":
             sr,
             instruments_dict,
             scaling_dict,
-            instrumentsPath,
             initialBestMatchesLength,
             simThresh,
             binLength,

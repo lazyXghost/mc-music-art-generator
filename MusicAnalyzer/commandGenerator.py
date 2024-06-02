@@ -1,10 +1,10 @@
 import pickle as pkl
 import json
-from RajatsMinecraftLibrary.minecraft import commandGenerator
+from .RajatsMinecraftLibrary.minecraft import commandGenerator
 import configparser
 import argparse
-from RajatsMinecraftLibrary.amplitude import AsfPosConverter
-from RajatsMinecraftLibrary.minecraft import spaceManager
+from .RajatsMinecraftLibrary.amplitude import AsfPosConverter
+from .RajatsMinecraftLibrary.minecraft import spaceManager
 
 def getBlockDetails(
     results_path, target_file, music_box_dict, amplitude_dict, pitch_mapping_shift, sim_thresh
