@@ -37,7 +37,7 @@ def getBlockDetails(
     return res
 
 
-def main(
+def generateCommands(
     results_path,
     target_file,
     music_box_dict,
@@ -154,7 +154,7 @@ if __name__ == "__main__":
     target_file = args.file
     if args.file and args.coordinates:
         starting_coordinates = [int(_) for _ in args.coordinates.split(",")]
-        commands = main(
+        commands = generateCommands(
             results_path,
             target_file,
             music_box_dict,
