@@ -7,12 +7,8 @@ from .RajatsMinecraftLibrary.amplitude import AsfPosConverter
 from .RajatsMinecraftLibrary.minecraft import spaceManager
 
 def getBlockDetails(
-    results_path, target_file, music_box_dict, amplitude_dict, pitch_mapping_shift, sim_thresh
+    data, music_box_dict, amplitude_dict, pitch_mapping_shift, sim_thresh
 ):
-    pickle_file_path = f"{results_path}pkl/{target_file}.pkl"
-    with open(pickle_file_path, "rb") as f:
-        data = pkl.load(f)
-
     res = []
     for beat in data[1:]:
         if beat[1]["similarity"] > sim_thresh:
@@ -38,8 +34,7 @@ def getBlockDetails(
 
 
 def generateCommands(
-    results_path,
-    target_file,
+    data,
     music_box_dict,
     amplitude_dict,
     hearable_range,
@@ -57,8 +52,9 @@ def generateCommands(
     )
     myCommandGenerator = commandGenerator()
     space_manager = spaceManager()
+    
     block_details = getBlockDetails(
-        results_path, target_file, music_box_dict, amplitude_dict, pitch_mapping_shift, sim_thresh
+        data, music_box_dict, amplitude_dict, pitch_mapping_shift, sim_thresh
     )
     batch_size = int(hearable_range / one_hundred_milli_horizontal_gap)
     floor_level = 0
@@ -133,15 +129,6 @@ def generateCommands(
 
 config = configparser.ConfigParser()
 config.read("config.ini")
-music_box_dict = json.loads(config["MinecraftSettings"]["music_box_dict"])
-amplitude_dict = json.loads(config["MinecraftSettings"]["amplitude_dict"])
-pitch_mapping_shift = int(config["MinecraftSettings"]["pitch_mapping_shift"])
-sim_thresh = float(config["MinecraftSettings"]['sim_thresh'])
-instant_repeater_zs = [int(_) for _ in config["MinecraftSettings"]["instant_repeater_zs"].split(",")]
-hearable_range = int(config["MinecraftSettings"]["hearable_range"])
-one_floor_vertical_gap = int(config["MinecraftSettings"]["one_floor_vertical_gap"])
-one_hundred_milli_horizontal_gap = int(config["MinecraftSettings"]["100ms_horizontal_gap"])
-results_path = config["MinecraftSettings"]["results_path"]
 
 parser = argparse.ArgumentParser(
     description="Command generator for minecraft note blocks"
@@ -151,12 +138,24 @@ parser.add_argument("-c", "--coordinates", help="Starting coordinatest")
 args = parser.parse_args()
 
 if __name__ == "__main__":
+    music_box_dict = json.loads(config["MinecraftSettings"]["music_box_dict"])
+    amplitude_dict = json.loads(config["MinecraftSettings"]["amplitude_dict"])
+    pitch_mapping_shift = int(config["MinecraftSettings"]["pitch_mapping_shift"])
+    sim_thresh = float(config["MinecraftSettings"]['sim_thresh'])
+    instant_repeater_zs = [int(_) for _ in config["MinecraftSettings"]["instant_repeater_zs"].split(",")]
+    hearable_range = int(config["MinecraftSettings"]["hearable_range"])
+    one_floor_vertical_gap = int(config["MinecraftSettings"]["one_floor_vertical_gap"])
+    one_hundred_milli_horizontal_gap = int(config["MinecraftSettings"]["100ms_horizontal_gap"])
+    results_path = config["MinecraftSettings"]["results_path"]
     target_file = args.file
+
     if args.file and args.coordinates:
         starting_coordinates = [int(_) for _ in args.coordinates.split(",")]
+        pickle_file_path = f"{results_path}pkl/{target_file}.pkl"
+        with open(pickle_file_path, "rb") as f:
+            data = pkl.load(f)
         commands = generateCommands(
-            results_path,
-            target_file,
+            data,
             music_box_dict,
             amplitude_dict,
             hearable_range,

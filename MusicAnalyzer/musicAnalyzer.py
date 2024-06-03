@@ -13,22 +13,21 @@ config = configparser.ConfigParser()
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
 config.read(os.path.join(script_dir, 'config.ini'))
-config = config["AudioSettings"]
 
 
 def preProcess(
-    targetFile,
+    mainAudioValues,
     sr,
     instruments_dict,
     scaling_dict,
     initialBestMatchesLength,
     simThresh,
     binLength,
-    resultsPath,
+    outputFolderPath,
+    fileId,
     amplitudeMode,
 ):
     startTime = 0
-    mainAudioValues, _ = librosa.load(f"{targetFile}")
     result = []
     resAudioValues = np.zeros(len(mainAudioValues))
     # simValues = []
@@ -160,9 +159,8 @@ def preProcess(
         if startTime % 1000 == 0:
             # AudioManipulator.drawAudioValues(mainAudioValues, sr)
             # AudioManipulator.drawAudioValues(resAudioValues, sr)
-            targetFileName = targetFile.split("/")[-1].split(".")[0]
             sf.write(
-                f"{resultsPath}sounds/{targetFileName}{amplitudeMode}.mp3", resAudioValues, sr
+                os.path.join(outputFolderPath, f"{fileId}.mp3"), resAudioValues, sr
             )
         startTime += binLength
 
@@ -171,12 +169,7 @@ def preProcess(
     # print()
     return result
 
-sr = int(config["sr"])
-instruments_dict = json.loads(config["instruments_dict"])
-scaling_dict = json.loads(config["scaling_dict"])
-initialBestMatchesLength = int(config["initialBestMatchesLength"])
-binLength = int(config["binLength"])
-simThresh = float(config["simThresh"])
+
 
 parser = argparse.ArgumentParser(description="Music analyzer for minecraft note blocks")
 parser.add_argument("-m", "--mode", help="Specify the mode. <Mean> or <Max>")
@@ -185,23 +178,32 @@ parser.add_argument("-o", "--output", help="Specify the result path for saving")
 args = parser.parse_args()
 
 if __name__ == "__main__":
-    targetFile = args.file
-    resultsPath = args.output
+    musicFilePath = args.file
+    outputFolderPath = args.output
     amplitudeMode = args.mode
-    if targetFile and amplitudeMode:
-        targetFileName = targetFile.split("/")[-1].split(".")[0]
+
+    if musicFilePath and amplitudeMode:
+        sr = int(config["AudioSettings"]["sr"])
+        instruments_dict = json.loads(config["AudioSettings"]["instruments_dict"])
+        scaling_dict = json.loads(config["AudioSettings"]["scaling_dict"])
+        initialBestMatchesLength = int(config["AudioSettings"]["initialBestMatchesLength"])
+        binLength = int(config["AudioSettings"]["binLength"])
+        simThresh = float(config["AudioSettings"]["simThresh"])
+        mainAudioValues, _ = librosa.load(f"{musicFilePath}")
+        fileId = "uEim193#3ka"
         preProcessingResults = preProcess(
-            targetFile,
+            mainAudioValues,
             sr,
             instruments_dict,
             scaling_dict,
             initialBestMatchesLength,
             simThresh,
             binLength,
-            resultsPath,
+            outputFolderPath,
+            fileId,
             amplitudeMode,
         )
-        with open(f"{resultsPath}pkl/{targetFileName}{amplitudeMode}.pkl", "wb") as f:
+        with open(os.path.join(outputFolderPath, f"pkl/{musicFilePath.split("/")[-1].split(".")[0]}{amplitudeMode}.pkl"), "wb") as f:
             pkl.dump(preProcessingResults, f)
     else:
         print("Usage - python musicAnalyzer.py -f <file_name_with_extension> -o <output_folders_path> -m <mode - Mean or Max>")
