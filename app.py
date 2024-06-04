@@ -1,35 +1,15 @@
 from flask import Flask, jsonify, request
 import os
-from MusicAnalyzer.musicAnalyzer import preProcess
+import utils
 import librosa
 import pickle as pkl
 import multiprocessing as mp
+import json
 
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "InputSounds/"
 app.config["ALLOWED_EXTENSIONS"] = {"mp3", "wav", "ogg", "flac", "aac", "m4a"}
 script_dir = os.path.dirname(os.path.abspath(__file__))
-
-
-def allowed_file(filename):
-    return (
-        "." in filename
-        and filename.rsplit(".", 1)[1].lower() in app.config["ALLOWED_EXTENSIONS"]
-    )
-def preProcess_wrapper(params):
-    audio_part, sr, instruments_dict, scaling_dict, initialBestMatchesLength, simThresh, binLength, outputFolderPath, fileId, amplitudeMode = params
-    return preProcess(
-        audio_part,
-        sr,
-        instruments_dict,
-        scaling_dict,
-        initialBestMatchesLength,
-        simThresh,
-        binLength,
-        outputFolderPath,
-        fileId,
-        amplitudeMode,
-    )
 
 # # Define a simple route
 # @app.route('/')
@@ -56,7 +36,7 @@ def upload_file():
         if file.filename == "":
             return jsonify({"error": "No selected file"}), 400
 
-        if file and allowed_file(file.filename):
+        if file and utils.allowed_file(file.filename, app.config["ALLOWED_EXTENSIONS"]):
             file.save(os.path.join(app.config["UPLOAD_FOLDER"], file.filename))
 
             instruments_dict = {
@@ -103,17 +83,31 @@ def upload_file():
             mainAudioValues = librosa.load(
                 os.path.join(app.config["UPLOAD_FOLDER"], file.filename)
             )[0]
-
-            split_size = len(mainAudioValues) // 5
-            audio_parts = [mainAudioValues[i*split_size: (i+1)*split_size] for i in range(5)]
-            audio_parts[-1] = mainAudioValues[4*split_size:]
-            params_list = [
-                (audio_parts[i], sr, instruments_dict, scaling_dict, initialBestMatchesLength, simThresh, binLength, os.path.join(script_dir, "Results/sounds/"), file.filename.split(".")[0] + amplitudeMode + "-" + str(i), amplitudeMode)
-                for i in range(5)
+            parallel_processes_count = 7
+            split_size = len(mainAudioValues) // parallel_processes_count
+            audio_parts = [
+                mainAudioValues[i * split_size : (i + 1) * split_size] for i in range(parallel_processes_count)
             ]
-            with mp.Pool(processes=5) as pool:
-                results = pool.map(preProcess_wrapper, params_list)
-
+            audio_parts[-1] = mainAudioValues[(parallel_processes_count - 1) * split_size :]
+            params_list = [
+                (
+                    i,
+                    audio_parts[i],
+                    sr,
+                    instruments_dict,
+                    scaling_dict,
+                    initialBestMatchesLength,
+                    simThresh,
+                    binLength,
+                    os.path.join(script_dir, "Results/sounds/"),
+                    file.filename.split(".")[0] + amplitudeMode + "-" + str(i),
+                    amplitudeMode,
+                )
+                for i in range(parallel_processes_count)
+            ]
+            with mp.Pool(processes=parallel_processes_count) as pool:
+                results = pool.map(utils.preProcess_wrapper, params_list)
+            results = utils.combineParallelProcessingResults(results)
             # with open(
             #     os.path.join(
             #         script_dir, file.filename.split(".")[0] + amplitudeMode + ".pkl"
@@ -121,11 +115,9 @@ def upload_file():
             #     "wb",
             # ) as f:
             #     pkl.dump(result, f)
-            for result in results:
-                print(result)
 
             return (
-                jsonify({"message": "File processed successfully"}),
+                jsonify({"message": "File processed successfully", "data": json.dumps(utils.convert_to_serializable(results))}),
                 201,
             )
         else:
