@@ -23,8 +23,7 @@ def preProcess(
     initialBestMatchesLength,
     simThresh,
     binLength,
-    outputFolderPath,
-    fileId,
+    sounds_file_path,
     amplitudeMode,
 ):
     startTime = 0
@@ -160,7 +159,7 @@ def preProcess(
             # AudioManipulator.drawAudioValues(mainAudioValues, sr)
             # AudioManipulator.drawAudioValues(resAudioValues, sr)
             sf.write(
-                os.path.join(outputFolderPath, f"{fileId}.mp3"), resAudioValues, sr
+                sounds_file_path, resAudioValues, sr
             )
         startTime += binLength
 
@@ -190,7 +189,7 @@ if __name__ == "__main__":
         binLength = int(config["AudioSettings"]["binLength"])
         simThresh = float(config["AudioSettings"]["simThresh"])
         mainAudioValues, _ = librosa.load(f"{musicFilePath}")
-        fileId = "uEim193#3ka"
+        sounds_file_path = os.path.join(outputFolderPath, "uEim193#3ka.mp3"),
         preProcessingResults = preProcess(
             mainAudioValues,
             sr,
@@ -199,8 +198,7 @@ if __name__ == "__main__":
             initialBestMatchesLength,
             simThresh,
             binLength,
-            outputFolderPath,
-            fileId,
+            sounds_file_path,
             amplitudeMode,
         )
         with open(os.path.join(outputFolderPath, f"pkl/{musicFilePath.split("/")[-1].split(".")[0]}{amplitudeMode}.pkl"), "wb") as f:
