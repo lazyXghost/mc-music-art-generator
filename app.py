@@ -1,6 +1,10 @@
 from flask import Flask, request
 import os
 import views
+import warnings
+warnings.filterwarnings("ignore", message="n_fft=2048 is too large for input signal of length")
+warnings.filterwarnings("ignore", message="librosa.core.audio.__audioread_load")
+warnings.filterwarnings("ignore", message="PySoundFile failed. Trying audioread instead.")
 
 app = Flask(__name__)
 app.config["ALLOWED_EXTENSIONS"] = {"mp3", "wav", "ogg", "flac", "aac", "m4a"}

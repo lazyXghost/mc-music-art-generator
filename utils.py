@@ -2,6 +2,9 @@ from MusicAnalyzer.musicAnalyzer import preProcess
 import os
 import multiprocessing as mp
 import pickle as pkl
+import numpy as np
+import soundfile as sf
+import librosa
 
 parallel_processes_count = 7
 
@@ -41,8 +44,24 @@ def combineParallelProcessingResults(results):
             ct += 100
     return out
 
+def combine_results_sounds_files(sounds_folder_path, results_file_name):
+    combined_audio = np.array([])
+    audio_files_name = []
+    for file_name in os.listdir(sounds_folder_path):
+        if file_name[:len(results_file_name)] == results_file_name:
+            audio_files_name.append(file_name)
 
-async def callFileProcessingLogicParallely(
+    sorted(audio_files_name)
+    for audio_file_name in audio_files_name:
+            audio_file_path = os.path.join(sounds_folder_path, audio_file_name)
+            audio, sr = librosa.load(audio_file_path, sr=None)
+            combined_audio = np.concatenate((combined_audio, audio))
+            os.remove(audio_file_path)
+    results_file_path = os.path.join(sounds_folder_path, results_file_name + ".mp3")
+    sf.write(results_file_path, combined_audio, sr, format='MP3')
+
+
+def callFileProcessingLogicParallely(
     mainAudioValues,
     sr,
     instruments_dict,
@@ -80,7 +99,12 @@ async def callFileProcessingLogicParallely(
     with mp.Pool(processes=parallel_processes_count) as pool:
         results = pool.map(preProcess_wrapper, params_list)
     results = combineParallelProcessingResults(results)
-    
+
+    results_file_path = os.path.join(sounds_folder_path, results_file_name + ".mp3")
+    if os.path.exists(results_file_path):
+        os.remove(results_file_path)
+    combine_results_sounds_files(sounds_folder_path, results_file_name)
+
     pkl_folder_path = os.path.join(results_folder_path, "pkl")
     pkl_file_path = os.path.join(
         pkl_folder_path,

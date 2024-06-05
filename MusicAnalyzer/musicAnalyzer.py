@@ -31,7 +31,7 @@ def preProcess(
     resAudioValues = np.zeros(len(mainAudioValues))
     # simValues = []
     while startTime < 1000 * len(mainAudioValues) / sr:
-        print(startTime, end=",")
+        # print(startTime, end=",")
         resAudio = MyAudio(
             [{"fileName": "resFile", "pitchShift": 0, "ASF": 1}],
             AudioManipulator.splitAudioValues(
@@ -152,7 +152,7 @@ def preProcess(
                 resAudioValues = AudioManipulator.addAudioValuesInDuration(
                     resAudioValues, instrumentAudioValues, startTime, sr
                 )
-        print(bestMatch)
+        # print(bestMatch)
         # simValues.append(bestMatch["similarity"])
 
         if startTime % 1000 == 0:
