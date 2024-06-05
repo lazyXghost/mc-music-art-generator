@@ -52,7 +52,7 @@ def upload_file_view(
             return (
                 jsonify(
                     {
-                        "message": "File preprocessing started",
+                        "message": "File preprocessed successfully",
                         # "data": json.dumps(utils.convert_to_serializable(results)),
                     }
                 ),

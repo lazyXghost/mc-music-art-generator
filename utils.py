@@ -51,7 +51,7 @@ def combine_results_sounds_files(sounds_folder_path, results_file_name):
         if file_name[:len(results_file_name)] == results_file_name:
             audio_files_name.append(file_name)
 
-    sorted(audio_files_name)
+    audio_files_name = sorted(audio_files_name)
     for audio_file_name in audio_files_name:
             audio_file_path = os.path.join(sounds_folder_path, audio_file_name)
             audio, sr = librosa.load(audio_file_path, sr=None)
