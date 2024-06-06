@@ -42,7 +42,7 @@ def upload_file():
         "harp.ogg": [-12, 12],
         "guitar.ogg": [-12, 12],
         "xylophone.ogg": [-12, 12],
-        "bass.ogg": [-12, 12],
+        # "bass.ogg": [-12, 12],
         "chimes.ogg": [-12, 12],
         "hat.ogg": [-12, 12],
     }
