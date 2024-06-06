@@ -34,7 +34,7 @@ def upload_file():
         "bit.ogg": [-12, 12],
         "flute.ogg": [-12, 12],
         "didgeridoo.ogg": [-12, 12],
-        "bdrum.ogg": [-12, 12],
+        # "bdrum.ogg": [-12, 12],
         "bell.ogg": [-12, 12],
         "pling.ogg": [-12, 12],
         "snare.ogg": [-12, 12],
