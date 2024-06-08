@@ -2,15 +2,24 @@ from flask import Flask, request
 import os
 import views
 import warnings
-warnings.filterwarnings("ignore", message="n_fft=2048 is too large for input signal of length")
+import configparser
+import json
+
+warnings.filterwarnings(
+    "ignore", message="n_fft=2048 is too large for input signal of length"
+)
 warnings.filterwarnings("ignore", message="librosa.core.audio.__audioread_load")
-warnings.filterwarnings("ignore", message="PySoundFile failed. Trying audioread instead.")
+warnings.filterwarnings(
+    "ignore", message="PySoundFile failed. Trying audioread instead."
+)
 
-app = Flask(__name__)
-app.config["ALLOWED_EXTENSIONS"] = {"mp3", "wav", "ogg", "flac", "aac", "m4a"}
-app.config["FILES_FOLDER"] = "Files"
+config = configparser.ConfigParser()
 script_dir = os.path.dirname(os.path.abspath(__file__))
+config.read(os.path.join(script_dir, "config.ini"))
 
+config = config["AppSettings"]
+app = Flask(__name__)
+script_dir = os.path.dirname(os.path.abspath(__file__))
 # # Define a simple route
 # @app.route('/')
 # def home():
@@ -46,48 +55,59 @@ def upload_file():
         "chimes.ogg": [-12, 12],
         "hat.ogg": [-12, 12],
     }
-    scaling_dict = {
-        "cow_bell.ogg": 0.92,
-        "iron_xylophone.ogg": 1.94,
-        "bit.ogg": 3.16,
-        "flute.ogg": 1.41,
-        "didgeridoo.ogg": 0.633,
-        "bdrum.ogg": 0.775,
-        "bell.ogg": 3.954,
-        "pling.ogg": 1.712,
-        "snare.ogg": 0.861,
-        "banjo.ogg": 1.327,
-        "harp.ogg": 3.768,
-        "guitar.ogg": 1.013,
-        "xylophone.ogg": 2.307,
-        "bass.ogg": 0.645,
-        "chimes.ogg": 10.482,
-        "hat.ogg": 1.255,
-    }
     amplitudeMode = "Mean"
-    sr = 22050
     simThresh = 0.7
-    initialBestMatchesLength = 7
-    binLength = 100
-    files_folder_path = os.path.join(script_dir, app.config["FILES_FOLDER"])
 
     return views.upload_file_view(
         request.files,
-        app.config["ALLOWED_EXTENSIONS"],
-        files_folder_path,
-        sr,
+        json.loads(config["ALLOWED_EXTENSIONS"]),
+        os.path.join(script_dir, config["FILES_FOLDER"]),
+        int(config["sr"]),
         instruments_dict,
-        scaling_dict,
-        initialBestMatchesLength,
+        json.loads(config["scaling_dict"]),
+        int(config["initialBestMatchesLength"]),
         simThresh,
-        binLength,
+        int(config["bin_length"]),
         amplitudeMode,
     )
 
 
 @app.route("/api/get-processed-music", methods=["GET"])
 def get_processed_music():
-    return views.get_processed_music_view()
+    return views.get_processed_music_view(
+        os.path.join(script_dir, config["FILES_FOLDER"])
+    )
+
+
+@app.route("/api/get-commands", methods=["POST"])
+def get_commands():
+    music_box_dict = json.loads(config["music_box_dict"])
+    amplitude_dict = json.loads(config["amplitude_dict"])
+    pitch_mapping_shift = int(config["pitch_mapping_shift"])
+    instant_repeater_zs = [int(_) for _ in config["instant_repeater_zs"].split(",")]
+    hearable_range = int(config["hearable_range"])
+    one_floor_vertical_gap = int(config["one_floor_vertical_gap"])
+    one_hundred_milli_horizontal_gap = int(config["100ms_horizontal_gap"])
+
+    preprocessed_file_name = request.form.get(
+        "preprocessed_file_name", type=str
+    )
+    starting_coordinates = json.loads(request.form.get("starting_coordinates"))
+    sim_thresh = request.form.get("sim_thresh", default=0.0, type=float)
+
+    return views.get_commands_view(
+        os.path.join(script_dir, config["FILES_FOLDER"]),
+        preprocessed_file_name,
+        starting_coordinates,
+        music_box_dict,
+        amplitude_dict,
+        pitch_mapping_shift,
+        sim_thresh,
+        instant_repeater_zs,
+        hearable_range,
+        one_floor_vertical_gap,
+        one_hundred_milli_horizontal_gap,
+    )
 
 
 if __name__ == "__main__":

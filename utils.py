@@ -1,12 +1,16 @@
 from MusicAnalyzer.musicAnalyzer import preProcess
+from MusicAnalyzer.commandGenerator import generateCommands
 import os
 import multiprocessing as mp
 import pickle as pkl
 import numpy as np
 import soundfile as sf
 import librosa
+import io
+import zipfile
 
 parallel_processes_count = 7
+
 
 def preProcess_wrapper(params):
     (
@@ -34,7 +38,8 @@ def preProcess_wrapper(params):
         amplitudeMode,
     )
 
-def combineParallelProcessingResults(results):
+
+def combine_parallel_processing_results(results):
     out = []
     ct = 0
     for data in results:
@@ -44,24 +49,25 @@ def combineParallelProcessingResults(results):
             ct += 100
     return out
 
+
 def combine_results_sounds_files(sounds_folder_path, results_file_name):
     combined_audio = np.array([])
     audio_files_name = []
     for file_name in os.listdir(sounds_folder_path):
-        if file_name[:len(results_file_name)] == results_file_name:
+        if file_name[: len(results_file_name)] == results_file_name:
             audio_files_name.append(file_name)
 
     audio_files_name = sorted(audio_files_name)
     for audio_file_name in audio_files_name:
-            audio_file_path = os.path.join(sounds_folder_path, audio_file_name)
-            audio, sr = librosa.load(audio_file_path, sr=None)
-            combined_audio = np.concatenate((combined_audio, audio))
-            os.remove(audio_file_path)
+        audio_file_path = os.path.join(sounds_folder_path, audio_file_name)
+        audio, sr = librosa.load(audio_file_path, sr=None)
+        combined_audio = np.concatenate((combined_audio, audio))
+        os.remove(audio_file_path)
     results_file_path = os.path.join(sounds_folder_path, results_file_name + ".mp3")
-    sf.write(results_file_path, combined_audio, sr, format='MP3')
+    sf.write(results_file_path, combined_audio, sr, format="MP3")
 
 
-def callFileProcessingLogicParallely(
+def call_file_processing_logic_parallely(
     mainAudioValues,
     sr,
     instruments_dict,
@@ -71,7 +77,7 @@ def callFileProcessingLogicParallely(
     binLength,
     results_folder_path,
     filename,
-    amplitudeMode
+    amplitudeMode,
 ):
     split_size = len(mainAudioValues) // parallel_processes_count
     audio_parts = [
@@ -98,7 +104,7 @@ def callFileProcessingLogicParallely(
     ]
     with mp.Pool(processes=parallel_processes_count) as pool:
         results = pool.map(preProcess_wrapper, params_list)
-    results = combineParallelProcessingResults(results)
+    results = combine_parallel_processing_results(results)
 
     results_file_path = os.path.join(sounds_folder_path, results_file_name + ".mp3")
     if os.path.exists(results_file_path):
@@ -125,3 +131,40 @@ def callFileProcessingLogicParallely(
 #         return float(obj)
 #     else:
 #         return obj
+
+
+def create_zip_from_audios(sounds_folder_path):
+    zip_buffer = io.BytesIO()
+    with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zipf:
+        for filename in os.listdir(sounds_folder_path):
+            sounds_file_path = os.path.join(sounds_folder_path, filename)
+            zipf.write(sounds_file_path, os.path.basename(sounds_file_path))
+
+    zip_buffer.seek(0)
+    return zip_buffer
+
+
+def call_command_generator(
+    data,
+    music_box_dict,
+    amplitude_dict,
+    hearable_range,
+    one_hundred_milli_horizontal_gap,
+    starting_coordinates,
+    one_floor_vertical_gap,
+    instant_repeater_zs,
+    pitch_mapping_shift,
+    sim_thresh,
+):
+    return generateCommands(
+        data,
+        music_box_dict,
+        amplitude_dict,
+        hearable_range,
+        one_hundred_milli_horizontal_gap,
+        starting_coordinates,
+        one_floor_vertical_gap,
+        instant_repeater_zs,
+        pitch_mapping_shift,
+        sim_thresh,
+    )
