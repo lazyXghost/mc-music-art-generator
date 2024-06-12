@@ -1,0 +1,177 @@
+@font-face {
+	font-family: Minecraft;
+	src: url("../resources/Minecraft-Regular.otf")
+}
+
+.headercover {
+	font-family: Minecraft, Verdana, sans-serif;
+	background-image: url(../images/model.png);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 120px 20px 120px;
+	background-size: cover;
+	max-height: 50%;
+}
+
+#pagemaintitle {
+	background-color: rgba(0, 0, 0, 0.6);
+	color: white;
+	padding: 15px;
+	margin-bottom: 0px;
+}
+
+#pagesubtitle {
+	background-color: rgba(60, 60, 60, 0.5);
+	color: white;
+	padding: 10px;
+	margin-top: 0px;
+}
+
+.minecraft {
+	font-family: 'Minecraft', sans-serif;
+}
+
+#tabContainer {
+	background-color: #8B4513;
+	/* Minecraft dirt color */
+	border: 5px solid #D2691E;
+	/* Minecraft dirt edge color */
+}
+
+#loadingSpinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+}
+
+.form-check-inline {
+	display: inline-block;
+	width: 24%;
+}
+
+.custom-file-label::after {
+	content: "Browse";
+}
+
+.btn-primary {
+	background-color: #00BFFF;
+	border-color: #00BFFF;
+}
+
+.form-control-sm {
+	background-color: #D3D3D3;
+	/* Light grey */
+	border-color: #A9A9A9;
+	/* Dark grey */
+}
+
+.form-control-range {
+	background-color: #D3D3D3;
+}
+
+.custom-range::-webkit-slider-thumb {
+	background: #00BFFF;
+	/* Light blue */
+}
+
+.form-check-input {
+	background-color: #00BFFF;
+	border-color: #00BFFF;
+}
+
+.custom-file-input:focus~.custom-file-label {
+	box-shadow: none;
+	border-color: #A9A9A9;
+}
+
+.form-check-label {
+	color: white;
+}
+
+input[type="range"] { 
+	appearance: none;
+    -webkit-appearance: none;
+    /* margin: auto; */
+    position: relative;
+    overflow: hidden;
+    height: 20px;
+    width: 400px;
+    cursor: pointer;
+	padding-top: 10px;
+    border-radius: 0; /* iOS */
+	vertical-align: middle;
+}
+
+::-webkit-slider-runnable-track {
+    background: #ddd;
+}
+
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px; /* 1 */
+    height: 40px;
+    background: #fff;
+    box-shadow: -400px 0 0 400px dodgerblue; /* 2 */
+    border: 2px solid #999; /* 1 */
+}
+
+::-moz-range-track {
+    height: 40px;
+    background: #ddd;
+}
+
+::-moz-range-thumb {
+    background: #fff;
+    height: 40px;
+    width: 20px; /* 1 */
+    border: 3px solid #999; /* 1 */
+    border-radius: 0 !important;
+    box-shadow: -200px 0 0 200px dodgerblue;
+    box-sizing: border-box;
+}
+
+::-ms-fill-lower { 
+    background: dodgerblue;
+}
+
+::-ms-thumb { 
+    background: #fff;
+    border: 2px solid #999; /* 1 */
+    height: 40px;
+    width: 20px; /* 1 */
+    box-sizing: border-box;
+}
+
+::-ms-ticks-after { 
+    display: none; 
+}
+
+::-ms-ticks-before { 
+    display: none; 
+}
+
+::-ms-track { 
+    background: #ddd;
+    color: transparent;
+    height: 40px;
+    border: none;
+}
+
+::-ms-tooltip { 
+    display: none;
+}
+
+
+#simThreshOutput, #simThreshOutputCommand {
+	display: inline-block;
+	width: 40px;
+	text-align: center;
+	color: white;
+}

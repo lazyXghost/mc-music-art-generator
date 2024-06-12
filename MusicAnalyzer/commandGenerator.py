@@ -127,52 +127,51 @@ def generateCommands(
     return output
 
 
-config = configparser.ConfigParser()
-config.read("config.ini")
+# if __name__ == "__main__":
+#     config = configparser.ConfigParser()
+#     config.read("config.ini")
 
-parser = argparse.ArgumentParser(
-    description="Command generator for minecraft note blocks"
-)
-parser.add_argument("-f", "--file", help="Specify the file name for processing")
-parser.add_argument("-c", "--coordinates", help="Starting coordinatest")
-args = parser.parse_args()
+#     parser = argparse.ArgumentParser(
+#         description="Command generator for minecraft note blocks"
+#     )
+#     parser.add_argument("-f", "--file", help="Specify the file name for processing")
+#     parser.add_argument("-c", "--coordinates", help="Starting coordinatest")
+#     args = parser.parse_args()
+#     music_box_dict = json.loads(config["MinecraftSettings"]["music_box_dict"])
+#     amplitude_dict = json.loads(config["MinecraftSettings"]["amplitude_dict"])
+#     pitch_mapping_shift = int(config["MinecraftSettings"]["pitch_mapping_shift"])
+#     sim_thresh = float(config["MinecraftSettings"]['sim_thresh'])
+#     instant_repeater_zs = [int(_) for _ in config["MinecraftSettings"]["instant_repeater_zs"].split(",")]
+#     hearable_range = int(config["MinecraftSettings"]["hearable_range"])
+#     one_floor_vertical_gap = int(config["MinecraftSettings"]["one_floor_vertical_gap"])
+#     one_hundred_milli_horizontal_gap = int(config["MinecraftSettings"]["100ms_horizontal_gap"])
+#     results_path = config["MinecraftSettings"]["results_path"]
+#     target_file = args.file
 
-if __name__ == "__main__":
-    music_box_dict = json.loads(config["MinecraftSettings"]["music_box_dict"])
-    amplitude_dict = json.loads(config["MinecraftSettings"]["amplitude_dict"])
-    pitch_mapping_shift = int(config["MinecraftSettings"]["pitch_mapping_shift"])
-    sim_thresh = float(config["MinecraftSettings"]['sim_thresh'])
-    instant_repeater_zs = [int(_) for _ in config["MinecraftSettings"]["instant_repeater_zs"].split(",")]
-    hearable_range = int(config["MinecraftSettings"]["hearable_range"])
-    one_floor_vertical_gap = int(config["MinecraftSettings"]["one_floor_vertical_gap"])
-    one_hundred_milli_horizontal_gap = int(config["MinecraftSettings"]["100ms_horizontal_gap"])
-    results_path = config["MinecraftSettings"]["results_path"]
-    target_file = args.file
+#     if args.file and args.coordinates:
+#         starting_coordinates = [int(_) for _ in args.coordinates.split(",")]
+#         pickle_file_path = f"{results_path}pkl/{target_file}.pkl"
+#         with open(pickle_file_path, "rb") as f:
+#             data = pkl.load(f)
+#         commands = generateCommands(
+#             data,
+#             music_box_dict,
+#             amplitude_dict,
+#             hearable_range,
+#             one_hundred_milli_horizontal_gap,
+#             starting_coordinates,
+#             one_floor_vertical_gap,
+#             instant_repeater_zs,
+#             pitch_mapping_shift,
+#             sim_thresh,
+#         )
+#         # with open(f"{results_path}musicCommand_{target_file}.mcfunction", "w") as f:
+#         with open(f"{results_path}commands/{target_file.lower()}.mcfunction", "w") as f:
+#             f.write(commands)
+#     else:
+#         print(
+#             "Usage - python commandGenerator.py -f <file_name_without_extension> -c <coordinates>"
+#         )
 
-    if args.file and args.coordinates:
-        starting_coordinates = [int(_) for _ in args.coordinates.split(",")]
-        pickle_file_path = f"{results_path}pkl/{target_file}.pkl"
-        with open(pickle_file_path, "rb") as f:
-            data = pkl.load(f)
-        commands = generateCommands(
-            data,
-            music_box_dict,
-            amplitude_dict,
-            hearable_range,
-            one_hundred_milli_horizontal_gap,
-            starting_coordinates,
-            one_floor_vertical_gap,
-            instant_repeater_zs,
-            pitch_mapping_shift,
-            sim_thresh,
-        )
-        # with open(f"{results_path}musicCommand_{target_file}.mcfunction", "w") as f:
-        with open(f"{results_path}commands/{target_file.lower()}.mcfunction", "w") as f:
-            f.write(commands)
-    else:
-        print(
-            "Usage - python commandGenerator.py -f <file_name_without_extension> -c <coordinates>"
-        )
-
-    # plt.scatter([i for i in range(len(asfValues))], asfValues)
-    # plt.show()
+#     # plt.scatter([i for i in range(len(asfValues))], asfValues)
+#     # plt.show()

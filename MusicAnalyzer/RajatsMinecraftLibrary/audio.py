@@ -2,7 +2,34 @@ import numpy as np
 import librosa
 import IPython.display as ipd
 import matplotlib.pyplot as plt
+# import audioread
+# import time
+# import soundfile as sf
 
+# def read_audio(path):
+#     try:
+#         if path[-4:] == '.ogg':
+#             y, sr_native = sf.read(path)
+#         else:
+#             buf = []
+#             with audioread.audio_open(path) as input_file:
+#                 sr_native = input_file.samplerate
+#                 n_channels = input_file.channels
+
+#                 for frame in input_file:
+#                     frame = (1.0 / float(1 << 15)) * np.frombuffer(frame, f"<i{2:d}").astype(np.float32)
+#                     buf.append(frame)
+
+#                 y = np.concatenate(buf)
+#                 if n_channels > 1:
+#                     y = y.reshape((-1, n_channels)).T
+#                 y = np.mean(y, axis=tuple(range(y.ndim - 1)))
+#         y = librosa.resample(y, orig_sr=sr_native, target_sr=22050, res_type="soxr_hq")
+#         return y, 22050
+
+#     except Exception as e:
+#         print(f"Error reading audio file: {e}")
+#         return None, None
 
 class MyAudio:
     def __init__(self, details, audioValues):
@@ -30,9 +57,10 @@ class MyAudio:
             audio1Values, audio2Values = audio2Values, audio1Values
         audio2Values = audio2Values[:, : audio1Values.shape[1]]
 
-        return np.dot(audio1Values.flatten(), audio2Values.flatten()) / (
-            np.linalg.norm(audio1Values) * np.linalg.norm(audio2Values)
-        )
+        norm = np.linalg.norm(audio1Values) * np.linalg.norm(audio2Values)
+        if norm == 0:
+            return 0
+        return np.dot(audio1Values.flatten(), audio2Values.flatten()) / norm
 
 
 class AudioManipulator:
