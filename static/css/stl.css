@@ -1,0 +1,248 @@
+@font-face {
+	font-family: Minecraft;
+	src: url("../resources/Minecraft-Regular.otf")
+}
+
+.headercover {
+	font-family: Minecraft, Verdana, sans-serif;
+	background-image: url("../images/model.png");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 120px 20px 120px;
+	background-size: cover;
+  max-height: 50%;
+}
+
+#pagemaintitle {
+	background-color: rgba(0,0,0,0.6);
+  color: white;
+	padding: 15px;
+	margin-bottom: 0px;
+}
+#pagesubtitle {
+	background-color: rgba(60,60,60,0.5);
+  color: white;
+	padding: 10px;
+	margin-top: 0px;
+}
+.dragDropDisplay {
+  background: linear-gradient(0deg, rgba(255, 225, 200, 0.4), rgba(255, 225, 200, 0.4)), 
+              url('../images/dragover_bg.png') repeat;
+  /* background-color: rgba(230,230,230,0.85); */
+  z-index: 1000;
+  font-family: Minecraft, Verdana, sans-serif;
+}
+.dragDropIcon svg {
+  color: white;
+  transform: scale(5);
+  margin: 4rem auto;
+  display: block;
+}
+.dragDropButton {
+  color: black;
+  font-size: large;
+  background-color: rgb(170, 170, 170);
+  border: solid black 1px;
+  pointer-events: none;
+  box-shadow: -3px -3px rgb(120, 120, 120) inset,
+              3px 3px rgb(210, 210, 210) inset;     /* Right and Bottom shadow */
+}
+
+#displayImage {
+  /*Don't make a low-res image appear blurry when enlarging*/
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+#footertitle {
+  font-family: Minecraft;
+  color: white;
+}
+
+.modal-backdrop.show {
+  opacity: 0.7;
+}
+.bg-light {
+  background-color: rgb(240,240,240) !important;
+}
+.sizezero {
+  height: 0px;
+  width: 0px;
+}
+
+.profile-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin: 1rem 0.6rem;
+}
+
+kbd {
+  background-color: #555555;
+  white-space: nowrap;
+}
+
+/* Don't use bootstrap's .modal as static or it will never close */
+#spinnerModal {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+  z-index: 1051;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.7);
+}
+#spinnerModalHeading {
+  z-index: 1061;
+}
+
+#demoCarousel {
+  max-width: 750px;
+}
+
+.checkbox-scaled input[type=checkbox] {
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+  transform: scale(1.5);
+  padding: 10px;
+}
+
+table caption {
+  caption-side: top;
+}
+
+.delete-X:hover {
+  color: red;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 120%;
+}
+
+#survGuidePlaceholderText {
+  padding-left: 200;
+  padding-right: 200;
+}
+
+.guide-tableareas {
+  overflow: scroll !important;
+  max-height: 1500;
+}
+
+.guide-tableareas td.focused {
+  -ms-transform: scale(1.5); 
+  -moz-transform: scale(1.5); 
+  -webkit-transform: scale(1.5); 
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
+/* based on Chrome's "user agent stylesheet" for ":focus-visible" */
+.guide-tableareas td.focused {
+  outline: black auto 1px;
+}
+
+@media (max-width: 768px) {
+  .checkbox-scaled input[type=checkbox] {
+    -ms-transform: scale(1.0); /* IE */
+    -moz-transform: scale(1.0); /* FF */
+    -webkit-transform: scale(1.0); /* Safari and Chrome */
+    -o-transform: scale(1.0); /* Opera */
+    transform: scale(1.0);
+    padding: 5px;
+  }
+  #colourPaletteTable thead th {
+    font-size: 90%;
+    padding: 6px;
+  }
+  #colourPaletteTable .colour-insert {
+    padding: 0;
+  }
+  #colourPaletteTable .colour-insert svg {
+    width: 0.75em;
+    height: 0.75em;
+  }
+  #colourPaletteTable td:nth-child(4) {
+    font-size: 80%;
+    padding: 10px 2px;
+  }
+  #colourPaletteTable td:nth-child(3) {
+    font-size: 85%;
+    max-width: 20%;
+    word-spacing: 80%;
+  }
+  #survGuidePlaceholderText p {
+    width: 100% !important;
+  }
+  #guideTabsContainer nav {
+    overflow-x: scroll;
+  }
+}
+
+.spaced-list li {
+  padding-bottom: 10px;
+}
+
+#light-dark-toggle-label::before {
+  background-color: black;
+  top: 0.35em;
+}
+#light-dark-toggle-label::after {
+  top: calc(0.35em + 2px);
+}
+
+.text-info.text-info-inverted {
+  /* bootstrap marked it as important already */
+  color: white !important;
+}
+
+.bs-popover-top > .arrow::before, .bs-popover-top > .arrow::after {
+  border-width: 1.45rem 0.5rem 0;
+}
+.bs-popover-bottom > .arrow::before, .bs-popover-bottom > .arrow::after {
+  border-width: 0 0.5rem 1.45rem;
+}
+
+.bs-popover-top > .arrow {
+  bottom: calc(-1.45rem - 0px);
+}
+.bs-popover-bottom > .arrow {
+  top: calc(-1.45rem - 0px);
+}
+
+.bs-popover-top {
+  margin-bottom: 1.45rem;
+}
+.bs-popover-bottom {
+  margin-top: 1.45rem;
+}
+
+.visbox-vis:hover, .visbox-invis:hover {
+  cursor: pointer;
+}
+[type="checkbox"].visbox {
+  display: none;
+}
+[type="checkbox"].visbox:checked ~ .visbox-invis {
+  display: none;
+}
+[type="checkbox"].visbox:checked ~ .visbox-vis {
+  opacity: 10%;
+}
+[type="checkbox"].visbox:checked:hover ~ .visbox-vis {
+  opacity: 80%;
+}
+[type="checkbox"].visbox:not(:checked) ~ .visbox-vis {
+  display: none;
+}
+
+.guide-tableareas td.minimized {
+  opacity: 50%;
+  transform: scale(0.2);
+}

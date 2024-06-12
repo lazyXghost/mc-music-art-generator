@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 import os
 import views
 import warnings
@@ -20,10 +20,19 @@ config.read(os.path.join(script_dir, "config.ini"))
 config = config["AppSettings"]
 app = Flask(__name__)
 script_dir = os.path.dirname(os.path.abspath(__file__))
-# # Define a simple route
-# @app.route('/')
-# def home():
-#     return "Hello, Flask!"
+
+
+@app.route('/')
+def index():
+    return render_template("index.html")
+
+@app.route('/about')
+def about():
+    return render_template("about.html")
+
+@app.route('/manual')
+def manual():
+    return render_template("manual.html")
 
 # # Define an API endpoint
 # @app.route('/api/data', methods=['GET'])

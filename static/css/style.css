@@ -1,0 +1,28 @@
+@font-face {
+	font-family: Minecraft;
+	src: url("../resources/Minecraft-Regular.otf")
+}
+
+.headercover{
+  font-family: Minecraft, Verdana, sans-serif;
+  background-image: url(../images/model.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+	padding: 120px 20px 120px;
+	background-size: cover;
+  max-height: 50%;
+}
+
+#pagemaintitle {
+	background-color: rgba(0,0,0,0.6);
+  color: white;
+	padding: 15px;
+	margin-bottom: 0px;
+}
+#pagesubtitle {
+	background-color: rgba(60,60,60,0.5);
+  color: white;
+	padding: 10px;
+	margin-top: 0px;
+}
