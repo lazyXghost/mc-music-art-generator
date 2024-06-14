@@ -18,10 +18,10 @@ def upload_file_view(
     amplitudeMode,
 ):
     try:
-        if "file" not in files:
+        if "audioFile" not in files:
             return jsonify({"error": "No file part"}), 400
 
-        uploadedFile = files["file"]
+        uploadedFile = files["audioFile"]
         if uploadedFile.filename == "":
             return jsonify({"error": "No selected file"}), 400
 
@@ -50,14 +50,7 @@ def upload_file_view(
                 amplitudeMode,
             )
 
-            return (
-                jsonify(
-                    {
-                        "message": "File preprocessed successfully",
-                    }
-                ),
-                201,
-            )
+            return jsonify({"message": "File preprocessed successfully"}), 201
         else:
             return jsonify({"error": "File type not allowed"}), 400
     except Exception as e:
@@ -111,14 +104,7 @@ def get_commands_view(
             pitch_mapping_shift,
             sim_thresh,
         )
-        return (
-            jsonify(
-                {
-                    "data": results,
-                }
-            ),
-            201,
-        )
+        return jsonify({"data": results}), 201
     except Exception as e:
         print(e)
         return jsonify({"message": "Error occurred, will solve it soon"}), 500

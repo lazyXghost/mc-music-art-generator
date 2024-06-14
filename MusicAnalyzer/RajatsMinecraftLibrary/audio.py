@@ -30,9 +30,10 @@ class MyAudio:
             audio1Values, audio2Values = audio2Values, audio1Values
         audio2Values = audio2Values[:, : audio1Values.shape[1]]
 
-        return np.dot(audio1Values.flatten(), audio2Values.flatten()) / (
-            np.linalg.norm(audio1Values) * np.linalg.norm(audio2Values)
-        )
+        norm = np.linalg.norm(audio1Values) * np.linalg.norm(audio2Values)
+        if norm == 0:
+            return 0
+        return np.dot(audio1Values.flatten(), audio2Values.flatten()) / norm
 
 
 class AudioManipulator:

@@ -46,27 +46,14 @@ def manual():
 
 @app.route("/api/process-music", methods=["POST"])
 def upload_file():
-    instruments_dict = {
-        "cow_bell.ogg": [-12, 12],
-        "iron_xylophone.ogg": [-12, 12],
-        "bit.ogg": [-12, 12],
-        "flute.ogg": [-12, 12],
-        "didgeridoo.ogg": [-12, 12],
-        # "bdrum.ogg": [-12, 12],
-        "bell.ogg": [-12, 12],
-        "pling.ogg": [-12, 12],
-        "snare.ogg": [-12, 12],
-        "banjo.ogg": [-12, 12],
-        "harp.ogg": [-12, 12],
-        "guitar.ogg": [-12, 12],
-        "xylophone.ogg": [-12, 12],
-        # "bass.ogg": [-12, 12],
-        "chimes.ogg": [-12, 12],
-        "hat.ogg": [-12, 12],
-    }
-    amplitudeMode = "Mean"
-    simThresh = 0.7
-
+    simThresh = request.form["simThresh"]
+    amplitudeMode = request.form["amplitudeMode"]
+    instruments_dict = {}
+    ogis = ["cow_bell", "iron_xylophone", "bit", "flute", "didgeridoo", "bdrum", "bell", "pling", "snare", "banjo", "harp", "guitar", "xylophone", "bass", "chimes", "hat"]
+    for ogi in ogis:
+        if(ogi in request.form):
+            instrument_file_name = ogi + ".ogg"
+            instruments_dict[instrument_file_name] = [-12, 12]
     return views.upload_file_view(
         request.files,
         json.loads(config["ALLOWED_EXTENSIONS"]),

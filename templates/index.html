@@ -102,11 +102,12 @@
         </div>
         <div class="container tab-content border border-dark border-top-0 rounded-bottom mt-0 mb-4 p-4 position-relative minecraft"
             id="tabContainer">
-            <form id="instrumentForm">
+            <form id="processMusicForm" method="POST" enctype=multipart/form-data>
                 <div class="form-group">
                     <label for="audioFile" style="color: white">Upload Audio File:</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="audioFile" accept="audio/*" />
+                        <input type="file" class="custom-file-input" id="audioFile" accept="audio/*" required
+                            name="audioFile" />
                         <label class="custom-file-label" for="audioFile">Choose file</label>
                     </div>
                 </div>
@@ -115,101 +116,87 @@
                     <label style="color: white">Select Instruments:</label>
                     <div id="instruments" class="d-flex flex-wrap">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" checked id="cow_bell" name="instruments"
-                                value="cow_bell" />
+                            <input class="form-check-input" type="checkbox" checked id="cow_bell" name="cow_bell" />
                             <label class="form-check-label" for="cow_bell">cow_bell</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" checked id="iron_xylophone"
-                                name="instruments" value="iron_xylophone" />
+                                name="iron_xylophone" />
                             <label class="form-check-label" for="iron_xylophone">iron_xylophone</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" checked id="bit" name="instruments"
-                                value="bit" />
+                            <input class="form-check-input" type="checkbox" checked id="bit" name="bit" />
                             <label class="form-check-label" for="bit">bit</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" checked id="flute" name="instruments"
-                                value="flute" />
+                            <input class="form-check-input" type="checkbox" checked id="flute" name="flute" />
                             <label class="form-check-label" for="flute">flute</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" checked id="didgeridoo" name="instruments"
-                                value="didgeridoo" />
+                            <input class="form-check-input" type="checkbox" checked id="didgeridoo" name="didgeridoo" />
                             <label class="form-check-label" for="didgeridoo">didgeridoo</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="bdrum" name="instruments"
-                                value="bdrum" />
+                            <input class="form-check-input" type="checkbox" id="bdrum" name="bdrum" />
                             <label class="form-check-label" for="bdrum">bdrum</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" checked id="bell" name="instruments"
-                                value="bell" />
+                            <input class="form-check-input" type="checkbox" checked id="bell" name="bell" />
                             <label class="form-check-label" for="bell">bell</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" checked id="pling" name="instruments"
-                                value="pling" />
+                            <input class="form-check-input" type="checkbox" checked id="pling" name="pling" />
                             <label class="form-check-label" for="pling">pling</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" checked id="snare" name="instruments"
-                                value="snare" />
+                            <input class="form-check-input" type="checkbox" checked id="snare" name="snare" />
                             <label class="form-check-label" for="snare">snare</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" checked id="banjo" name="instruments"
-                                value="banjo" />
+                            <input class="form-check-input" type="checkbox" checked id="banjo" name="banjo" />
                             <label class="form-check-label" for="banjo">banjo</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" checked id="harp" name="instruments"
-                                value="harp" />
+                            <input class="form-check-input" type="checkbox" checked id="harp" name="harp" />
                             <label class="form-check-label" for="harp">harp</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" checked id="guitar" name="instruments"
-                                value="guitar" />
+                            <input class="form-check-input" type="checkbox" checked id="guitar" name="guitar" />
                             <label class="form-check-label" for="guitar">guitar</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" checked id="xylophone" name="instruments"
-                                value="xylophone" />
+                            <input class="form-check-input" type="checkbox" checked id="xylophone" name="xylophone" />
                             <label class="form-check-label" for="xylophone">xylophone</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="bass" name="instruments"
-                                value="bass" />
+                            <input class="form-check-input" type="checkbox" id="bass" name="bass" />
                             <label class="form-check-label" for="bass">bass</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" checked id="chimes" name="instruments"
-                                value="chimes" />
+                            <input class="form-check-input" type="checkbox" checked id="chimes" name="chimes" />
                             <label class="form-check-label" for="chimes">chimes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" checked id="hat" name="instruments"
-                                value="hat" />
+                            <input class="form-check-input" type="checkbox" checked id="hat" name="hat" />
                             <label class="form-check-label" for="hat">hat</label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="amplitudeMode" style="color: white">Amplitude Mode:</label>
-                    <select id="amplitudeMode" class="form-control form-control-sm">
+                    <select id="amplitudeMode" class="form-control form-control-sm" name="amplitudeMode">
                         <option value="Mean">Mean</option>
                         <option value="Max">Max</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="simThresh" style="color: white">Similarity Threshold: </label>
-                    <input type="range" id="simThresh" min="0" max="1" step="0.01" value="0.7" />
+                    <input type="range" id="simThresh" min="0" max="1" step="0.01" value="0.7" name="simThresh" />
                     <span id="simThreshOutput">0.7</span>
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm">Submit</button>
             </form>
+            <div id="result"></div>
         </div>
         <div class="container-lg text-center text-capitalize">
             <h3>Create the Add-On</h3>

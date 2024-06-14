@@ -13,3 +13,21 @@ document.addEventListener("DOMContentLoaded", function() {
         nextSibling.innerText = fileName;
     });
 });
+
+document.getElementById('processMusicForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    let formData = new FormData(this);
+
+    fetch('/api/process-music', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json()) // Assuming the server returns a JSON response
+    .then(data => {
+        document.getElementById('result').innerText = 'Success: ' + JSON.stringify(data);
+    })
+    .catch(error => {
+        document.getElementById('result').innerText = 'Error: ' + error;
+    });
+});
