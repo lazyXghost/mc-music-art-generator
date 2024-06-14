@@ -16,6 +16,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.getElementById('processMusicForm').addEventListener('submit', function(event) {
     event.preventDefault();
+    document.getElementById('result').innerText = '';
+
+    // Show loading spinner
+    let loadingSpinner = document.getElementById('loadingSpinner');
+    loadingSpinner.style.display = 'block';
+
+    // Disable submit button
+    let submitButton = document.querySelector('#processMusicForm button[type="submit"]');
+    submitButton.disabled = true;
 
     let formData = new FormData(this);
 
@@ -23,11 +32,18 @@ document.getElementById('processMusicForm').addEventListener('submit', function(
         method: 'POST',
         body: formData,
     })
-    .then(response => response.json()) // Assuming the server returns a JSON response
+    .then(response => response.json())
     .then(data => {
         document.getElementById('result').innerText = 'Success: ' + JSON.stringify(data);
     })
     .catch(error => {
         document.getElementById('result').innerText = 'Error: ' + error;
+    })
+    .finally(() => {
+        // Hide loading spinner
+        loadingSpinner.style.display = 'none';
+
+        // Re-enable submit button
+        submitButton.disabled = false;
     });
 });

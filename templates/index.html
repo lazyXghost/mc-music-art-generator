@@ -102,6 +102,12 @@
         </div>
         <div class="container tab-content border border-dark border-top-0 rounded-bottom mt-0 mb-4 p-4 position-relative minecraft"
             id="tabContainer">
+            <div id="loadingSpinner" style="display: none;">
+                <p>Loading...</p>
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
             <form id="processMusicForm" method="POST" enctype=multipart/form-data>
                 <div class="form-group">
                     <label for="audioFile" style="color: white">Upload Audio File:</label>

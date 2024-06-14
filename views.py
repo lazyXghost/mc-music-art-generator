@@ -3,6 +3,7 @@ import utils
 import librosa
 import os
 import pickle as pkl
+import traceback
 
 
 def upload_file_view(
@@ -55,6 +56,8 @@ def upload_file_view(
             return jsonify({"error": "File type not allowed"}), 400
     except Exception as e:
         print(e)
+        print(f"An error occurred: {e}")
+        traceback.print_exc()
         return jsonify({"message": "Error occurred, will solve it soon"}), 500
 
 

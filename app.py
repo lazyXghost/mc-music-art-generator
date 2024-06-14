@@ -46,7 +46,7 @@ def manual():
 
 @app.route("/api/process-music", methods=["POST"])
 def upload_file():
-    simThresh = request.form["simThresh"]
+    simThresh = float(request.form["simThresh"])
     amplitudeMode = request.form["amplitudeMode"]
     instruments_dict = {}
     ogis = ["cow_bell", "iron_xylophone", "bit", "flute", "didgeridoo", "bdrum", "bell", "pling", "snare", "banjo", "harp", "guitar", "xylophone", "bass", "chimes", "hat"]
