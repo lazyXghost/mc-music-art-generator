@@ -78,7 +78,7 @@ document.getElementById('processMusicForm').addEventListener('submit', function(
     .then(data => {
         console.log(data, data.processed_music);
         const processedAudioArray = new Float32Array(data.processed_music);
-        const wavBlob = float32ToWav(processedAudioArray, 44100);
+        const wavBlob = float32ToWav(processedAudioArray, data.sample_rate);
         const url = URL.createObjectURL(wavBlob);
         console.log(processedAudioArray, wavBlob, url)
 

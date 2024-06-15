@@ -38,7 +38,7 @@ def process_music_view(
 
             mainAudioValues = librosa.load(upload_file_path)[0]
             results_folder_path = os.path.join(files_folder_path, "Results")
-            processed_audio = utils.call_file_processing_logic_parallely(
+            processed_audio, sr = utils.call_file_processing_logic_parallely(
                 mainAudioValues,
                 sr,
                 instruments_dict,
@@ -51,7 +51,7 @@ def process_music_view(
                 amplitudeMode,
             )
 
-            return jsonify({"message": "File preprocessed successfully", "processed_music": list(processed_audio)}), 201
+            return jsonify({"message": "File preprocessed successfully", "processed_music": list(processed_audio), "sample_rate": sr}), 201
         else:
             return jsonify({"error": "File type not allowed"}), 400
     except Exception as e:

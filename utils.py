@@ -57,6 +57,7 @@ def combine_results_sounds_files(sounds_folder_path, results_file_name):
         if file_name[: len(results_file_name)] == results_file_name:
             audio_files_name.append(file_name)
 
+    sr = 0
     audio_files_name = sorted(audio_files_name)
     for audio_file_name in audio_files_name:
         audio_file_path = os.path.join(sounds_folder_path, audio_file_name)
@@ -65,7 +66,7 @@ def combine_results_sounds_files(sounds_folder_path, results_file_name):
         os.remove(audio_file_path)
     results_file_path = os.path.join(sounds_folder_path, results_file_name + ".mp3")
     sf.write(results_file_path, combined_audio, sr, format="MP3")
-    return combined_audio
+    return combined_audio, sr
 
 
 def call_file_processing_logic_parallely(
@@ -110,7 +111,7 @@ def call_file_processing_logic_parallely(
     results_file_path = os.path.join(sounds_folder_path, results_file_name + ".mp3")
     if os.path.exists(results_file_path):
         os.remove(results_file_path)
-    processed_audio = combine_results_sounds_files(sounds_folder_path, results_file_name)
+    processed_audio, sr = combine_results_sounds_files(sounds_folder_path, results_file_name)
 
     pkl_folder_path = os.path.join(results_folder_path, "pkl")
     pkl_file_path = os.path.join(
@@ -119,7 +120,7 @@ def call_file_processing_logic_parallely(
     )
     with open(pkl_file_path, "wb") as f:
         pkl.dump(results, f)
-    return processed_audio
+    return processed_audio, sr
 
 
 # def convert_to_serializable(obj):
