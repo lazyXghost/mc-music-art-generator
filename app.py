@@ -45,7 +45,7 @@ def manual():
 
 
 @app.route("/api/process-music", methods=["POST"])
-def upload_file():
+def process_music():
     simThresh = float(request.form["simThresh"])
     amplitudeMode = request.form["amplitudeMode"]
     instruments_dict = {}
@@ -54,7 +54,7 @@ def upload_file():
         if(ogi in request.form):
             instrument_file_name = ogi + ".ogg"
             instruments_dict[instrument_file_name] = [-12, 12]
-    return views.upload_file_view(
+    return views.process_music_view(
         request.files,
         json.loads(config["ALLOWED_EXTENSIONS"]),
         os.path.join(script_dir, config["FILES_FOLDER"]),

@@ -65,6 +65,7 @@ def combine_results_sounds_files(sounds_folder_path, results_file_name):
         os.remove(audio_file_path)
     results_file_path = os.path.join(sounds_folder_path, results_file_name + ".mp3")
     sf.write(results_file_path, combined_audio, sr, format="MP3")
+    return combined_audio
 
 
 def call_file_processing_logic_parallely(
@@ -109,7 +110,7 @@ def call_file_processing_logic_parallely(
     results_file_path = os.path.join(sounds_folder_path, results_file_name + ".mp3")
     if os.path.exists(results_file_path):
         os.remove(results_file_path)
-    combine_results_sounds_files(sounds_folder_path, results_file_name)
+    processed_audio = combine_results_sounds_files(sounds_folder_path, results_file_name)
 
     pkl_folder_path = os.path.join(results_folder_path, "pkl")
     pkl_file_path = os.path.join(
@@ -118,6 +119,7 @@ def call_file_processing_logic_parallely(
     )
     with open(pkl_file_path, "wb") as f:
         pkl.dump(results, f)
+    return processed_audio
 
 
 # def convert_to_serializable(obj):

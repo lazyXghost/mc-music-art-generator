@@ -6,7 +6,7 @@ import pickle as pkl
 import traceback
 
 
-def upload_file_view(
+def process_music_view(
     files,
     allowed_extensions,
     files_folder_path,
@@ -38,7 +38,7 @@ def upload_file_view(
 
             mainAudioValues = librosa.load(upload_file_path)[0]
             results_folder_path = os.path.join(files_folder_path, "Results")
-            utils.call_file_processing_logic_parallely(
+            processed_audio = utils.call_file_processing_logic_parallely(
                 mainAudioValues,
                 sr,
                 instruments_dict,
@@ -51,7 +51,7 @@ def upload_file_view(
                 amplitudeMode,
             )
 
-            return jsonify({"message": "File preprocessed successfully"}), 201
+            return jsonify({"message": "File preprocessed successfully", "processed_music": list(processed_audio)}), 201
         else:
             return jsonify({"error": "File type not allowed"}), 400
     except Exception as e:
