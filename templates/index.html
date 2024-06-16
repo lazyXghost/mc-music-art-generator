@@ -87,12 +87,13 @@
         <div class="container-lg text-center text-capitalize minecraft">
             <h3>Crafting table</h3>
         </div>
+        <form id="processMusicForm" method="POST" enctype=multipart/form-data>
         <div
             class="container bg-light rounded-top py-3 px-4 mt-4 mb-0 d-flex justify-content-between border border-dark border-bottom-0">
             <ul class="nav nav-tabs" id="navbarList">
                 <!-- Filled by JS -->
             </ul>
-            <button class="btn btn-success rounded rounded-pill" id="addNewAudioBtn" title="Add Another Audio">
+            <button class="btn btn-success rounded rounded-pill" id="resetAudioButton" title="Reset" type="reset">
                 <svg width="2em" height="2em" viewbox="0 0 16 16" class="bi bi-plus" fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
@@ -108,7 +109,6 @@
                     <span class="visually-hidden"></span>
                 </div>
             </div>
-            <form id="processMusicForm" method="POST" enctype=multipart/form-data>
                 <div class="form-group">
                     <label for="audioFile" style="color: white">Upload Audio File:</label>
                     <div class="custom-file">
@@ -207,112 +207,27 @@
         <div class="container-lg text-center text-capitalize">
             <h3>Create the Add-On</h3>
         </div>
-        <div class="container tab-content border border-dark rounded py-3 px-4 my-4" id="packContainer">
-            <form id="packForm" novalidate>
-                <span class="row form-text text-muted px-3 d-block mb-3">Enter a name and an optional description for
-                    your behaviour pack (These will be displayed in Minecraft) :</span>
-                <div class="form-group row">
-                    <label for="bpackNameInput" class="col-sm-2 col-form-label text-primary text-right">Name</label>
-                    <input type="text" id="bpackNameInput" class="col-sm-10 form-control"
-                        placeholder="Amazing Pixel Art" />
-                </div>
-                <div class="form-group row">
-                    <label for="bpackDescInput"
-                        class="col-sm-2 col-form-label text-primary text-right">Description</label>
-                    <textarea id="bpackDescInput" class="col-sm-10 form-control" rows="3"
-                        placeholder="Created using Map Art Maker for Minecraft !"></textarea>
-                </div>
-                <span class="row form-text text-muted px-3 d-block mb-3">Some additional settings - the default values
-                    are recommended</span>
-                <div class="form-group row">
-                    <label for="funcOptionsDiv" class="col-sm-2 col-form-label text-primary text-center">Command
-                        Options</label>
-                    <div id="funcOptionsDiv" class="form-group col-sm-10">
-                        <div class="form-check">
-                            <input type="checkbox" id="keepBlocks" class="form-check-input" name="keepBlocksOption"
-                                value="keep" />
-                            <label for="keepBlocks" class="form-check-label"> Replace only air blocks </label>
-                            <a data-toggle="tooltip" data-placement="top" class="text-info add-questionmark"
-                                aria-label="Explanation popup" title='Will not overwrite existing structures in the area that the commands are being executed, if there are any.
-                        This may result in "gaps&quot in the image.' data-delay='{"show":200, "hide":1500}'>
-                            </a>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="useLinkedPos" class="form-check-input" name="linkedPosOption"
-                                value="link" />
-                            <label for="useLinkedPos" class="form-check-label">
-                                Use the same starting coordinate for all functions
-                            </label>
-                            <a data-toggle="tooltip" data-placement="top" class="text-info add-questionmark"
-                                data-html="true"
-                                title='The map will contain atleast 2 commands to be run in sequence to build it.
-                        If this option is enabled, you can run all of them from the same location, without moving to the next region
-                        each time (Explained in the <a href="manual.html" target="_blank">manual</a>). But placing 
-                        blocks far away outside loaded chunks <i>may</i> fail, which is why this is unchecked by default.'
-                                data-delay='{"show":200, "hide":1500}' aria-label="Explanation popup"></a>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="buildWithStructures" class="form-check-input"
-                                name="useStructuresOption" value="structs" />
-                            <label for="buildWithStructures" class="form-check-label">
-                                Use only structures instead of the setblock command
-                            </label>
-                            <a data-toggle="tooltip" data-placement="top" class="text-info add-questionmark"
-                                aria-label="Explanation popup" data-html="true" title="Use this to include all used blocks as structures and load them with the <code>/structure load</code> command instead
-                        of placing regular blocks with <code>/setblock</code>. This can avoid gaps in the map due to blocks not being placed outside 
-                        the simulation distance, but may be a bit slower to run or cause lag initially."
-                                data-delay='{"show":200, "hide":1500}'>
-                            </a>
-                        </div>
+        <div class="container-fluid h-100 tab-content border border-dark rounded py-3 px-4 my-4" id="packContainer">
+            <div class="row h-100">
+                <div class="col-12 col-md-8 d-flex justify-content-center align-items-center">
+                    <div class="form-container">
+                        <form>
+                            <div class="form-group">
+                                <label for="simThreshCommand" style="color: black">Similarity Threshold: </label>
+                                <input type="range" id="simThreshCommand" min="0" max="1" step="0.01" value="0.7" name="simThresh" />
+                                <span id="simThreshOutputCommand" style="color: black">0.7</span>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="startCoordinates" style="color: black">Starting Coordinates: </label>
+                                <input type="text" class="form-control" id="startCoordinates" name="startCoordinates" placeholder="x, y, z">
+                            </div>
+                            <input type="hidden" id="songName" name="songName">
+                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                        </form>
                     </div>
                 </div>
-                <div class="form-group row" id="packActionsPreProcess">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4">
-                        <button id="writePackBtn" class="btn btn-primary btn-block">Write Functions</button>
-                    </div>
-                    <div class="col-md-4"></div>
+                <div class="col-12 col-md-4 bg-light" id="audioList">
                 </div>
-            </form>
-            <div class="container d-none" id="packActionsPostProcess">
-                <div class="row my-2">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4">
-                        <button id="downloadPackBtn" class="btn btn-success btn-block font-weight-bold">
-                            Download &nbsp;
-                            <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-download" fill="currentColor"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
-                                <path fill-rule="evenodd"
-                                    d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="col-md-4"></div>
-                </div>
-                <div class="text-muted text-center my-3">
-                    If the download button doesn't work, try <a id="altDownloadPack" href="">this link</a> for small
-                    packs.
-                </div>
-                <div class="alert alert-warning mt-4">
-                    <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                    </svg>
-                    &nbsp; The pack is a zip file with a '.mcpack' extension. If Minecraft is already installed, just
-                    double click it to
-                    launch the game and import it on PC, or read the installation steps
-                    <a href="https://docs.microsoft.com/en-us/minecraft/creator/documents/addonpackinstallation?tabs=Windows10#installing-add-on-instructions"
-                        class="alert-link" rel="nofollow noreferrer" target="_blank">
-                        for your device</a>. <br />Apply it to your world (cheats must be enabled) and run each of the
-                    functions - there will be 2 to 32 for
-                    each image depending on the selected area.
-                    <a class="alert-link" href="manual.html#in-mc" target="_blank"> <u>Read this info page</u></a>
-                    for more detailed instructions.
-                </div>
-                <div class="row my-2"><a class="btn-sm btn btn-outline-danger" id="resetAddonDiv"> Reset </a></div>
             </div>
         </div>
     </div>
@@ -342,17 +257,21 @@
                     </svg>
                 </div>
             </div>
-            <div class="btn btn-sm btn-outline-secondary ml-5" id="tryOfflineBtn">Try Offline</div>
         </div>
         <p>
-            <a class="text-white-50" href="<% if (page == 'index') { %>#<% } else { %>index.html<% } %>">Web App</a>
-            |
-            <a class="text-white-50" href="<% if (page == 'manual') { %>#<% } else { %>manual.html<% } %>">Manual</a>
-            |
-            <a class="text-white-50" href="<% if (page == 'about') { %>#<% } else { %>about.html<% } %>">About</a>
+            {% if page != 'index' %}
+                <a class="text-white-50" href="/index">Web App</a> |
+            {% endif %}
+            {% if page != 'manual' %}
+                <a class="text-white-50" href="/manual">Manual</a> |
+            {% endif %}
+            {% if page != 'about' %}
+                <a class="text-white-50" href="/about">About</a>
+            {% endif %}
         </p>
         <br />
     </div>
+    <script> var audios = {{audios | tojson | safe}}; </script>
 </body>
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 

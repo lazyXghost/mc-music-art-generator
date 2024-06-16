@@ -19,20 +19,20 @@ config.read(os.path.join(script_dir, "config.ini"))
 
 config = config["AppSettings"]
 app = Flask(__name__)
-script_dir = os.path.dirname(os.path.abspath(__file__))
 
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    audios = views.index_view(script_dir)
+    return render_template("index.html", page="index", audios=audios)
 
 @app.route('/about')
 def about():
-    return render_template("about.html")
+    return render_template("about.html", page = "about")
 
 @app.route('/manual')
 def manual():
-    return render_template("manual.html")
+    return render_template("manual.html", page = "manual")
 
 # # Define an API endpoint
 # @app.route('/api/data', methods=['GET'])

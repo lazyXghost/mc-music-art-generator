@@ -1,19 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const simThresh = document.getElementById("simThresh");
-    const simThreshOutput = document.getElementById("simThreshOutput");
-
-    simThresh.addEventListener("input", function() {
-        simThreshOutput.textContent = simThresh.value;
-    });
-    
-    // Update file input label with selected file name
-    document.querySelector('.custom-file-input').addEventListener('change', function(e) {                                                                 
-        const fileName = document.getElementById("audioFile").files[0].name;
-        const nextSibling = e.target.nextElementSibling;
-        nextSibling.innerText = fileName;
-    });
-});
-
 function float32ToWav(buffer, sampleRate) {
     const encodeWAV = (samples, sampleRate) => {
         const buffer = new ArrayBuffer(44 + samples.length * 2);
@@ -55,6 +39,52 @@ function float32ToWav(buffer, sampleRate) {
     const wavBuffer = encodeWAV(samples, sampleRate);
     return new Blob([wavBuffer], { type: 'audio/wav' });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    // --------------------------------------------------------------
+    const simThresh = document.getElementById("simThresh");
+    const simThreshOutput = document.getElementById("simThreshOutput");
+    
+    simThresh.addEventListener("input", function() {
+        simThreshOutput.textContent = simThresh.value;
+    });
+    
+    const simThreshCommand = document.getElementById("simThreshCommand");
+    const simThreshOutputCommand = document.getElementById("simThreshOutputCommand");
+    
+    simThreshCommand.addEventListener("input", function() {
+        simThreshOutputCommand.textContent = simThreshCommand.value;
+    });
+    
+    // Update file input label with selected file name
+    document.querySelector('.custom-file-input').addEventListener('change', function(e) {                                                                 
+        const fileName = document.getElementById("audioFile").files[0].name;
+        const nextSibling = e.target.nextElementSibling;
+        nextSibling.innerText = fileName;
+    });
+    // --------------------------------------------------------------
+    
+    // --------------------------------------------------------------
+    var audioList = document.getElementById('audioList');
+    Object.keys(audios).forEach(function(key) {
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'btn btn-secondary btn-block mt-2';
+        button.textContent = key;  // Use the key as the button label
+        
+        button.addEventListener('click', function() {
+            var audioData = audios[key];
+            console.log('Original audio:', audioData.original);
+            console.log('Processed audio:', audioData.processed);
+            console.log('Pickle result:', audioData.pkl);
+            
+            // Your logic to play audio or update form fields goes here
+        });
+
+        audioList.appendChild(button);
+    });
+    // --------------------------------------------------------------
+});
 
 document.getElementById('processMusicForm').addEventListener('submit', function(event) {
     event.preventDefault();

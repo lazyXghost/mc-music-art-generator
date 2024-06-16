@@ -123,17 +123,17 @@ def call_file_processing_logic_parallely(
     return processed_audio, sr
 
 
-# def convert_to_serializable(obj):
-#     if isinstance(obj, dict):
-#         return {k: convert_to_serializable(v) for k, v in obj.items()}
-#     elif isinstance(obj, list):
-#         return [convert_to_serializable(i) for i in obj]
-#     elif isinstance(obj, tuple):
-#         return tuple(convert_to_serializable(i) for i in obj)
-#     elif isinstance(obj, np.float32):
-#         return float(obj)
-#     else:
-#         return obj
+def convert_to_serializable(obj):
+    if isinstance(obj, dict):
+        return {k: convert_to_serializable(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_to_serializable(i) for i in obj]
+    elif isinstance(obj, tuple):
+        return tuple(convert_to_serializable(i) for i in obj)
+    elif isinstance(obj, np.float32):
+        return float(obj)
+    else:
+        return obj
 
 
 def create_zip_from_audios(sounds_folder_path):

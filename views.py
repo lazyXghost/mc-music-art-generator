@@ -6,6 +6,47 @@ import pickle as pkl
 import traceback
 
 
+def index_view(script_dir):
+    files_dir_path = os.path.join(script_dir, "Files")
+    results_dir_path = os.path.join(files_dir_path, "Results")
+    inputSounds_dir_path = os.path.join(files_dir_path, "InputSounds")
+    pkl_dir_path = os.path.join(results_dir_path, "pkl")
+    sounds_dir_path = os.path.join(results_dir_path, "sounds")
+
+    audios = {}
+    for processed_audio_file_name in os.listdir(sounds_dir_path):
+        try:
+            processed_audio_file_path = os.path.join(sounds_dir_path, processed_audio_file_name)
+            
+            # Load processed audio with librosa
+            processed_audio = librosa.load(processed_audio_file_path)
+            processed_audio = utils.convert_to_serializable((list(processed_audio[0]), processed_audio[1]))
+            
+            # Parse original audio file name
+            original_audio_file_name_parts = processed_audio_file_name.split("-")
+            original_audio_file_name = f"{original_audio_file_name_parts[0]}.{original_audio_file_name_parts[1].split('.')[1]}"
+            original_audio_file_path = os.path.join(inputSounds_dir_path, original_audio_file_name)
+            
+            # Load original audio with librosa
+            original_audio = librosa.load(original_audio_file_path)
+            original_audio = utils.convert_to_serializable((list(original_audio[0]), original_audio[1]))
+
+            # Construct pkl file path
+            pkl_file_name = f"{processed_audio_file_name.split('.')[0]}.pkl"
+            pkl_file_path = os.path.join(pkl_dir_path, pkl_file_name)
+            
+            # Load pkl file
+            with open(pkl_file_path, "rb") as f:
+                pkl_res =utils.convert_to_serializable(pkl.load(f))
+            
+            # Add to audios dictionary
+            audios[processed_audio_file_name.split(".")[0]] = {"original": original_audio, "processed": processed_audio, "pkl": pkl_res}
+        
+        except Exception as e:
+            print(f"Error processing {processed_audio_file_name}: {str(e)}")
+
+    return audios
+
 def process_music_view(
     files,
     allowed_extensions,
