@@ -32,15 +32,9 @@ def index_view(script_dir):
             original_audio = utils.convert_to_serializable((list(original_audio[0]), original_audio[1]))
 
             # Construct pkl file path
-            pkl_file_name = f"{processed_audio_file_name.split('.')[0]}.pkl"
-            pkl_file_path = os.path.join(pkl_dir_path, pkl_file_name)
-            
-            # Load pkl file
-            with open(pkl_file_path, "rb") as f:
-                pkl_res =utils.convert_to_serializable(pkl.load(f))
-            
+            pkl_file_name = f"{processed_audio_file_name.split('.')[0]}"
             # Add to audios dictionary
-            audios[processed_audio_file_name.split(".")[0]] = {"original": original_audio, "processed": processed_audio, "pkl": pkl_res}
+            audios[processed_audio_file_name.split(".")[0]] = {"original": original_audio, "processed": processed_audio, "pkl_file_name": pkl_file_name}
         
         except Exception as e:
             print(f"Error processing {processed_audio_file_name}: {str(e)}")
