@@ -6,8 +6,8 @@ import pickle as pkl
 import numpy as np
 import soundfile as sf
 import librosa
-import io
-import zipfile
+# import io
+# import zipfile
 
 parallel_processes_count = 7
 
@@ -136,15 +136,15 @@ def convert_to_serializable(obj):
         return obj
 
 
-def create_zip_from_audios(sounds_folder_path):
-    zip_buffer = io.BytesIO()
-    with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zipf:
-        for filename in os.listdir(sounds_folder_path):
-            sounds_file_path = os.path.join(sounds_folder_path, filename)
-            zipf.write(sounds_file_path, os.path.basename(sounds_file_path))
+# def create_zip_from_audios(sounds_folder_path):
+#     zip_buffer = io.BytesIO()
+#     with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zipf:
+#         for filename in os.listdir(sounds_folder_path):
+#             sounds_file_path = os.path.join(sounds_folder_path, filename)
+#             zipf.write(sounds_file_path, os.path.basename(sounds_file_path))
 
-    zip_buffer.seek(0)
-    return zip_buffer
+#     zip_buffer.seek(0)
+#     return zip_buffer
 
 
 def call_command_generator(
