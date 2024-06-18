@@ -96,17 +96,17 @@ def process_music_view(
         return jsonify({"message": "Error occurred, will solve it soon"}), 500
 
 
-def get_processed_music_view(files_folder_path):
-    results_folder_path = os.path.join(files_folder_path, "Results")
-    sounds_folder_path = os.path.join(results_folder_path, "sounds")
+# def get_processed_music_view(files_folder_path):
+#     results_folder_path = os.path.join(files_folder_path, "Results")
+#     sounds_folder_path = os.path.join(results_folder_path, "sounds")
 
-    zip_buffer = utils.create_zip_from_audios(sounds_folder_path)
-    return send_file(
-        zip_buffer,
-        mimetype="application/zip",
-        as_attachment=True,
-        download_name="audio_files.zip",
-    )
+#     zip_buffer = utils.create_zip_from_audios(sounds_folder_path)
+#     return send_file(
+#         zip_buffer,
+#         mimetype="application/zip",
+#         as_attachment=True,
+#         download_name="audio_files.zip",
+#     )
 
 
 def get_commands_view(

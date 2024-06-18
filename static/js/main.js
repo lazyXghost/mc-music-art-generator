@@ -122,6 +122,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
             var audioData = audios[key];
             document.getElementById("pklFileName").value = audioData.pkl_file_name;
+
+            document.getElementById("resultCommandMusicForm").innerHTML = "";
             // // Your logic to play audio or update form fields goes here
             // console.log('Original audio:', audioData.original);
             // console.log('Processed audio:', audioData.processed);
@@ -138,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.getElementById('processMusicForm').addEventListener('submit', function (event) {
     event.preventDefault();
-    document.getElementById('result').innerText = '';
+    document.getElementById('resultProcessMusicForm').innerText = '';
 
     // Show loading spinner
     let loadingSpinner = document.getElementById('loadingSpinner');
@@ -160,12 +162,51 @@ document.getElementById('processMusicForm').addEventListener('submit', function 
             // audioPlayer.setAttribute("controls", "controls");
             audioPlayer.src = URL.createObjectURL(float32ToWav((new Float32Array(data.processed_music)), data.sample_rate));
 
-            const resultDiv = document.getElementById('result');
+            const resultDiv = document.getElementById('resultProcessMusicForm');
             resultDiv.innerHTML = '';
             resultDiv.appendChild(audioPlayer);
         })
         .catch(error => {
-            document.getElementById('result').innerText = 'Error: ' + error;
+            document.getElementById('resultProcessMusicForm').innerText = 'Error: ' + error;
+        })
+        .finally(() => {
+            // Hide loading spinner
+            loadingSpinner.style.display = 'none';
+
+            // Re-enable submit button
+            submitButton.disabled = false;
+        });
+});
+
+document.getElementById('commandMusicForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    document.getElementById('resultCommandMusicForm').innerText = '';
+
+    // Show loading spinner
+    let loadingSpinner = document.getElementById('loadingSpinner');
+    loadingSpinner.style.display = 'block';
+
+    // Disable submit button
+    let submitButton = document.querySelector('#commandMusicForm button[type="submit"]');
+    submitButton.disabled = true;
+
+    let formData = new FormData(this);
+
+    fetch('/api/get-commands', {
+        method: 'POST',
+        body: formData,
+    })
+        .then(response => response.json())
+        .then(data => {
+            let downloadButton = document.createElement('a');
+            downloadButton.innerText = formData.get('pklFileName') + '.mcfunction';
+            downloadButton.href = URL.createObjectURL(new Blob([data.data], { type: 'text/plain' }));
+            downloadButton.download = formData.get('pklFileName') + '.mcfunction';
+            document.getElementById('resultCommandMusicForm').appendChild(downloadButton);
+            downloadButton.click();
+        })
+        .catch(error => {
+            document.getElementById('resultCommandMusicForm').innerText = 'Error: ' + error;
         })
         .finally(() => {
             // Hide loading spinner

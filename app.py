@@ -68,11 +68,11 @@ def process_music():
     )
 
 
-@app.route("/api/get-processed-music", methods=["GET"])
-def get_processed_music():
-    return views.get_processed_music_view(
-        os.path.join(script_dir, config["FILES_FOLDER"])
-    )
+# @app.route("/api/get-processed-music", methods=["GET"])
+# def get_processed_music():
+#     return views.get_processed_music_view(
+#         os.path.join(script_dir, config["FILES_FOLDER"])
+#     )
 
 
 @app.route("/api/get-commands", methods=["POST"])
@@ -86,10 +86,10 @@ def get_commands():
     one_hundred_milli_horizontal_gap = int(config["100ms_horizontal_gap"])
 
     preprocessed_file_name = request.form.get(
-        "preprocessed_file_name", type=str
+        "pklFileName", type=str
     )
-    starting_coordinates = json.loads(request.form.get("starting_coordinates"))
-    sim_thresh = request.form.get("sim_thresh", default=0.0, type=float)
+    starting_coordinates = [int(_) for _ in request.form.get("startingCoordinates").split(" ")]
+    sim_thresh = request.form.get("simThresh", type=float)
 
     return views.get_commands_view(
         os.path.join(script_dir, config["FILES_FOLDER"]),
