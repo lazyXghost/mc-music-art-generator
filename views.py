@@ -1,4 +1,4 @@
-from flask import jsonify, send_file
+from flask import jsonify
 import utils
 import librosa
 import os
@@ -7,18 +7,24 @@ import traceback
 
 
 def index_view(script_dir):
-    audios_dir_path = os.path.join(script_dir, "Audios")
-    audios = {}
-    for _ in os.listdir(audios_dir_path):
-        # If condition to prevent .DS_Store error on listdir, since .DS_Store is a not a directory
-        if os.path.isdir(os.path.join(audios_dir_path, _)):
-            audio_id = _
-            audios[audio_id] = {}
-            audio_id_dir_path = os.path.join(audios_dir_path, audio_id)
-            for file_name in os.listdir(audio_id_dir_path):
-                if '.pkl' not in file_name:
-                    audios[audio_id][file_name.split(".")[0]] = utils.convert_to_serializable(librosa.load(os.path.join(audio_id_dir_path, file_name)))
-    return audios
+    try:
+        audios_dir_path = os.path.join(script_dir, "Audios")
+        audios = {}
+        for _ in os.listdir(audios_dir_path):
+            # If condition to prevent .DS_Store error on listdir, since .DS_Store is a not a directory
+            if os.path.isdir(os.path.join(audios_dir_path, _)):
+                audio_id = _
+                audios[audio_id] = {}
+                audio_id_dir_path = os.path.join(audios_dir_path, audio_id)
+                for file_name in os.listdir(audio_id_dir_path):
+                    if '.pkl' not in file_name:
+                        audios[audio_id][file_name.split(".")[0]] = utils.convert_to_serializable(librosa.load(os.path.join(audio_id_dir_path, file_name)))
+        return audios
+    except Exception as e:
+        print(e)
+        print(f"An error occurred: {e}")
+        traceback.print_exc()
+        return jsonify({"message": "Error occurred, will solve it soon"}), 500
 
 def process_music_view(
     files,
@@ -91,40 +97,38 @@ def process_music_view(
 #     )
 
 
-# def get_commands_view(
-#     files_folder_path: str,
-#     preprocessed_file_name: str,
-#     starting_coordinates: list[int],
-#     music_box_dict,
-#     amplitude_dict,
-#     pitch_mapping_shift,
-#     sim_thresh,
-#     instant_repeater_zs,
-#     hearable_range,
-#     one_floor_vertical_gap,
-#     one_hundred_milli_horizontal_gap,
-# ):
-#     results_folder_path = os.path.join(files_folder_path, "Results")
-#     pkl_folder_path = os.path.join(results_folder_path, "pkl")
-#     pkl_file_path = os.path.join(pkl_folder_path, preprocessed_file_name)
-#     pkl_file_path += ".pkl"
-#     try:
-#         with open(pkl_file_path, "rb") as f:
-#             data = pkl.load(f)
+def get_commands_view(
+    pkl_file_path: str,
+    starting_coordinates: list[int],
+    music_box_dict,
+    amplitude_dict,
+    pitch_mapping_shift,
+    sim_thresh,
+    instant_repeater_zs,
+    hearable_range,
+    one_floor_vertical_gap,
+    one_hundred_milli_horizontal_gap,
+):
+    try:
+        with open(pkl_file_path, "rb") as f:
+            data = pkl.load(f)
 
-#         results = utils.call_command_generator(
-#             data,
-#             music_box_dict,
-#             amplitude_dict,
-#             hearable_range,
-#             one_hundred_milli_horizontal_gap,
-#             starting_coordinates,
-#             one_floor_vertical_gap,
-#             instant_repeater_zs,
-#             pitch_mapping_shift,
-#             sim_thresh,
-#         )
-#         return jsonify({"data": results}), 201
-#     except Exception as e:
-#         print(e)
-#         return jsonify({"message": "Error occurred, will solve it soon"}), 500
+        results = utils.call_command_generator(
+            data,
+            music_box_dict,
+            amplitude_dict,
+            hearable_range,
+            one_hundred_milli_horizontal_gap,
+            starting_coordinates,
+            one_floor_vertical_gap,
+            instant_repeater_zs,
+            pitch_mapping_shift,
+            sim_thresh,
+        )
+        return jsonify({"data": results}), 201
+    except Exception as e:
+        print(e)
+        print(f"An error occurred: {e}")
+        traceback.print_exc()
+        return jsonify({"message": "Error occurred, will solve it soon"}), 500
+    

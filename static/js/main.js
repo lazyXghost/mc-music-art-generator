@@ -67,44 +67,32 @@ document.addEventListener("DOMContentLoaded", function () {
     // --------------------------------------------------------------
     var audioList = document.getElementById('audioList');
     console.log(audios);
-    Object.keys(audios).forEach(function (key) {
+    Object.keys(audios).forEach(function (audioId) {
         var container = document.createElement('div');  // Create a container div
         container.className = 'audio-container mb-3';   // Add some margin for spacing
     
         var button = document.createElement('button');
         button.type = 'button';
         button.className = 'btn btn-secondary btn-block mt-2';
-        button.textContent = key;  // Use the key as the button label
+        button.textContent = audioId;  // Use the audioId as the button label
     
         var audioWrapper = document.createElement('div');  // Wrapper to hold both audio elements
         audioWrapper.className = 'd-none flex-column';  // Use Bootstrap's d-none to hide initially and flex-column for vertical layout
     
-        var originalAudioContainer = document.createElement('div');  // Container for original audio
-        originalAudioContainer.className = 'd-flex align-items-center mb-2';  // Flex layout for label and audio on the same line with some bottom margin
-        var originalLabel = document.createElement('span');  // Label for original audio
-        originalLabel.textContent = 'Original: ';
-        originalLabel.className = 'mr-2 small';  // Margin to the right of the label
-        var originalAudioPlayer = document.createElement('audio');
-        originalAudioPlayer.controls = true;
-        originalAudioPlayer.src = URL.createObjectURL(float32ToWav(new Float32Array(audios[key].original[0]), audios[key].original[1])); // use the original audio as source
-    
-        originalAudioContainer.appendChild(originalLabel);
-        originalAudioContainer.appendChild(originalAudioPlayer);
-    
-        var processedAudioContainer = document.createElement('div');  // Container for processed audio
-        processedAudioContainer.className = 'd-flex align-items-center';  // Flex layout for label and audio on the same line
-        var processedLabel = document.createElement('span');  // Label for processed audio
-        processedLabel.textContent = 'Processed: ';
-        processedLabel.className = 'mr-2 small';  // Margin to the right of the label
-        var processedAudioPlayer = document.createElement('audio');
-        processedAudioPlayer.controls = true;
-        processedAudioPlayer.src = URL.createObjectURL(float32ToWav(new Float32Array(audios[key].processed[0]), audios[key].processed[1])); // use the processed audio as source
-    
-        processedAudioContainer.appendChild(processedLabel);
-        processedAudioContainer.appendChild(processedAudioPlayer);
-    
-        audioWrapper.appendChild(originalAudioContainer);
-        audioWrapper.appendChild(processedAudioContainer);
+        Object.keys(audios[audioId]).forEach(function(key){
+            var audioContainer = document.createElement('div');  // Container for original audio
+            audioContainer.className = 'd-flex align-items-center mb-2';  // Flex layout for label and audio on the same line with some bottom margin
+            var label = document.createElement('span');  // Label for original audio
+            label.textContent = key + ": ";
+            label.className = 'mr-2 small';  // Margin to the right of the label
+            var audioPlayer = document.createElement('audio');
+            audioPlayer.controls = true;
+            audioPlayer.src = URL.createObjectURL(float32ToWav(new Float32Array(audios[audioId][key][0]), audios[audioId][key][1])); // use the original audio as source
+            audioContainer.appendChild(label);
+            audioContainer.appendChild(audioPlayer);
+        
+            audioWrapper.appendChild(audioContainer);
+        })
     
         button.addEventListener('click', function () {
             // Hide all other audio players and remove highlight from all buttons
@@ -121,10 +109,10 @@ document.addEventListener("DOMContentLoaded", function () {
             button.classList.remove('btn-secondary');
             button.classList.add('btn-primary');
     
-            var audioData = audios[key];
-            document.getElementById("pklFileName").value = audioData.pkl_file_name;
+            document.getElementById("audioId").value = audioId;
 
             document.getElementById("resultCommandMusicForm").innerHTML = "";
+            document.getElementById("commandsFormSubmitButton").disabled = false;
             // // Your logic to play audio or update form fields goes here
             // console.log('Original audio:', audioData.original);
             // console.log('Processed audio:', audioData.processed);
@@ -200,9 +188,9 @@ document.getElementById('commandMusicForm').addEventListener('submit', function 
         .then(response => response.json())
         .then(data => {
             let downloadButton = document.createElement('a');
-            downloadButton.innerText = formData.get('pklFileName') + '.mcfunction';
+            downloadButton.innerText = formData.get('audioId') + '-' + formData.get('commandsAmplitudeMode') + '.mcfunction';
             downloadButton.href = URL.createObjectURL(new Blob([data.data], { type: 'text/plain' }));
-            downloadButton.download = formData.get('pklFileName') + '.mcfunction';
+            downloadButton.download = formData.get('audioId') + '-' + formData.get('commandsAmplitudeMode') + '.mcfunction';
             document.getElementById('resultCommandMusicForm').appendChild(downloadButton);
             downloadButton.click();
         })

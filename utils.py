@@ -1,18 +1,11 @@
 from MusicAnalyzer.musicAnalyzer import preProcess
-
-# from MusicAnalyzer.commandGenerator import generateCommands
+from MusicAnalyzer.commandGenerator import generateCommands
 import os
 import multiprocessing as mp
 import pickle as pkl
 import numpy as np
 import soundfile as sf
 import librosa
-
-# # import io
-# # import zipfile
-
-# parallel_processes_count = 7
-
 
 def preProcess_wrapper(params):
     (
@@ -139,6 +132,8 @@ def convert_to_serializable(obj):
 
 
 # # def create_zip_from_audios(sounds_folder_path):
+# #     import io
+# #     import zipfile
 # #     zip_buffer = io.BytesIO()
 # #     with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zipf:
 # #         for filename in os.listdir(sounds_folder_path):
@@ -149,27 +144,27 @@ def convert_to_serializable(obj):
 # #     return zip_buffer
 
 
-# def call_command_generator(
-#     data,
-#     music_box_dict,
-#     amplitude_dict,
-#     hearable_range,
-#     one_hundred_milli_horizontal_gap,
-#     starting_coordinates,
-#     one_floor_vertical_gap,
-#     instant_repeater_zs,
-#     pitch_mapping_shift,
-#     sim_thresh,
-# ):
-#     return generateCommands(
-#         data,
-#         music_box_dict,
-#         amplitude_dict,
-#         hearable_range,
-#         one_hundred_milli_horizontal_gap,
-#         starting_coordinates,
-#         one_floor_vertical_gap,
-#         instant_repeater_zs,
-#         pitch_mapping_shift,
-#         sim_thresh,
-#     )
+def call_command_generator(
+    data,
+    music_box_dict,
+    amplitude_dict,
+    hearable_range,
+    one_hundred_milli_horizontal_gap,
+    starting_coordinates,
+    one_floor_vertical_gap,
+    instant_repeater_zs,
+    pitch_mapping_shift,
+    sim_thresh,
+):
+    return generateCommands(
+        data,
+        music_box_dict,
+        amplitude_dict,
+        hearable_range,
+        one_hundred_milli_horizontal_gap,
+        starting_coordinates,
+        one_floor_vertical_gap,
+        instant_repeater_zs,
+        pitch_mapping_shift,
+        sim_thresh,
+    )

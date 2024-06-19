@@ -21,10 +21,11 @@ config = config["AppSettings"]
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route("/")
 def index():
     audios = views.index_view(script_dir)
     return render_template("index.html", page="index", audios=audios)
+
 
 # @app.route('/about')
 # def about():
@@ -48,7 +49,11 @@ def index():
 def process_music():
     simThresh = float(request.form["simThresh"])
     amplitudeMode = request.form["amplitudeMode"]
-    instruments_dict = {f"{ogi}.ogg": [-12, 12] for ogi in json.loads(config["instruments_name"]) if ogi in request.form}
+    instruments_dict = {
+        f"{ogi}.ogg": [-12, 12]
+        for ogi in json.loads(config["instruments_name"])
+        if ogi in request.form
+    }
     parallel_processes_count = int(config["parallelProcessesCount"])
     return views.process_music_view(
         request.files,
@@ -61,7 +66,7 @@ def process_music():
         simThresh,
         int(config["bin_length"]),
         amplitudeMode,
-        parallel_processes_count
+        parallel_processes_count,
     )
 
 
@@ -72,36 +77,39 @@ def process_music():
 # #     )
 
 
-# @app.route("/api/get-commands", methods=["POST"])
-# def get_commands():
-#     music_box_dict = json.loads(config["music_box_dict"])
-#     amplitude_dict = json.loads(config["amplitude_dict"])
-#     pitch_mapping_shift = int(config["pitch_mapping_shift"])
-#     instant_repeater_zs = [int(_) for _ in config["instant_repeater_zs"].split(",")]
-#     hearable_range = int(config["hearable_range"])
-#     one_floor_vertical_gap = int(config["one_floor_vertical_gap"])
-#     one_hundred_milli_horizontal_gap = int(config["100ms_horizontal_gap"])
+@app.route("/api/get-commands", methods=["POST"])
+def get_commands():
+    music_box_dict = json.loads(config["music_box_dict"])
+    amplitude_dict = json.loads(config["amplitude_dict"])
+    pitch_mapping_shift = int(config["pitch_mapping_shift"])
+    instant_repeater_zs = [int(_) for _ in config["instant_repeater_zs"].split(",")]
+    hearable_range = int(config["hearable_range"])
+    one_floor_vertical_gap = int(config["one_floor_vertical_gap"])
+    one_hundred_milli_horizontal_gap = int(config["100ms_horizontal_gap"])
 
-#     preprocessed_file_name = request.form.get(
-#         "pklFileName", type=str
-#     )
-#     starting_coordinates = [int(_) for _ in request.form.get("startingCoordinates").split(" ")]
-#     sim_thresh = request.form.get("simThresh", type=float)
+    audioId = request.form.get("audioId", type=str)
+    starting_coordinates = [
+        int(_) for _ in request.form.get("startingCoordinates").split(" ")
+    ]
+    sim_thresh = request.form.get("simThresh", type=float)
+    amplitude_mode = request.form.get("commandsAmplitudeMode", type=str)
 
-#     return views.get_commands_view(
-#         os.path.join(script_dir, config["FILES_FOLDER"]),
-#         preprocessed_file_name,
-#         starting_coordinates,
-#         music_box_dict,
-#         amplitude_dict,
-#         pitch_mapping_shift,
-#         sim_thresh,
-#         instant_repeater_zs,
-#         hearable_range,
-#         one_floor_vertical_gap,
-#         one_hundred_milli_horizontal_gap,
-#     )
+    return views.get_commands_view(
+        os.path.join(
+            os.path.join(os.path.join(script_dir, config["AUDIOS_DIR"]), audioId),
+            f"result-{amplitude_mode}.pkl",
+        ),
+        starting_coordinates,
+        music_box_dict,
+        amplitude_dict,
+        pitch_mapping_shift,
+        sim_thresh,
+        instant_repeater_zs,
+        hearable_range,
+        one_floor_vertical_gap,
+        one_hundred_milli_horizontal_gap,
+    )
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80)
+    app.run(host="0.0.0.0", port=80)

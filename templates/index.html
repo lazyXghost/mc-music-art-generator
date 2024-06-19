@@ -211,8 +211,15 @@
                     <div class="form-container">
                         <form id = "commandMusicForm">
                             <div class="form-group">
-                                <label for="File name" style="color: black">File Name: </label>
-                                <input type="text" class="form-control" id="pklFileName" name="pklFileName" placeholder="-" readonly>
+                                <label for="audioId" style="color: black">Audio Id: </label>
+                                <input type="text" class="form-control" id="audioId" name="audioId" placeholder="-" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="commandsAmplitudeMode" style="color: black">Amplitude Mode:</label>
+                                <select id="commandsAmplitudeMode" class="form-control form-control-sm" name="commandsAmplitudeMode">
+                                    <option value="Mean">Mean</option>
+                                    <option value="Max">Max</option>
+                                </select>
                             </div>
                             <div class="form-group mt-3">
                                 <label for="simThreshCommand" style="color: black">Similarity Threshold: </label>
@@ -223,7 +230,7 @@
                                 <label for="startCoordinates" style="color: black">Starting Coordinates: </label>
                                 <input type="text" class="form-control" id="startingCoordinates" name="startingCoordinates" placeholder="x y z" required>
                             </div>
-                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                            <button type="submit" class="btn btn-primary mt-3" id = "commandsFormSubmitButton" disabled>Submit</button>
                         </form>
                         <div id="resultCommandMusicForm" style="padding-top: 20px;"></div>
                     </div>
