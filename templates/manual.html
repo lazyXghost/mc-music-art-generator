@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>mc music command generator</title>
+
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="title" content="Map Art Maker for Minecraft">
+        <meta name="description" content="Upload audio clip and create an Add-On (Bedrock edition 1.20.0+) that builds a novel midi machine that plays that music using noteblocks!">
+        <meta name="keywords" content="minecraft,music,noteblocks,midi-machine,bedrock,free,online,generator,1.20,vanilla,add-on,trails,tales">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="language" content="English">
+        <meta name="author" content="LazyxGhost & i0gerath">
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" crossorigin="anonymous" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style-dark.css') }}">
+        <meta id="colorSchemeMetaTag" name="color-scheme" content="light dark"/>
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#C0C0C0">
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <meta name="msapplication-TileColor" content="#C0C0C0">
+        <meta name="msapplication-config" content="images/browserconfig.xml">
+        <meta name="theme-color" content="#C0C0C0">
+
+        
+        <!-- For SEO -->
+        
+
+    </head>
+
+    <body>
+
+        <div class="container-fluid headercover" id="pageHead">
+            <div class="container-sm">
+                <h1 class="text-center text-white rounded-top" id="pagemaintitle">Music Command Generator for Minecraft</h1>
+                <h5 class="text-center text-white rounded-bottom py-md-1" id="pagesubtitle">Upload Ausio and create an Add-On (Bedrock edition 1.20.0+) that builds a unique midi machine that plays that music using noteblocks!</h5>
+            </div>
+        </div>
+        <div class="container-fluid bg-dark"><br></div>
+
+        <div class="container-lg justify-content-lg-center mx-auto my-5 py-3" id="pageMainContent">
+            <div class="container-lg text-center text-capitalize" id="manual"><h3>Manual<br><hr><br></h3></div>
+            <div class="alert alert-dismissible alert-success fade show">
+              <div class="text-center pt-2">This <em>isn't</em> the main page of this application !</div>
+              <button type="button" class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span></button>
+              <div class="my-4 row"><div class="col-md-4"></div>
+              <div class="col-md-4 px-2"><a href="index.html" class="btn btn-block btn-success">
+                Back to the App &nbsp;
+                <svg width="1.5em" height="1.5em" viewbox="0 0 16 16" class="bi bi-controller" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M11.119 2.693c.904.19 1.75.495 2.235.98.407.408.779 1.05 1.094 1.772.32.733.599 1.591.805 2.466.206.875.34 1.78.364 2.606.024.815-.059 1.602-.328 2.21a1.42 1.42 0 0 1-1.445.83c-.636-.067-1.115-.394-1.513-.773a11.307 11.307 0 0 1-.739-.809c-.126-.147-.25-.291-.368-.422-.728-.804-1.597-1.527-3.224-1.527-1.627 0-2.496.723-3.224 1.527-.119.131-.242.275-.368.422-.243.283-.494.576-.739.81-.398.378-.877.705-1.513.772a1.42 1.42 0 0 1-1.445-.83c-.27-.608-.352-1.395-.329-2.21.024-.826.16-1.73.365-2.606.206-.875.486-1.733.805-2.466.315-.722.687-1.364 1.094-1.772.486-.485 1.331-.79 2.235-.98.932-.196 2.03-.292 3.119-.292 1.089 0 2.187.096 3.119.292zm-6.032.979c-.877.185-1.469.443-1.733.708-.276.276-.587.783-.885 1.465a13.748 13.748 0 0 0-.748 2.295 12.351 12.351 0 0 0-.339 2.406c-.022.755.062 1.368.243 1.776a.42.42 0 0 0 .426.24c.327-.034.61-.199.929-.502.212-.202.4-.423.615-.674.133-.156.276-.323.44-.505C4.861 9.97 5.978 9.026 8 9.026s3.139.943 3.965 1.855c.164.182.307.35.44.505.214.25.403.472.615.674.318.303.601.468.929.503a.42.42 0 0 0 .426-.241c.18-.408.265-1.02.243-1.776a12.354 12.354 0 0 0-.339-2.406 13.753 13.753 0 0 0-.748-2.295c-.298-.682-.61-1.19-.885-1.465-.264-.265-.856-.523-1.733-.708-.85-.179-1.877-.27-2.913-.27-1.036 0-2.063.091-2.913.27z"/>
+            <path d="M11.5 6.026a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1 1a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1 1a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-7-2.5h1v3h-1v-3z"/>
+            <path d="M3.5 6.526h3v1h-3v-1zM3.051 3.26a.5.5 0 0 1 .354-.613l1.932-.518a.5.5 0 0 1 .258.966l-1.932.518a.5.5 0 0 1-.612-.354zm9.976 0a.5.5 0 0 0-.353-.613l-1.932-.518a.5.5 0 1 0-.259.966l1.932.518a.5.5 0 0 0 .612-.354z"/>
+          </svg></a></div>
+            <div class="col-md-4"></div></div>
+            </div>
+            <h4 class="container-lg text-center text-capitalize" id="compatibility">Browser Compatibility<br><br></h4>
+            <p> It is recommended to use this app on a desktop/laptop instead of on mobile. </p> 
+            <p> The app has been tested on recent versions of Google Chrome, Safari and Microsoft Edge. 
+              Internet Explorer is <em>not</em> fully compatible. Since this is a client-side app (It is run entirely by your browser,
+              no data is sent back the server for processing !), some essential functions may not
+              work if your browser hasn't been updated for a long while, or your device places many
+              restrictions on it.</p>
+            <p>This site does not use any cookies.</p>
+            <p><strong class="h6">PWA :</strong> This app can work offline, using the features of Progressive Web Apps <a class="text-info" rel="nofollow noreferrer"
+                href="https://en.wikipedia.org/wiki/Progressive_web_application" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewbox="0 0 16 16" class="bi bi-question-circle"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                  <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+                </svg></a> &nbsp;. Click the '<i class="text-monospace">Try Offline</i>' button in the footer to cache the resources 
+                to do so (this will only take around 3 MB of space). If your browser supports these features, it will show you an option
+                to install this website as a native application on your system ! On mobile, you can equivalently save it to the Home Screen.<br>
+                Note : On desktop, PWAs may not be fully supported in browsers other than recent versions of Chrome, Edge & Safari. 
+                Even without the installable app, you will be able to use the website without an internet connection.
+                You can clear the cached website from your browser settings if you wish to do so.
+            </p>
+            <h4 class="container-lg text-center text-capitalize" id="web-app"><br>Miscellaneous notes<br><br></h4>
+            <ul class="mt-1">
+              <li> When you create the add-on, commands to build all the Midi-machine which plays the music in-game that was uploaded <i>and</i> processed
+                will be written into it. Every floor of the machine plays 2 seconds of song leading to around 65*50 blocks being used in x-z axis (which is a 
+                lot !), Given your initial coordinates, make sure that one y level below is ready to be replaced. Every noteblock placement is accompanied with corresponding music block 
+                and per unit time has a full range of redstone wire as per the Minecraft audible range. they are
+                regular commands like <code>/setblock</code>, More instructions on running the functions are given <a href="#in-mc">below</a>.
+                <br><a href="https://minecraft.wiki/w/Function_(Bedrock_Edition)" rel="nofollow noreferrer">
+                Read more</a> about functions in Minecraft.</li><br>
+              <li> The converted audio heard after you click the 'Process Audio' button may vary in quality depending on the song chosen
+                (especially in the "noise"generated due to limitations in minecraft noteblock sounds being 8-bit sounds) This is unavoidable.
+                You can change your experience by selecting/deselecting some instruments which will change the overall quality of the song. </li><br>
+              <li>
+                Make sure to keep enough room in y aixs for the midi machine to fit completely as even 20 sec song wil take 10 floors wit heach floor being 
+                4 blocks high. Do not place two midi machine in an overlapping manner as that will lead to breakage in mechanism.
+              </li><br>
+              <li>The fill commands to clear the map volume of existing blocks (default, unless you checked the "Replace only air blocks"
+                 option) may fail in case your simulation distance is too low. In this case, existing terrain above and below the 3D map blocks
+                will remain, possibly hiding the blocks that were placed there.</li><br>
+            </ul>
+            <h4 class="container-lg text-center text-capitalize" id="in-mc"><br><br>In Minecraft<br><br></h4>
+            <ol class="spaced-list">
+              <li> Import and apply the behaviour pack to your world(s). <br> <strong class="text-muted">Note : </strong >Cheats &amp;
+                Operator permissions must be enabled to use functions. If you want to earn achievements in that world or keep cheats 
+                off, you'll have to place the blocks manually (You can look at the Survival Guide for some help).</li>
+              <li> Go to the location where the midi machine is to be built, and stande near the staring point but dont stand inside the buildable region.<br>
+                </li>
+              <li>The syntax of the function command is <kbd>/function&nbsp;<i>machine_name</i></kbd>.<br>
+              For example, if your machine name was <i>onesummerday</i> (make sure to keep names with no spaces and no capital names), you would need to run
+                the commands <pre class="pl-4 mb-0"><code>/function onesummerday</code></pre><br>
+              <strong class="text-black">Note :</strong> You may need to <em>restart Minecraft</em> and then run the <kbd>/reload</kbd> command first,
+                in case they don't appear in the commands screen or minecraft hasn't recognised the functions <br> &nbsp;</li>
+              <li><span class="lead" id="in-mc-done">You're Done !</span><p> Once you've constructed the machine, 
+                there will also a railcart system built in order to enjoy the song lesiurely.<br>All you need to do is sit in the cart and press the button.
+                <br/>
+              </li>
+            </ol>
+            <br><hr>
+            <h4 class="container-lg text-center text-capitalize" id="example-pack"><br><br>Example behaviour pack<br><br></h4>
+            <p> This is the file structure of an example behaviour pack generated by this app. It contains 2 
+            images - one with the function name "cliff" of size 2x1, and another named "bastion" of
+            size 3x2. You can run the commands as <a href="#in-mc">described above</a> to build these images.</p>
+            <pre class="bg-light px-3 mx-3 my-2 border border-dark rounded"><code>
+            behaviour pack.mcpack
+             &boxv;
+             &boxvr;&boxh; manifest.json
+             &boxvr;&boxh; pack_icon.png
+             &boxvr;&boxh; structures/
+             &boxv;    &boxur;&boxh; mapart/
+             &boxv;         &boxur;   ...
+             &boxur;&boxh; functions/
+                  &boxvr;&boxh; cliff/
+                  &boxv;    &boxvr;&boxh; 1.mcfunction
+                  &boxv;    &boxvr;&boxh; 2.mcfunction
+                  &boxv;    &boxvr;&boxh; 3.mcfunction 
+                  &boxv;    &boxur;&boxh; 4.mcfunction
+                  &boxur;&boxh; bastion/
+                       &boxvr;&boxh; 1.mcfunction
+                       &boxvr;&boxh; 2.mcfunction
+                       &boxvr;     ...
+                       &boxur;&boxh; 12.mcfunction
+            </code></pre><br>
+            <div class="row"><div class="col-4"></div>
+              <div class="col-4"><a class="btn btn-block btn-warning mx-auto" href="resources/sample_pack.mcpack" 
+                                    download="sample_pack.mcpack"> Download a sample pack </a>
+                <!--form method="get" action="resources/all_link_keep.zip">
+                <button class="btn btn-block btn-warning mx-auto" type="submit">Download a sample pack</button></form-->
+              </div><div class="col-4"></div></div><br>
+            <ul><li> The <code>manifest</code> specifies : 
+                <ul> <li> The minimum game version - <code> 1.20.0</code> (of Minecraft)</li> 
+                  <li> Behaviour pack version - <code>1.0.0</code> is used for each pack by default. (Only this sample pack has version 4.5.0)</li> 
+                  <li> The name and description that you entered, will be displayed for the add-on in game.</li>
+                  <li> 2 version-4 <a  rel="nofollow noreferrer" href="https://en.wikipedia.org/wiki/Universally_unique_identifier">
+                    UUIDs </a> to uniquely identify the pack, generated randomly using the JS web Crypto API.</li></ul> 
+                You can always edit the icon or manifest if you prefer to make any changes later on.</li><br></ul>
+            <p>The pack contains some structures (with block data) of a few blocks that may decay or need support (non-solid blocks)
+              etc - these structures are used instead of the setblock command to overcome those limitations. Every pack will contain
+              these even if they are not used in any image(s).</p>
+            <p> To view/edit/replace the files inside, just rename the <code>.mcpack</code> extension to <code>.zip</code>
+            and extract all contents using any Compressed (ZIP) folder utility.</p>
+            <br><hr><br>
+            <div class="text-center lead"><a href="#manual">Back to top &uarr;</a> </div>
+        </div>
+
+        <div class="container-fluid bg-dark text-center" id="pageFooter">
+            <br><h6 class="text-white" id="footertitle">Noteblock Command Generator for Minecraft</h6>
+            <h6 class="text-white-50">Version 1.0</h6>
+            <div class="dark-theme d-flex justify-content-center my-4" style="background-color: transparent;">
+              <div class="custom-control custom-switch">
+                <div class="d-inline" style="padding-right: 2.5rem;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun-fill" viewbox="0 0 16 16">
+                    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                  </svg>
+                </div>
+                <div class="d-inline mt-2">
+                  <input type="checkbox" class="custom-control-input" id="light-dark-toggle"/>
+                  <label class="custom-control-label" for="light-dark-toggle" id="light-dark-toggle-label"></label>
+                </div>
+                <div class="d-inline">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewbox="0 0 16 16">
+                    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="btn btn-sm btn-outline-secondary ml-5" id="tryOfflineBtn">Try Offline</div> 
+            </div>
+            <p>
+              <a class="text-white-50" href="<% if (page == 'index') { %>#<% } else { %>index.html<% } %>">Web App</a> | 
+              <a class="text-white-50" href="<% if (page == 'manual') { %>#<% } else { %>manual.html<% } %>">Manual</a> | 
+              <a class="text-white-50" href="<% if (page == 'about') { %>#<% } else { %>about.html<% } %>">About</a>
+            </p><br>
+          </div>
+    </body>
+</html>
