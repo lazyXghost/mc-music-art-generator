@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // --------------------------------------------------------------
     var audioList = document.getElementById('audioList');
+    console.log(audios);
     Object.keys(audios).forEach(function (key) {
         var container = document.createElement('div');  // Create a container div
         container.className = 'audio-container mb-3';   // Add some margin for spacing

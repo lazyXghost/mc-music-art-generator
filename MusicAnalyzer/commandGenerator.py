@@ -127,17 +127,16 @@ def generateCommands(
     return output
 
 
-config = configparser.ConfigParser()
-config.read("config.ini")
-
-parser = argparse.ArgumentParser(
-    description="Command generator for minecraft note blocks"
-)
-parser.add_argument("-f", "--file", help="Specify the file name for processing")
-parser.add_argument("-c", "--coordinates", help="Starting coordinatest")
-args = parser.parse_args()
-
 if __name__ == "__main__":
+    config = configparser.ConfigParser()
+    config.read("config.ini")
+
+    parser = argparse.ArgumentParser(
+        description="Command generator for minecraft note blocks"
+    )
+    parser.add_argument("-f", "--file", help="Specify the file name for processing")
+    parser.add_argument("-c", "--coordinates", help="Starting coordinatest")
+    args = parser.parse_args()
     music_box_dict = json.loads(config["MinecraftSettings"]["music_box_dict"])
     amplitude_dict = json.loads(config["MinecraftSettings"]["amplitude_dict"])
     pitch_mapping_shift = int(config["MinecraftSettings"]["pitch_mapping_shift"])

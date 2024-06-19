@@ -1,15 +1,17 @@
 from MusicAnalyzer.musicAnalyzer import preProcess
-from MusicAnalyzer.commandGenerator import generateCommands
+
+# from MusicAnalyzer.commandGenerator import generateCommands
 import os
 import multiprocessing as mp
 import pickle as pkl
 import numpy as np
 import soundfile as sf
 import librosa
-# import io
-# import zipfile
 
-parallel_processes_count = 7
+# # import io
+# # import zipfile
+
+# parallel_processes_count = 7
 
 
 def preProcess_wrapper(params):
@@ -22,7 +24,7 @@ def preProcess_wrapper(params):
         initialBestMatchesLength,
         simThresh,
         binLength,
-        sounds_file_path,
+        audio_id_dir_path,
         amplitudeMode,
     ) = params
 
@@ -34,7 +36,7 @@ def preProcess_wrapper(params):
         initialBestMatchesLength,
         simThresh,
         binLength,
-        sounds_file_path,
+        audio_id_dir_path,
         amplitudeMode,
     )
 
@@ -77,9 +79,9 @@ def call_file_processing_logic_parallely(
     initialBestMatchesLength,
     simThresh,
     binLength,
-    results_folder_path,
-    filename,
+    audio_id_dir_path,
     amplitudeMode,
+    parallel_processes_count
 ):
     split_size = len(mainAudioValues) // parallel_processes_count
     audio_parts = [
@@ -87,8 +89,6 @@ def call_file_processing_logic_parallely(
         for i in range(parallel_processes_count)
     ]
     audio_parts[-1] = mainAudioValues[(parallel_processes_count - 1) * split_size :]
-    results_file_name = filename.split(".")[0] + "-" + amplitudeMode
-    sounds_folder_path = os.path.join(results_folder_path, "sounds")
     params_list = [
         (
             i,
@@ -99,7 +99,7 @@ def call_file_processing_logic_parallely(
             initialBestMatchesLength,
             simThresh,
             binLength,
-            os.path.join(sounds_folder_path, results_file_name + "-" + str(i) + ".mp3"),
+            os.path.join(audio_id_dir_path, f"processed-{amplitudeMode}-{i}.mp3"),
             amplitudeMode,
         )
         for i in range(parallel_processes_count)
@@ -108,17 +108,17 @@ def call_file_processing_logic_parallely(
         results = pool.map(preProcess_wrapper, params_list)
     results = combine_parallel_processing_results(results)
 
-    results_file_path = os.path.join(sounds_folder_path, results_file_name + ".mp3")
-    if os.path.exists(results_file_path):
-        os.remove(results_file_path)
-    processed_audio, sr = combine_results_sounds_files(sounds_folder_path, results_file_name)
-
-    pkl_folder_path = os.path.join(results_folder_path, "pkl")
-    pkl_file_path = os.path.join(
-        pkl_folder_path,
-        results_file_name + ".pkl",
+    if os.path.exists(
+        os.path.join(audio_id_dir_path, f"processed-{amplitudeMode}.mp3")
+    ):
+        os.remove(os.path.join(audio_id_dir_path, f"processed-{amplitudeMode}.mp3"))
+    processed_audio, sr = combine_results_sounds_files(
+        audio_id_dir_path, f"processed-{amplitudeMode}"
     )
-    with open(pkl_file_path, "wb") as f:
+
+    with open(
+        os.path.join(audio_id_dir_path, f"result-{amplitudeMode}.pkl"), "wb"
+    ) as f:
         pkl.dump(results, f)
     return processed_audio, sr
 
@@ -130,44 +130,46 @@ def convert_to_serializable(obj):
         return [convert_to_serializable(i) for i in obj]
     elif isinstance(obj, tuple):
         return tuple(convert_to_serializable(i) for i in obj)
+    elif isinstance(obj, np.ndarray):
+        return list(convert_to_serializable(i) for i in obj)
     elif isinstance(obj, np.float32):
         return float(obj)
     else:
         return obj
 
 
-# def create_zip_from_audios(sounds_folder_path):
-#     zip_buffer = io.BytesIO()
-#     with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zipf:
-#         for filename in os.listdir(sounds_folder_path):
-#             sounds_file_path = os.path.join(sounds_folder_path, filename)
-#             zipf.write(sounds_file_path, os.path.basename(sounds_file_path))
+# # def create_zip_from_audios(sounds_folder_path):
+# #     zip_buffer = io.BytesIO()
+# #     with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zipf:
+# #         for filename in os.listdir(sounds_folder_path):
+# #             audio_id_dir_path = os.path.join(sounds_folder_path, filename)
+# #             zipf.write(audio_id_dir_path, os.path.basename(audio_id_dir_path))
 
-#     zip_buffer.seek(0)
-#     return zip_buffer
+# #     zip_buffer.seek(0)
+# #     return zip_buffer
 
 
-def call_command_generator(
-    data,
-    music_box_dict,
-    amplitude_dict,
-    hearable_range,
-    one_hundred_milli_horizontal_gap,
-    starting_coordinates,
-    one_floor_vertical_gap,
-    instant_repeater_zs,
-    pitch_mapping_shift,
-    sim_thresh,
-):
-    return generateCommands(
-        data,
-        music_box_dict,
-        amplitude_dict,
-        hearable_range,
-        one_hundred_milli_horizontal_gap,
-        starting_coordinates,
-        one_floor_vertical_gap,
-        instant_repeater_zs,
-        pitch_mapping_shift,
-        sim_thresh,
-    )
+# def call_command_generator(
+#     data,
+#     music_box_dict,
+#     amplitude_dict,
+#     hearable_range,
+#     one_hundred_milli_horizontal_gap,
+#     starting_coordinates,
+#     one_floor_vertical_gap,
+#     instant_repeater_zs,
+#     pitch_mapping_shift,
+#     sim_thresh,
+# ):
+#     return generateCommands(
+#         data,
+#         music_box_dict,
+#         amplitude_dict,
+#         hearable_range,
+#         one_hundred_milli_horizontal_gap,
+#         starting_coordinates,
+#         one_floor_vertical_gap,
+#         instant_repeater_zs,
+#         pitch_mapping_shift,
+#         sim_thresh,
+#     )

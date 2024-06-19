@@ -169,14 +169,12 @@ def preProcess(
     return result
 
 
-
-parser = argparse.ArgumentParser(description="Music analyzer for minecraft note blocks")
-parser.add_argument("-m", "--mode", help="Specify the mode. <Mean> or <Max>")
-parser.add_argument("-f", "--file", help="Specify the file path for processing")
-parser.add_argument("-o", "--output", help="Specify the result path for saving")
-args = parser.parse_args()
-
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Music analyzer for minecraft note blocks")
+    parser.add_argument("-m", "--mode", help="Specify the mode. <Mean> or <Max>")
+    parser.add_argument("-f", "--file", help="Specify the file path for processing")
+    parser.add_argument("-o", "--output", help="Specify the result path for saving")
+    args = parser.parse_args()
     musicFilePath = args.file
     outputFolderPath = args.output
     amplitudeMode = args.mode
