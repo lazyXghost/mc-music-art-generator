@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // --------------------------------------------------------------
     var audioList = document.getElementById('audioList');
-    console.log(audios);
     Object.keys(audios).forEach(function (audioId) {
         var container = document.createElement('div');  // Create a container div
         container.className = 'audio-container mb-3';   // Add some margin for spacing
@@ -185,8 +184,19 @@ document.getElementById('commandMusicForm').addEventListener('submit', function 
         method: 'POST',
         body: formData,
     })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(errorData => {
+                    // Create a new error with the message from the backend
+                    let error = new Error('Network response was not ok');
+                    error.data = errorData;
+                    throw error;
+                });
+            }
+            return response.json();
+        })
         .then(data => {
+            console.log(data);
             let downloadButton = document.createElement('a');
             downloadButton.innerText = formData.get('audioId') + '-' + formData.get('commandsAmplitudeMode') + '.mcfunction';
             downloadButton.href = URL.createObjectURL(new Blob([data.data], { type: 'text/plain' }));
@@ -195,7 +205,8 @@ document.getElementById('commandMusicForm').addEventListener('submit', function 
             downloadButton.click();
         })
         .catch(error => {
-            document.getElementById('resultCommandMusicForm').innerText = 'Error: ' + error;
+            let errorMessage = error.data ? error.data.message : error.message;
+            document.getElementById('resultCommandMusicForm').innerText = 'Error: ' + errorMessage;
         })
         .finally(() => {
             // Hide loading spinner

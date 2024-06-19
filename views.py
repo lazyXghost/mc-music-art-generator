@@ -53,6 +53,8 @@ def process_music_view(
         )
         if uploadedFile and allowed:
             audioId = uploadedFile.filename.split('.')[0]
+            if not os.path.exists(os.path.join(audios_dir_path, audioId)):
+                os.mkdir(os.path.join(audios_dir_path, audioId))
             audioExtension = uploadedFile.filename.split('.')[1]
             # if audioId in os.listdir(audios_dir_path):
             #     return jsonify({"error": "Audio with same id already exists"}), 400
@@ -110,6 +112,9 @@ def get_commands_view(
     one_hundred_milli_horizontal_gap,
 ):
     try:
+        if not os.path.exists(pkl_file_path):
+            return jsonify({"message": "AudioId hasn't been processed for selected amplitude mode"}), 404
+
         with open(pkl_file_path, "rb") as f:
             data = pkl.load(f)
 
